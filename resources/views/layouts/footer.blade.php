@@ -5,7 +5,7 @@
                 <div class="row">
                     <div class="col-md-3 col-sm-6 col-xs-6 footer-col-4">
                         <div class="widget widget_about">
-                            <div class="logo-footer m-a0"><a href="index.html"><img src="images/logo-light1.png" alt=""></a></div>
+                            <div class="logo-footer m-a0"><a href="index.html"><img src="{{ asset('assets/images/logo.png') }}" alt=""></a></div>
                             <p class="m-t20 m-b40">We know the difference is in the details and that’s why our car rental services, in the tourism and business industry, stand out for their quality.</p>
 							<form action="script/mailchamp.php" method="post" class="form-subscribe dzSubscribe">
 								<div class="dzSubscribeMsg"></div>
@@ -54,12 +54,6 @@
                     </div>
                     <div class="col-md-3 col-sm-6 col-xs-6 footer-col-4">
                         <div class="widget widget_services">
-							<div class="map-line">
-								<a href="javascript:;" class="site-button">
-									<img src="images/map-icon.png" alt=""/>
-									<span class="m-l10 m-t10">Car Dealers on Map</span>
-								</a>
-							</div>
                             <h4 class="m-b15 text-uppercase">Account Information</h4>
 							<ul>
                                 <li><a href="page-about.html">About us</a></li>

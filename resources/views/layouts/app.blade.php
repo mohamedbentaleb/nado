@@ -6,7 +6,11 @@
         <div class="page-wraper">
             <div id="loading-area"></div>
             @include('layouts.navigation')
-            @yield('content')
+            <!-- Content -->
+            <div class="page-content">
+                @yield('content')
+            <!-- Content END-->
+            </div>
             @include('layouts.footer')
         </div>
     </body>

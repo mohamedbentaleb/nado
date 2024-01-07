@@ -4,77 +4,77 @@ Core script to handle the entire theme and core functions
 var CarDealer = function(){
 	/* Search Bar ============ */
 	var siteUrl = '';
-	
+
 	var homeSearch = function() {
 		'use strict';
 		/* top search in header on click function */
 		var quikSearch = jQuery("#quik-search-btn");
 		var quikSearchRemove = jQuery("#quik-search-remove");
-		
+
 		quikSearch.on('click',function() {
-			
+
 			jQuery('.dlab-quik-search').fadeIn(500);
 			jQuery('.dlab-quik-search').addClass('On');
-			
+
 			//jQuery('.dlab-quik-search').animate({'width': '100%' });
 			//jQuery('.dlab-quik-search').delay(500).css({'left': '0'  });
 		});
-		
+
 		quikSearchRemove.on('click',function() {
 			jQuery('.dlab-quik-search').fadeOut(500);
 			jQuery('.dlab-quik-search').removeClass('On');
-			
+
 			//jQuery('.dlab-quik-search').animate({'width': '0%' ,  'right': '0'  });
 			//jQuery('.dlab-quik-search').css({'left': 'auto'  });
-		});	
+		});
 		/* top search in header on click function End*/
 	}
-	
+
 	var cartButton = function(){
 		$(".item-close").on('click',function(){
 			$(this).closest(".cart-item").hide('500');
-		});	
+		});
 		$('.cart-btn').on('click',function(){
 			$(".cart-list").slideToggle('slow');
 		})
 		//$('.cart-btn').toggle(500,easing);
-	}  
-	
-	
+	}
+
+
 	/* One Page Layout ============ */
 	var onePageLayout = function() {
 		'use strict';
 		var headerHeight =   parseInt($('.onepage').css('height'), 10);
-		$(".scroll").on('click',function(event) 
+		$(".scroll").on('click',function(event)
 		{
 			event.preventDefault();
-			
+
 			if (this.hash !== "") {
-				var hash = this.hash;	
+				var hash = this.hash;
 				var seactionPosition = $(hash).offset().top;
 				var headerHeight =   parseInt($('.onepage').css('height'), 10);
 				//alert(headerHeight);
-				
-				$('body').scrollspy({target: ".navbar", offset: headerHeight+2}); 
-				
+
+				$('body').scrollspy({target: ".navbar", offset: headerHeight+2});
+
 				var scrollTopPosition = seactionPosition - (headerHeight);
-				
+
 				$('html, body').animate({
 					scrollTop: scrollTopPosition
 				}, 800, function(){
 					//window.location.hash = hash;
 				});
-			}   
+			}
 		});
-		$('body').scrollspy({target: ".navbar", offset: headerHeight + 2});  
+		$('body').scrollspy({target: ".navbar", offset: headerHeight + 2});
 	}
-	
+
 	/* Header Height ============ */
 	var handelResizeElement = function(){
 		var HeaderHeight = $('.header').height();
 		$('.header').css('height', HeaderHeight);
 	}
-	
+
 	/* Load File ============ */
 	var dzTheme = function(){
 		 'use strict';
@@ -85,15 +85,15 @@ var CarDealer = function(){
 		 	jQuery(this).hide(function(){
 				jQuery(this).on('load',dzsrc, function(){
 					jQuery(this).fadeIn('slow');
-				}); 
+				});
 			})
-			
+
 		 });
-		 
-		 
+
+
 		 /* Search Area */
 		if($('#searchable-area').length)
-		{ 
+		{
 			$('#searchable-area' ).searchable({
 				searchField: '#container-search',
 				selector: '.search-content',
@@ -107,44 +107,44 @@ var CarDealer = function(){
 			})
 		}
 		/* Search Area End */
-		
+
 		/* Car Search City Box */
 		if($('#da-thumbs .item .city-box').length)
 		{
 			$('#da-thumbs .item .city-box').each( function() { $(this).hoverdir(); } );
-		}	
-		
+		}
+
 		$("input[name$='new_search']").on('click',function() {
 			var searchBy = $(this).val();
-			$("div.new_form_div").hide();   
+			$("div.new_form_div").hide();
  			$("#" + searchBy + "Div").show();
 		});
-		
+
 		$("input[name$='used_search']").on('click',function() {
 			var searchBy = $(this).val();
-			$("div.used_form_div").hide();   
+			$("div.used_form_div").hide();
  			$("#" + searchBy + "Div").show();
 		});
 		/* Car Search City Box End */
-		
+
 		/* AsideBar */
 		jQuery('.icon-bx-toggle').on('click',function(){
 			jQuery('.icon-bx-toggle').toggleClass('active');
 		});
-		
+
 		//jQuery('.icon-bx-toggle').toggleClass('active');
-		
+
 		jQuery('.icon-bx-toggle').on('click',function(){
 			jQuery('.icon-bx-toggle').removeClass('active');
 			jQuery(this).addClass('active');
 		});
 	}
-	
-	
-	
+
+
+
 	/* Magnific Popup ============ */
 	var MagnificPopup = function(){
-		'use strict';	
+		'use strict';
 		/* magnificPopup function */
 		jQuery('.mfp-gallery').magnificPopup({
 			delegate: '.mfp-link',
@@ -164,8 +164,8 @@ var CarDealer = function(){
 			}
 		});
 		/* magnificPopup function end */
-		
-		/* magnificPopup for paly video function */		
+
+		/* magnificPopup for paly video function */
 		jQuery('.video').magnificPopup({
 			type: 'iframe',
 			iframe: {
@@ -182,14 +182,14 @@ var CarDealer = function(){
 			}
 		});
 		/* magnificPopup for paly video function end*/
-		
+
 	}
-	
+
 	/* Scroll To Top ============ */
 	var scrollTop = function (){
 		'use strict';
 		var scrollTop = jQuery("button.scroltop");
-		/* page scroll top on click function */	
+		/* page scroll top on click function */
 		scrollTop.on('click',function() {
 			jQuery("html, body").animate({
 				scrollTop: 0
@@ -207,10 +207,10 @@ var CarDealer = function(){
 		});
 		/* page scroll top on click function end*/
 	}
-	
+
 	/* Handel Accordian ============ */
 	var handelAccordian = function(){
-		/* accodin open close icon change */	 	
+		/* accodin open close icon change */
 		jQuery('#accordion').on('hidden.bs.collapse', function(e){
 			jQuery(e.target)
 				.prev('.panel-heading')
@@ -225,13 +225,13 @@ var CarDealer = function(){
 		});
 		/* accodin open close icon change end */
 	}
-	
+
 	/* Handel Placeholder ============ */
 	var handelPlaceholder = function(){
 		/* input placeholder for ie9 & ie8 & ie7 */
 		jQuery.support.placeholder = ('placeholder' in document.createElement('input'));
 		/* input placeholder for ie9 & ie8 & ie7 end*/
-		
+
 		/*fix for IE7 and IE8  */
 		if (!jQuery.support.placeholder) {
 			jQuery("[placeholder]").focus(function () {
@@ -250,15 +250,15 @@ var CarDealer = function(){
 		}
 		/*fix for IE7 and IE8 end */
 	}
-	
+
 	/* Equal Height ============ */
 	var equalHeight = function(container) {
-	
-		var currentTallest = 0, 
-			currentRowStart = 0, 
-			rowDivs = new Array(), 
+
+		var currentTallest = 0,
+			currentRowStart = 0,
+			rowDivs = new Array(),
 			$el, topPosition = 0;
-			
+
 		$(container).each(function() {
 			$el = $(this);
 			$($el).height('auto')
@@ -281,7 +281,7 @@ var CarDealer = function(){
 			}
 		});
 	}
-	
+
 	/* Footer Align ============ */
 	var footerAlign = function() {
 		'use strict';
@@ -291,22 +291,22 @@ var CarDealer = function(){
 		jQuery('.footer-fixed > .page-wraper').css('padding-bottom', footerHeight);
 		jQuery('.site-footer').css('height', footerHeight);
 	}
-	
+
 	/* File Input ============ */
 	var fileInput = function(){
 		'use strict';
-		/* Input type file jQuery */	 	 
+		/* Input type file jQuery */
 		jQuery(document).on('change', '.btn-file :file', function() {
 			var input = jQuery(this);
 			var	numFiles = input.get(0).files ? input.get(0).files.length : 1;
 			var	label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
 			input.trigger('fileselect', [numFiles, label]);
 		});
-		
+
 		jQuery('.btn-file :file').on('fileselect', function(event, numFiles, label) {
 			input = jQuery(this).parents('.input-group').find(':text');
 			var log = numFiles > 10 ? numFiles + ' files selected' : label;
-		
+
 			if (input.length) {
 				input.val(log);
 			} else {
@@ -315,11 +315,11 @@ var CarDealer = function(){
 		});
 		/* Input type file jQuery end*/
 	}
-	
+
 	/* Header Fixed ============ */
 	var headerFix = function(){
 		'use strict';
-		/* Main navigation fixed on top  when scroll down function custom */		
+		/* Main navigation fixed on top  when scroll down function custom */
 		jQuery(window).on('scroll', function () {
 			var menu = jQuery('.sticky-header');
 			if ($(window).scrollTop() > menu.offset().top) {
@@ -332,11 +332,11 @@ var CarDealer = function(){
 		});
 		/* Main navigation fixed on top  when scroll down function custom end*/
 	}
-	
+
 	/* Masonry Box ============ */
 	var masonryBox = function(){
 		'use strict';
-		/* masonry by  = bootstrap-select.min.js */ 
+		/* masonry by  = bootstrap-select.min.js */
 		var self = $(".masonry");
 		self.imagesLoaded(function () {
 			self.masonry({
@@ -359,9 +359,9 @@ var CarDealer = function(){
 		});
 		/* masonry by  = bootstrap-select.min.js end */
 	}
-	
+
 	/* Set Div Height ============ */
-	var setDivHeight = function(){	
+	var setDivHeight = function(){
 		'use strict';
 		var allHeights = [];
 		jQuery('.dzseth > div, .dzseth .img-cover, .dzseth .equal').each(function(e){
@@ -372,7 +372,7 @@ var CarDealer = function(){
 			var maxHeight = Math.max.apply(Math,allHeights);
 			jQuery(this).css('height',maxHeight);
 		})
-		
+
 		allHeights = [];
 		/* Removice */
 		var screenWidth = $( window ).width();
@@ -381,9 +381,9 @@ var CarDealer = function(){
 			jQuery('.dzseth > div, .dzseth .img-cover, .dzseth .equal').each(function(e){
 				jQuery(this).css('height','');
 			})
-		}	
+		}
 	}
-	
+
 	/* Counter Number ============ */
 	var counter = function(){
 		jQuery('.counter').counterUp({
@@ -391,18 +391,18 @@ var CarDealer = function(){
 			time: 3000
 		});
 	}
-	
+
 	/* Video Popup ============ */
 	var handelVideo = function(){
-		/* Video responsive function */	
+		/* Video responsive function */
 		jQuery('iframe[src*="youtube.com"]').wrap('<div class="embed-responsive embed-responsive-16by9"></div>');
-		jQuery('iframe[src*="vimeo.com"]').wrap('<div class="embed-responsive embed-responsive-16by9"></div>');	
+		jQuery('iframe[src*="vimeo.com"]').wrap('<div class="embed-responsive embed-responsive-16by9"></div>');
 		/* Video responsive function end */
 	}
-	
+
 	/* Gallery Filter ============ */
 	var handelFilterMasonary = function(){
-		/* gallery filter activation = jquery.mixitup.min.js */ 
+		/* gallery filter activation = jquery.mixitup.min.js */
 		if (jQuery('#image-gallery-mix').length) {
 			jQuery('.gallery-filter').find('li').each(function () {
 				$(this).addClass('filter');
@@ -420,14 +420,14 @@ var CarDealer = function(){
 		}
 		/* gallery filter activation = jquery.mixitup.min.js */
 	}
-	
+
 	/* Handel Bootstrap Select ============ */
 	var handelBootstrapSelect = function(){
-		/* Bootstrap Select box function by  = bootstrap-select.min.js */ 
+		/* Bootstrap Select box function by  = bootstrap-select.min.js */
 		jQuery('select').selectpicker();
 		/* Bootstrap Select box function by  = bootstrap-select.min.js end*/
 	}
-	
+
 	/* Handel Bootstrap Touch Spin ============ */
 	var handelBootstrapTouchSpin = function(){
 		jQuery("input[name='demo_vertical2']").TouchSpin({
@@ -435,13 +435,13 @@ var CarDealer = function(){
 		  verticalupclass: 'glyphicon glyphicon-plus',
 		  verticaldownclass: 'glyphicon glyphicon-minus'
 		});
-		
+
 	}
 	/* Resizebanner ============ */
 	var handelBannerResize = function(){
 		$(".full-height").css("height", $(window).height());
 	}
-	
+
 	/* Countdown ============ */
 	var handelCountDown = function(){
 		/* Time Countr Down Js */
@@ -453,20 +453,20 @@ var CarDealer = function(){
 		}
 		/* Time Countr Down Js End */
 	}
-	
+
 	/* Content Scroll ============ */
 	var handelCustomScroll = function(){
 		/* all available option parameters with their default values */
 		if($(".content-scroll").length)
-		{ 
+		{
 			$(".content-scroll").mCustomScrollbar({
 				setWidth:false,
 				setHeight:false,
 				axis:"y"
-			});	
+			});
 		}
 	}
-	
+
 	/* Left Menu ============ */
 	var handelSideBarMenu = function(){
 		$('.openbtn').on('click',function(e){
@@ -480,16 +480,16 @@ var CarDealer = function(){
 			{
 				document.getElementById("mySidenav1").style.right = "0";
 			}
-			
+
 		})
-		
+
 		$('.closebtn').on('click',function(e){
 			e.preventDefault();
 			if($('#mySidenav').length > 0)
 			{
 				document.getElementById("mySidenav").style.left = "-300px";
 			}
-			
+
 			if($('#mySidenav1').length > 0)
 			{
 				document.getElementById("mySidenav1").style.right = "-820px";
@@ -512,7 +512,7 @@ var CarDealer = function(){
 			});
 		}
 	}
-	
+
 	var wowAnimation = function(){
 		if($('.wow').length > 0)
 		{
@@ -523,16 +523,16 @@ var CarDealer = function(){
 			  offset:       100,          // distance to the element when triggering the animation (default is 0)
 			  mobile:       false       // trigger animations on mobile devices (true is default)
 			});
-			wow.init();	
-		}	
+			wow.init();
+		}
 	}
-	
+
 	var boxHover = function(){
-	
+
 		jQuery('.box-hover').on('mouseenter',function(){
 			jQuery('.box-hover').removeClass('active');
 			jQuery(this).addClass('active');
-			
+
 		})
 	}
 
@@ -541,23 +541,23 @@ var CarDealer = function(){
 		var modal = jQuery(this),
 		dialog = modal.find('.modal-dialog');
 		modal.css('display', 'block');
-		
-		/* Dividing by two centers the modal exactly, but dividing by three 
+
+		/* Dividing by two centers the modal exactly, but dividing by three
 		 or four works better for larger screens.  */
 		dialog.css("margin-top", Math.max(0, (jQuery(window).height() - dialog.height()) / 2));
 	}
-	
+
 	var handelResize = function (){
-		
+
 		/* Reposition when the window is resized */
 		jQuery(window).on('resize', function() {
 			jQuery('.modal:visible').each(reposition);
-		
+
 			equalHeight('.equal-wraper .equal-col');
 			footerAlign();
 		});
 	}
-	
+
 	var  dezText = function(words, id) {
 		'use strict';
 		if($('#'+id).length > 0)
@@ -591,14 +591,9 @@ var CarDealer = function(){
 					letterCount += x;
 				}
 			}, 70)
-		}	
+		}
 	}
-	
-	var handleSupport = function(){
-		var support = '<a href="https://1.envato.market/rWDGd" target="_blank" class="bt-buy-now theme-btn"><i class="fa fa-shopping-cart"></i><span>Buy Now</span></a><a href="https://w3itexperts.ticksy.com" target="_blank" class="bt-support-now theme-btn"><i class="fa fa-life-ring"></i><span>Support</span></a><!-- Go to www.addthis.com/dashboard to customize your tools --><script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5b221c5e31b4e54b"></script>';
-		jQuery('body').append(support);
-	}
-	
+
 	/* Function ============ */
 	return {
 		init:function(){
@@ -629,36 +624,35 @@ var CarDealer = function(){
 			jQuery('.modal').on('show.bs.modal', reposition);
 			dezText(['Best Accordians', 'Awesome Icon Box', 'Usefull Tabs', 'Attractive Alert Box', 'Client Testimonials', 'Buttons, Image Box, Widgets And Many More...  ' ], "text");
 		},
-		
+
 		load:function(){
 			masonryBox();
 			handelBootstrapSelect();
 			handelBootstrapTouchSpin();
 			equalHeight('.equal-wraper .equal-col');
-			handleSupport();
 		}
 	}
-	
+
 }();
 
 
-/* Document.ready Start */	
+/* Document.ready Start */
 jQuery(document).ready(function() {
     'use strict';
 	CarDealer.init();
-	
+
 });
 /* Document.ready END */
 
 /* Window Load START */
 jQuery(window).load(function () {
-	'use strict'; 
+	'use strict';
 	CarDealer.load();
-	
+
 	setTimeout(function(){
 		jQuery('#loading-area').remove();
 	}, 0);
-	
+
 });
 
 /*  Window Load END */
