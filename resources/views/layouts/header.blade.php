@@ -7,7 +7,7 @@
     <meta name="description" content="" />
     <meta name="format-detection" content="telephone=no">
     <!-- Favicons Icon -->
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="{{ asset('assets/images/favicon.png') }}" type="image/x-icon" />
     <!-- Page Title Here -->
     <title>CarZone - Car Dealer Automotive Responsive HTML5 Template</title>
     <!-- Mobile Specific -->

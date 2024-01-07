@@ -2,6 +2,9 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\FrontController;
+use App\Http\Controllers\SellController;
+use App\Http\Controllers\BuyController;
+use App\Http\Controllers\ContactController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,6 +22,9 @@ use Illuminate\Support\Facades\Route;
     return view('welcome');
 });*/
 Route::resource('/', FrontController::class);
+Route::resource('/Vendre', SellController::class);
+Route::resource('/Acheter', BuyController::class);
+Route::resource('/Contactez-nous', ContactController::class);
 
 Route::get('/admin/dashboard', function () {
     return view('admin.dashboard');
