@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\admin\BrandsController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\FrontController;
 use App\Http\Controllers\SellController;
@@ -34,6 +35,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/admin/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/admin/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/admin/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
+    Route::resource('/admin/brands', BrandsController::class);
 });
 
 require __DIR__.'/auth.php';
