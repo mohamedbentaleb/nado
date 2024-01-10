@@ -1,4 +1,8 @@
-<x-guest-layout>
+@extends('admin.layouts.guest')
+
+@section('title' , 'Register')
+
+@section('content')
     <form method="POST" action="{{ route('register') }}">
         @csrf
 
@@ -14,6 +18,12 @@
             <x-input-label for="email" :value="__('Email')" />
             <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autocomplete="username" />
             <x-input-error :messages="$errors->get('email')" class="mt-2" />
+        </div>
+
+        <div class="mt-4">
+            <select name="job" class="block mt-1 w-full">
+                <option value="admin">admin</option>
+            </select>
         </div>
 
         <!-- Password -->
@@ -44,9 +54,9 @@
                 {{ __('Already registered?') }}
             </a>
 
-            <x-primary-button class="ms-4">
+            <x-primary-button class="ml-4">
                 {{ __('Register') }}
             </x-primary-button>
         </div>
     </form>
-</x-guest-layout>
+@endsection
