@@ -1,10 +1,9 @@
 @extends('layouts.app')
 
-@section('title', 'Nado.ma')
+@section('title', 'Home | Nado.ma')
 
 @section('content')
 
-<!-- Slider -->
 <div class="bnr-slider">
     <div class="slider-carousel owl-carousel owl-theme owl-none owl-dots">
         <div class="item">
@@ -27,11 +26,14 @@
             <div class="slider-item " style="background-image: url({{ asset('assets/images/main-slider/slide-nado-4.jpg') }});">
             </div>
         </div>
+        <div class="item">
+            <div class="slider-item " style="background-image: url({{ asset('assets/images/main-slider/slide-nado-5.jpg') }});">
+            </div>
+        </div>
     </div>
 </div>
-<!-- Slider END -->
 <!-- searching cars form -->
-<div class="section-full bg-secondry">
+<div class="section-full bg-secondry hide">
     <div class="car-searchings text-white">
         <form class="searching-form">
             <div class="container">
@@ -94,129 +96,151 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-12 col-md-8 col-sm-8">
-                <ul id="" class="row dlab-gallery-listing gallery mfp-gallery masonry brand-variety">
-                    <li class="card-container mercedes all honda toyota col-lg-4 col-md-6 col-sm-6 col-xs-6">
-                        <div class="car-brand bg-white">
-                            <figure class="text-center">
-                                <img src="{{ asset('assets/images/brands/pic1.png') }}" alt="">
-                            </figure>
-                            <div class="p-a20">
-                                <p class="font-14 m-b5">Registered 2016</p>
-                                <h3 class="m-t5 font-weight-700">Volkswagen <span class="text-primary font-weight-400">GTR</span> </h3>
-                                <ul class="list-inline car-brand-value m-b0">
-                                    <li>$50/Day</li>
-                                    <li><i class="flaticon-dashboard-1"></i>  2.3K CC</li>
-                                </ul>
+            <div class="clearfix owl-carousel featured-offer owl-theme owl-nav  owl-dots col-lg-12 p-lr0">
+                <div class="item">
+                    <div class="dlab-space">
+                        <div class="dlab-feed-list style-1 relative">
+                            <div class="dlab-media bg-white">
+                                <a href="#"><img src="{{ asset('assets/images/featured/v1300.png')}}" alt=""></a>
                             </div>
-                            <ul class="link-car-brand m-b0">
-                                <li><a href="javascript:;"><i class="flaticon-settings"></i> Mannual</a></li>
-                                <li><a href="javascript:;"><i class="flaticon-oil"></i> Petrol</a></li>
-                                <li><a href="javascript:;"><i class="flaticon-dashboard-1"></i> 2.3K CC</a></li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="card-container mercedes all volkswagen audi col-lg-4 col-md-6 col-sm-6 col-xs-6">
-                        <div class="car-brand bg-white">
-                            <figure class="text-center">
-                                <img src="{{ asset('assets/images/brands/pic2.png') }}" alt="">
-                            </figure>
-                            <div class="p-a20">
-                                <p class="font-14 m-b5">Registered 2016</p>
-                                <h3 class="m-t5 font-weight-700">Audi Sports <span class="text-primary font-weight-400">S8</span> </h3>
-                                <ul class="list-inline car-brand-value m-b0">
-                                    <li>$50/Day</li>
-                                    <li><i class="flaticon-dashboard-1"></i>  2.3K CC</li>
-                                </ul>
+                            <div class="dlab-info">
+                                <h5 class="dlab-title h5"><a href="#">Mercedes-Benz <span class="text-primary">Classe E</span> </a></h5>
+                                <p class="dlab-price"><span>300 000 DH</span> </p>
+                                <div class="icon-box-btn text-center">
+                                    <ul class="clearfix">
+                                        <li><a href="javascript:;"><i class="flaticon-calendar"></i> 2016</a></li>
+                                        <li><a href="javascript:"><i class="flaticon-settings"></i> Automa..</a></li>
+                                        <li><a href="javascript:;"><i class="flaticon-oil"></i> Diesel</a></li>
+                                        <li><a href="javascript:;"><i class="flaticon-dashboard-1"></i> 65K km</a></li>
+                                    </ul>
+                                </div>
                             </div>
-                            <ul class="link-car-brand m-b0">
-                                <li><a href="javascript:;"><i class="flaticon-settings"></i> Mannual</a></li>
-                                <li><a href="javascript:;"><i class="flaticon-oil"></i> Petrol</a></li>
-                                <li><a href="javascript:;"><i class="flaticon-dashboard-1"></i> 2.3K CC</a></li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="card-container mercedes all honda ferrari col-lg-4 col-md-6 col-sm-6 col-xs-6">
-                        <div class="car-brand bg-white">
-                            <figure class="text-center">
-                                <img src="{{ asset('assets/images/brands/pic3.png') }}" alt="">
-                            </figure>
-                            <div class="p-a20">
-                                <p class="font-14 m-b5">Registered 2016</p>
-                                <h3 class="m-t5 font-weight-700">Bugatti Feyron <span class="text-primary font-weight-400">F2</span> </h3>
-                                <ul class="list-inline car-brand-value m-b0">
-                                    <li>$50/Day</li>
-                                    <li><i class="flaticon-dashboard-1"></i>  2.3K CC</li>
-                                </ul>
+                            <div class="rent-link">
+                                <a href="#" class="site-button">Acheter Cette Voiture</a>
                             </div>
-                            <ul class="link-car-brand m-b0">
-                                <li><a href="javascript:;"><i class="flaticon-settings"></i> Mannual</a></li>
-                                <li><a href="javascript:;"><i class="flaticon-oil"></i> Petrol</a></li>
-                                <li><a href="javascript:;"><i class="flaticon-dashboard-1"></i> 2.3K CC</a></li>
-                            </ul>
                         </div>
-                    </li>
-                    <li class="card-container mercedes all volkswagen chevrolet col-lg-4 col-md-6 col-sm-6 col-xs-6">
-                        <div class="car-brand bg-white">
-                            <figure class="text-center">
-                                <img src="{{ asset('assets/images/brands/pic4.png') }}" alt="">
-                            </figure>
-                            <div class="p-a20">
-                                <p class="font-14 m-b5">Registered 2016</p>
-                                <h3 class="m-t5 font-weight-700">Mercedes Benz<span class="text-primary font-weight-400">R3</span> </h3>
-                                <ul class="list-inline car-brand-value m-b0">
-                                    <li>$50/Day</li>
-                                    <li><i class="flaticon-dashboard-1"></i>  2.3K CC</li>
-                                </ul>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="dlab-space">
+                        <div class="dlab-feed-list style-1 relative">
+                            <div class="dlab-media bg-white">
+                                <a href="#"><img src="{{ asset('assets/images/featured/v2300.png')}}" alt=""></a>
                             </div>
-                            <ul class="link-car-brand m-b0">
-                                <li><a href="javascript:;"><i class="flaticon-settings"></i> Mannual</a></li>
-                                <li><a href="javascript:;"><i class="flaticon-oil"></i> Petrol</a></li>
-                                <li><a href="javascript:;"><i class="flaticon-dashboard-1"></i> 2.3K CC</a></li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="card-container mercedes all toyota chevrolet col-lg-4 col-md-6 col-sm-6 col-xs-6">
-                        <div class="car-brand bg-white">
-                            <figure class="text-center">
-                                <img src="{{ asset('assets/images/brands/pic5.png') }}" alt="">
-                            </figure>
-                            <div class="p-a20">
-                                <p class="font-14 m-b5">Registered 2016</p>
-                                <h3 class="m-t5 font-weight-700">Toyota Avanza  <span class="text-primary font-weight-400">RX</span> </h3>
-                                <ul class="list-inline car-brand-value m-b0">
-                                    <li>$50/Day</li>
-                                    <li><i class="flaticon-dashboard-1"></i>  2.3K CC</li>
-                                </ul>
+                            <div class="dlab-info">
+                                <h5 class="dlab-title h5"><a href="#">Citroen <span class="text-primary">DS3 </span> </a></h5>
+                                <p class="dlab-price"><span>260 000 DH</span></p>
+                                <div class="icon-box-btn text-center">
+                                    <ul class="clearfix">
+                                        <li><a href="javascript:;"><i class="flaticon-calendar"></i> 2022</a></li>
+                                        <li><a href="javascript:"><i class="flaticon-settings"></i> Automa.. </a></li>
+                                        <li><a href="javascript:;"><i class="flaticon-oil"></i> Diesel</a></li>
+                                        <li><a href="javascript:;"><i class="flaticon-dashboard-1"></i> 15K km</a></li>
+                                    </ul>
+                                </div>
                             </div>
-                            <ul class="link-car-brand m-b0">
-                                <li><a href="javascript:;"><i class="flaticon-settings"></i> Mannual</a></li>
-                                <li><a href="javascript:;"><i class="flaticon-oil"></i> Petrol</a></li>
-                                <li><a href="javascript:;"><i class="flaticon-dashboard-1"></i> 2.3K CC</a></li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="card-container mercedes all audi ferrari col-lg-4 col-md-6 col-sm-6 col-xs-6">
-                        <div class="car-brand bg-white">
-                            <figure class="text-center">
-                                <img src="{{ asset('assets/images/brands/pic6.png') }}" alt="">
-                            </figure>
-                            <div class="p-a20">
-                                <p class="font-14 m-b5">Registered 2016</p>
-                                <h3 class="m-t5 font-weight-700">Chevrolet <span class="text-primary font-weight-400">GTR</span> </h3>
-                                <ul class="list-inline car-brand-value m-b0">
-                                    <li>$50/Day</li>
-                                    <li><i class="flaticon-dashboard-1"></i>  2.3K CC</li>
-                                </ul>
+                            <div class="rent-link">
+                                <a href="#" class="site-button">Acheter Cette Voiture</a>
                             </div>
-                            <ul class="link-car-brand m-b0">
-                                <li><a href="javascript:;"><i class="flaticon-settings"></i> Mannual</a></li>
-                                <li><a href="javascript:;"><i class="flaticon-oil"></i> Petrol</a></li>
-                                <li><a href="javascript:;"><i class="flaticon-dashboard-1"></i> 2.3K CC</a></li>
-                            </ul>
                         </div>
-                    </li>
-                </ul>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="dlab-space">
+                        <div class="dlab-feed-list style-1 relative">
+                            <div class="dlab-media bg-white">
+                                <a href="#"><img src="{{ asset('assets/images/featured/v3300.png')}}" alt=""></a>
+                            </div>
+                            <div class="dlab-info">
+                                <h5 class="dlab-title h5"><a href="#">Volkswagen  <span class="text-primary">Tiguan Rline</span> </a></h5>
+                                <p class="dlab-price"><span>540 000 DH</span></p>
+                                <div class="icon-box-btn text-center">
+                                    <ul class="clearfix">
+                                        <li><a href="javascript:;"><i class="flaticon-calendar"></i>  2021</a></li>
+                                        <li><a href="javascript:"><i class="flaticon-settings"></i> Automa..</a></li>
+                                        <li><a href="javascript:;"><i class="flaticon-oil"></i> Diesel</a></li>
+                                        <li><a href="javascript:;"><i class="flaticon-dashboard-1"></i> 100K km</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="rent-link">
+                                <a href="#" class="site-button">Acheter Cette Voiture</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="dlab-space">
+                        <div class="dlab-feed-list style-1 relative">
+                            <div class="dlab-media bg-white">
+                                <a href="#"><img src="{{ asset('assets/images/featured/v4300.png')}}" alt=""></a>
+                            </div>
+                            <div class="dlab-info">
+                                <h5 class="dlab-title h5"><a href="#">BMW <span class="text-primary">X4 </span> </a></h5>
+                                <p class="dlab-price"><span>385 000 DH</span> </p>
+                                <div class="icon-box-btn text-center">
+                                    <ul class="clearfix">
+                                        <li><a href="javascript:;"><i class="flaticon-calendar"></i> 2018</a></li>
+                                        <li><a href="javascript:"><i class="flaticon-settings"></i>  Automa..</a></li>
+                                        <li><a href="javascript:;"><i class="flaticon-oil"></i> Diesel</a></li>
+                                        <li><a href="javascript:;"><i class="flaticon-dashboard-1"></i> 110K km</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="rent-link">
+                                <a href="#" class="site-button">Acheter Cette Voiture</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="dlab-space">
+                        <div class="dlab-feed-list style-1 relative">
+                            <div class="dlab-media bg-white">
+                                <a href="#"><img src="{{ asset('assets/images/featured/v5300.png')}}" alt=""></a>
+                            </div>
+                            <div class="dlab-info">
+                                <h5 class="dlab-title h5"><a href="#">Volkswagen <span class="text-primary">Arteon</span> </a></h5>
+                                <p class="dlab-price"><span>250 000 DH</span></p>
+                                <div class="icon-box-btn text-center">
+                                    <ul class="clearfix">
+                                        <li><a href="javascript:;"><i class="flaticon-calendar"></i> 2019</a></li>
+                                        <li><a href="javascript:"><i class="flaticon-settings"></i> Automa.</a></li>
+                                        <li><a href="javascript:;"><i class="flaticon-oil"></i> Diesel</a></li>
+                                        <li><a href="javascript:;"><i class="flaticon-dashboard-1"></i> 120K km</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="rent-link">
+                                <a href="#" class="site-button">Acheter Cette Voiture</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="dlab-space">
+                        <div class="dlab-feed-list style-1 relative">
+                            <div class="dlab-media bg-white">
+                                <a href="#"><img src="{{ asset('assets/images/featured/v6300.png')}}" alt=""></a>
+                            </div>
+                            <div class="dlab-info">
+                                <h5 class="dlab-title h5"><a href="#">Hyundai  <span class="text-primary">Creta</span> </a></h5>
+                                <p class="dlab-price"><span>177 000 DH</span></p>
+                                <div class="icon-box-btn text-center">
+                                    <ul class="clearfix">
+                                        <li><a href="javascript:;"><i class="flaticon-calendar"></i> 2019</a></li>
+                                        <li><a href="javascript:"><i class="flaticon-settings"></i> Automa.. </a></li>
+                                        <li><a href="javascript:;"><i class="flaticon-oil"></i> Diesel</a></li>
+                                        <li><a href="javascript:;"><i class="flaticon-dashboard-1"></i> 100K km</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="rent-link">
+                                <a href="#" class="site-button">Acheter Cette Voiture</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -237,108 +261,84 @@
                 <div class="blog-carousel news owl-carousel owl-btn-center-lr">
                     <div class="item">
                         <div class="ow-blog-post date-style-2 dlab-latest-blog style-2">
-                            <div class="ow-post-media dlab-img-effect"> <img src="{{ asset('assets/images/blog/latest-blog/pic4.jpg') }}" alt=""> </div>
-                            <div class="ow-post-meta">
-                                <ul>
-                                    <li>27 JUNE 2018</li>
-                                </ul>
+                            <div class="ow-post-media dlab-img-effect">
+                                <lite-youtube videoid="OQv0p9XJsSk"></lite-youtube>
                             </div>
                             <div class="ow-post-info ">
                                 <div class="ow-post-title">
-                                    <h4 class="post-title"> <a href="blog-single-sidebar.html" title="Video post">What To Do if Your Rental Car Has Met With An Accident</a> </h4>
-                                </div>
-                                <div class="ow-post-readmore ">
-                                    <a href="javascript:;" rel="bookmark" class="site-button-link"> Read Article </a>
+                                    <h4 class="post-title">
+                                        Citroen ds3 crossback 2022
+                                    </h4>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="item">
                         <div class="ow-blog-post date-style-2 dlab-latest-blog style-2">
-                            <div class="ow-post-media dlab-img-effect"> <img src="{{ asset('assets/images/blog/latest-blog/pic5.jpg') }}" alt=""> </div>
-                            <div class="ow-post-meta">
-                                <ul>
-                                    <li>27 JUNE 2018</li>
-                                </ul>
+                            <div class="ow-post-media dlab-img-effect">
+                                <lite-youtube videoid="jqWRDYpOt50"></lite-youtube>
                             </div>
                             <div class="ow-post-info ">
                                 <div class="ow-post-title">
-                                    <h4 class="post-title"> <a href="blog-single-sidebar.html" title="Video post">What To Do if Your Rental Car Has Met With An Accident</a> </h4>
-                                </div>
-                                <div class="ow-post-readmore ">
-                                    <a href="javascript:;" rel="bookmark" class="site-button-link"> Read Article </a>
+                                    <h4 class="post-title">
+                                        Volkswagen gtd GOLF 7 plus 2019
+                                    </h4>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="item">
                         <div class="ow-blog-post date-style-2 dlab-latest-blog style-2">
-                            <div class="ow-post-media dlab-img-effect"> <img src="{{ asset('assets/images/blog/latest-blog/pic6.jpg') }}" alt=""> </div>
-                            <div class="ow-post-meta">
-                                <ul>
-                                    <li>27 JUNE 2018</li>
-                                </ul>
+                            <div class="ow-post-media dlab-img-effect">
+                                <lite-youtube videoid="82OkIW8g1AA"></lite-youtube>
                             </div>
                             <div class="ow-post-info ">
                                 <div class="ow-post-title">
-                                    <h4 class="post-title"> <a href="blog-single-sidebar.html" title="Video post">What To Do if Your Rental Car Has Met With An Accident</a> </h4>
-                                </div>
-                                <div class="ow-post-readmore ">
-                                    <a href="javascript:;" rel="bookmark" class="site-button-link"> Read Article </a>
+                                    <h4 class="post-title">
+                                        Mercedes-Benz Classe C 2022
+                                    </h4>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="item">
                         <div class="ow-blog-post date-style-2 dlab-latest-blog style-2">
-                            <div class="ow-post-media dlab-img-effect"> <img src="{{ asset('assets/images/blog/latest-blog/pic4.jpg') }}" alt=""> </div>
-                            <div class="ow-post-meta">
-                                <ul>
-                                    <li>27 JUNE 2018</li>
-                                </ul>
+                            <div class="ow-post-media dlab-img-effect">
+                                <lite-youtube videoid="mtPz6wOyaqE"></lite-youtube>
                             </div>
                             <div class="ow-post-info ">
                                 <div class="ow-post-title">
-                                    <h4 class="post-title"> <a href="blog-single-sidebar.html" title="Video post">What To Do if Your Rental Car Has Met With An Accident</a> </h4>
-                                </div>
-                                <div class="ow-post-readmore ">
-                                    <a href="javascript:;" rel="bookmark" class="site-button-link"> Read Article </a>
+                                    <h4 class="post-title">
+                                        Volkswagen Tiguan R-line 2021
+                                    </h4>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="item">
                         <div class="ow-blog-post date-style-2 dlab-latest-blog style-2">
-                            <div class="ow-post-media dlab-img-effect"> <img src="{{ asset('assets/images/blog/latest-blog/pic5.jpg') }}" alt=""> </div>
-                            <div class="ow-post-meta">
-                                <ul>
-                                    <li>27 JUNE 2018</li>
-                                </ul>
+                            <div class="ow-post-media dlab-img-effect">
+                                <lite-youtube videoid="X6g97ZcQOPg"></lite-youtube>
                             </div>
                             <div class="ow-post-info ">
                                 <div class="ow-post-title">
-                                    <h4 class="post-title"> <a href="blog-single-sidebar.html" title="Video post">What To Do if Your Rental Car Has Met With An Accident</a> </h4>
-                                </div>
-                                <div class="ow-post-readmore ">
-                                    <a href="javascript:;" rel="bookmark" class="site-button-link"> Read Article </a>
+                                    <h4 class="post-title">
+                                        Skoda Octavia Diesel Manuelle 2019
+                                    </h4>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="item">
                         <div class="ow-blog-post date-style-2 dlab-latest-blog style-2">
-                            <div class="ow-post-media dlab-img-effect"> <img src="{{ asset('assets/images/blog/latest-blog/pic6.jpg') }}" alt=""> </div>
-                            <div class="ow-post-meta">
-                                <ul>
-                                    <li>27 JUNE 2018</li>
-                                </ul>
+                            <div class="ow-post-media dlab-img-effect">
+                                <lite-youtube videoid="w6NfgiRKTlk"></lite-youtube>
                             </div>
                             <div class="ow-post-info ">
                                 <div class="ow-post-title">
-                                    <h4 class="post-title"> <a href="blog-single-sidebar.html" title="Video post">What To Do if Your Rental Car Has Met With An Accident</a> </h4>
-                                </div>
-                                <div class="ow-post-readmore ">
-                                    <a href="javascript:;" rel="bookmark" class="site-button-link"> Read Article </a>
+                                    <h4 class="post-title">
+                                        dacia sandero stepway gris 2021
+                                    </h4>
                                 </div>
                             </div>
                         </div>
@@ -396,7 +396,7 @@
 </div>
 <!-- team end -->
 <!-- about -->
-<div class="section-full content-inner-1 bg-white about-sect">
+<div class="section-full bg-white about-sect  content-inner">
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
@@ -406,16 +406,16 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-6 col-md-6 m-b30">
+            <div class="col-lg-7 col-md-6 m-b30">
                 <figure>
-                    <iframe width="100%" height="600" src="https://www.youtube.com/embed/MmkOISJpsqs?si=AiZ6nV6YitH9C-T0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    <iframe width="100%" height="600" src="https://www.youtube.com/embed/MmkOISJpsqs" title="YouTube video player" frameborder="0" ></iframe>
                 </figure>
             </div>
-            <div class="col-lg-6 col-md-6 m-b30">
+            <div class="col-lg-5 col-md-6 m-b30">
                 <div class="row">
                     <div class="col-md-6 col-sm-6 m-b30">
                         <div class="icon-bx-wraper bx-style-1 p-a5 center">
-                            <div class="icon-bx-sm radius bg-primary m-b20"> <a href="#" class="icon-cell"><i class="flaticon-dashboard"></i></a> </div>
+                            <div class="icon-bx-sm radius bg-primary m-b20"> <a href="#" class="icon-cell"><i class="flaticon-speech-bubble"></i></a> </div>
                             <div class="icon-content">
                                 <h5 class="dlab-tilte text-uppercase">La consultation</h5>
                                 <p>Nous vous présentons l’ensemble des véhicules en vente sur notre plateforme avec l’ensemble des détails technique.</p>
@@ -424,7 +424,7 @@
                     </div>
                     <div class="col-md-6 col-sm-6 m-b30">
                         <div class="icon-bx-wraper bx-style-1 p-a20 center">
-                            <div class="icon-bx-sm radius bg-primary m-b20"> <a href="#" class="icon-cell"><i class="flaticon-piston"></i></a> </div>
+                            <div class="icon-bx-sm radius bg-primary m-b20"> <a href="#" class="icon-cell"><i class="flaticon-mechanic"></i></a> </div>
                             <div class="icon-content">
                                 <h5 class="dlab-tilte text-uppercase">La visite</h5>
                                 <p>Nous vous organisons un RDV avec le vendeur du véhicule en présence de l’un de nos agents.</p>
@@ -433,7 +433,7 @@
                     </div>
                     <div class="col-md-6 col-sm-6 m-b10">
                         <div class="icon-bx-wraper bx-style-1 p-a30 center">
-                            <div class="icon-bx-sm radius bg-primary m-b20"> <a href="#" class="icon-cell"><i class="flaticon-oil"></i></a> </div>
+                            <div class="icon-bx-sm radius bg-primary m-b20"> <a href="#" class="icon-cell"><i class="flaticon-users"></i></a> </div>
                             <div class="icon-content">
                                 <h5 class="dlab-tilte text-uppercase">La négociation</h5>
                                 <p>Nous gérons la négociation du prix entre vous et le vendeur du véhicule.</p>
@@ -442,7 +442,7 @@
                     </div>
                     <div class="col-md-6 col-sm-6 m-b10">
                         <div class="icon-bx-wraper bx-style-1 p-a30 center">
-                            <div class="icon-bx-sm radius bg-primary m-b20"> <a href="#" class="icon-cell"><i class="flaticon-mechanic"></i></a> </div>
+                            <div class="icon-bx-sm radius bg-primary m-b20"> <a href="#" class="icon-cell"><i class="flaticon-list"></i></a> </div>
                             <div class="icon-content">
                                 <h5 class="dlab-tilte text-uppercase">La mutation</h5>
                                 <p>Nous préparons les documents administratifs pour l’achat du véhicule.</p>
@@ -455,16 +455,31 @@
     </div>
 </div>
 <!-- about end -->
-<!-- testimonial -->
-<div class="section-full content-inner-2 bg-white testimonial-sc">
+<div class="section-full bg-white p-t50 car-listing content-inner">
     <div class="container">
         <div class="row">
-            <div class="col-lg-12">
-                <div class="advertise">
-                    <img src="{{ asset('assets/images/Pourquoi-Vendre-Chez-NADO.png') }}" alt=""/>
+            <div class="col-md-6 col-sm-12">
+                <div class="find-car box-hover" style="background-image: url({{ asset('assets/images/blog/default/thum1.jpg') }})">
+                    <div class="car-box">
+                        <h2 class="text-uppercase text-primary">Pourquoi Acheter De Chez Nado ?</h2>
+                        <p>NADO est une entreprise ayant une réputation très importante qui la garde toujours par la transparence et l'honnêteté. Notre rôle est de donner à nos clients des automobiles de haute qualité à moyen prix. NADO est présente aujourd'hui pour faciliter l'opération d'achat chez les marocains.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-12">
+                <div class="find-car box-hover" style="background-image: url({{ asset('assets/images/blog/default/thum2.jpg') }})">
+                    <div class="car-box">
+                        <h2 class="text-uppercase text-primary">Pourquoi Vendre Chez NADO ?</h2>
+                        <p>Nous connaissons tous que la vente d'une automobile prend toujours du temps pour les gens n'ayant pas d'expérience dans ce domaine. De ce fait, NADO propose aux marocains de bons plans pour vendre leurs automobiles facilement à un prix très satisfaisant en comparaison avec le marché.</p>
+                    </div>
                 </div>
             </div>
         </div>
+    </div>
+</div>
+<!-- testimonial -->
+<div class="section-full bg-white">
+    <div class="container">
         <div class="row">
             <div class="col-lg-12">
                 <div class="section-head style-1 gray text-center">
@@ -479,21 +494,28 @@
                         <div class="item">
                             <div class="mfp-gallery">
                                 <div class="dlab-box">
-                                    <p>“Tes This was our first time renting from Royal Cars and we were very pleased with the whole experience. Your price was lower than other companies. Our rental experience was good from start to finish, so we’ll be back in the future lorem ipsum diamet.”</p>
+                                    <p>“لم أكن أعرف ماذا أتوقع عند شرائي لأول مرة سيارة، لكن مستوى الخدمة الذي حصلت عليه تجاوز توقعاتي بكثير. فريق احترافي ومتعاون، والسيارة التي اشتريتها تجعلني سعيدة جدًا. شكرًا جزيلا لكم.”</p>
                                 </div>
                             </div>
                         </div>
                         <div class="item">
                             <div class="mfp-gallery">
                                 <div class="dlab-box">
-                                    <p>“Your price was lower than other companies. Our rental experience was good from start to finish, so we’ll be back in the future lorem ipsum diamet. Test 2 This was our first time renting from Royal Cars and we were very pleased with the whole experience.”</p>
+                                    <p>“Grâce à Every Sunday, j'ai réussi à vendre ma voiture dès le lendemain. Merci Nado pour cette plateforme efficace et rapide.”</p>
                                 </div>
                             </div>
                         </div>
                         <div class="item">
                             <div class="mfp-gallery">
                                 <div class="dlab-box">
-                                    <p>“Our rental experience was good from start to finish, so we’ll be back in the future lorem ipsum diamet. Test 3 This was our first time renting from Royal Cars and we were very pleased with the whole experience. Your price was lower than other companies.”</p>
+                                    <p>“Je tiens à vous remercier pour votre professionnalisme et votre enthousiasme, Nado. Votre plateforme a véritablement transformé l'expérience d'achat de voitures d'occasion. Je vous souhaite bon courage pour la suite”</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="mfp-gallery">
+                                <div class="dlab-box">
+                                    <p>“لم أكن أعرف ماذا أتوقع عند شرائي لأول مرة سيارة، لكن مستوى الخدمة الذي حصلت عليه تجاوز توقعاتي بكثير. فريق احترافي ومتعاون، والسيارة التي اشتريتها تجعلني سعيدة جدًا. شكرًا جزيلا لكم”</p>
                                 </div>
                             </div>
                         </div>
@@ -503,12 +525,12 @@
                             <div class="item">
                                 <div class="mfp-gallery">
                                     <div class="dlab-box">
-                                        <div class="dlab-media quote-left"><img src="{{ asset('assets/images/testimonials/pic1.jpg') }}" alt="">
+                                        <div class="dlab-media quote-left"><img src="{{ asset('assets/images/testimonials/person1.webp') }}" alt="">
                                             <div class=""></div>
                                         </div>
                                         <div class="dlab-title-bx p-t30">
-                                            <h5 class="text-black m-a0"><a href="#">John Doe</a></h5>
-                                            <span class="clearfix font-12">Designer</span>
+                                            <h5 class="text-black m-a0"><a href="#">HASSAN KABIR</a></h5>
+                                            <span class="clearfix font-12">Blogger</span>
                                         </div>
                                     </div>
                                 </div>
@@ -516,11 +538,11 @@
                             <div class="item">
                                 <div class="mfp-gallery">
                                     <div class="dlab-box">
-                                        <div class="dlab-media quote-left"><img src="{{ asset('assets/images/testimonials/pic2.jpg') }}" alt="">
+                                        <div class="dlab-media quote-left"><img src="{{ asset('assets/images/testimonials/person2.webp') }}" alt="">
                                         </div>
                                         <div class="dlab-title-bx p-t30">
-                                            <h5 class="text-black m-a0"><a href="#">David Matin</a></h5>
-                                            <span class="clearfix font-12">Designer</span>
+                                            <h5 class="text-black m-a0"><a href="#">HANAN YASSMIN</a></h5>
+                                            <span class="clearfix font-12">HR Manager</span>
                                         </div>
                                     </div>
                                 </div>
@@ -528,10 +550,21 @@
                             <div class="item">
                                 <div class="mfp-gallery">
                                     <div class="dlab-box">
-                                        <div class="dlab-media quote-left"><img src="{{ asset('assets/images/testimonials/pic3.jpg') }}" alt=""></div>
+                                        <div class="dlab-media quote-left"><img src="{{ asset('assets/images/testimonials/person3.webp') }}" alt=""></div>
                                         <div class="dlab-title-bx p-t30">
-                                            <h5 class="text-black m-a0"><a href="#">Mary Lucas</a></h5>
-                                            <span class="clearfix font-12">Designer</span>
+                                            <h5 class="text-black m-a0"><a href="#">KAMAL DARI</a></h5>
+                                            <span class="clearfix font-12">English Teacher</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="mfp-gallery">
+                                    <div class="dlab-box">
+                                        <div class="dlab-media quote-left"><img src="{{ asset('assets/images/testimonials/person4.webp') }}" alt=""></div>
+                                        <div class="dlab-title-bx p-t30">
+                                            <h5 class="text-black m-a0"><a href="#">HASSNA KAMAL</a></h5>
+                                            <span class="clearfix font-12">Student</span>
                                         </div>
                                     </div>
                                 </div>
@@ -553,8 +586,8 @@
                 <div class="counter-box">
                     <div class="icon-lg"><i class="fa-regular fa-user"></i></div>
                     <div class="">
-                        <span class="counter font-weight-800">1,172,700</span>
-                        <p class="font-14 text-uppercase font-weight-600 m-b0">Happy customers</p>
+                        <span class="font-weight-800">100%</span>
+                        <p class="font-14 text-uppercase font-weight-600 m-b0">Happy Clients</p>
                     </div>
                 </div>
             </div>
@@ -562,8 +595,8 @@
                 <div class="counter-box">
                     <div class="icon-lg"><i class="flaticon-steering-wheel"></i></div>
                     <div class="">
-                        <span class="counter font-weight-800">2,450</span>
-                        <p class="font-14 text-uppercase font-weight-600 m-b0">Cars in garage</p>
+                        <span class="counter font-weight-800">2,800</span>
+                        <p class="font-14 text-uppercase font-weight-600 m-b0">Véhicules Vendus</p>
                     </div>
                 </div>
             </div>
@@ -571,8 +604,8 @@
                 <div class="counter-box">
                     <div class="icon-lg"><i class="fa fa-flag-checkered"></i></div>
                     <div class="">
-                        <span class="counter font-weight-800">1,211,100</span>
-                        <p class="font-14 text-uppercase font-weight-600 m-b0">Total kilometer/Mil</p>
+                        <span class="counter font-weight-800">20</span>
+                        <p class="font-14 text-uppercase font-weight-600 m-b0">Réseau Pro</p>
                     </div>
                 </div>
             </div>
@@ -580,8 +613,8 @@
                 <div class="counter-box no-bdr">
                     <div class="icon-lg"><i class="flaticon-customer-service"></i></div>
                     <div class="">
-                        <span class="counter font-weight-800">47,250</span>
-                        <p class="font-14 text-uppercase font-weight-600 m-b0">Car center solutions</p>
+                        <span class="font-weight-800">24/24</span>
+                        <p class="font-14 text-uppercase font-weight-600 m-b0">Centre Automobiles</p>
                     </div>
                 </div>
             </div>
@@ -589,34 +622,4 @@
     </div>
 </div>
 <!-- counter end -->
-
-<!-- Modal Box -->
-<div class="modal fade lead-form-modal login-modal" id="car-details" tabindex="-1" role="dialog" >
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
-            <div class="modal-body row m-a0 clearfix">
-                <div class="col-lg-12 col-md-12 p-a0">
-                    <div class="lead-form browse-job text-left">
-                        <form>
-                            <h3 class="m-t0">Personal Details</h3>
-                            <div class="form-group">
-                                <input value="" class="form-control" placeholder="Name"/>
-                            </div>
-                            <div class="form-group">
-                                <input value="" class="form-control" placeholder="Mobile Number"/>
-                            </div>
-                            <div class="clearfix">
-                                <button type="button" class="btn-primary site-button btn-block">Submit </button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Modal Box End -->
 @endsection
