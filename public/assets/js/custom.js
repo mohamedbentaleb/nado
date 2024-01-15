@@ -395,8 +395,8 @@ var CarDealer = function(){
 	/* Video Popup ============ */
 	var handelVideo = function(){
 		/* Video responsive function */
-		jQuery('iframe[src*="youtube.com"]').wrap('<div class="embed-responsive embed-responsive-16by9"></div>');
-		jQuery('iframe[src*="vimeo.com"]').wrap('<div class="embed-responsive embed-responsive-16by9"></div>');
+		//jQuery('iframe[src*="youtube.com"]').wrap('<div class="embed-responsive embed-responsive-16by9"></div>');
+		//jQuery('iframe[src*="vimeo.com"]').wrap('<div class="embed-responsive embed-responsive-16by9"></div>');
 		/* Video responsive function end */
 	}
 

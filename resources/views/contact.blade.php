@@ -1,13 +1,13 @@
 @extends('layouts.app')
 
-@section('title', 'Nado.ma')
+@section('title', 'Contact | Nado.ma')
 
 @section('content')
   <!-- inner page banner -->
    <div class="dlab-bnr-inr overlay-black-middle" style="background-image:url({{ asset('assets/images/background/bg4.jpg')}} );">
     <div class="container">
         <div class="dlab-bnr-inr-entry">
-            <h1 class="text-white">Contact Us</h1>
+            <h1 class="text-white">Contact</h1>
         </div>
     </div>
 </div>
@@ -16,8 +16,8 @@
 <div class="breadcrumb-row">
     <div class="container">
         <ul class="list-inline">
-            <li><a href="#">Home</a></li>
-            <li>Contact us</li>
+            <li><a href="/">Home</a></li>
+            <li>Contact</li>
         </ul>
     </div>
 </div>
@@ -68,54 +68,52 @@
             <!-- Left part start -->
             <div class="col-md-6">
                 <div class="p-a30 bg-gray clearfix m-b30 ">
-                    <h2>Send Message Us</h2>
-                    <div class="dzFormMsg"></div>
-                    <form method="post" class="dzForm" action="script/contact.php">
-                    <input type="hidden" value="Contact" name="dzToDo" >
+                    <h2>Ecrivez-nous</h2>
+                    <div class="FormMsg"></div>
+                    <form method="post" class="Form" action="{{ route('Contactez-nous.store') }}">
+                    @csrf
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <div class="input-group">
-                                        <input name="dzName" type="text" required class="form-control" placeholder="Your Name">
+                                        <input name="name" type="text" required class="form-control" placeholder="Nom">
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <div class="input-group">
-                                        <input name="dzEmail" type="email" class="form-control" required  placeholder="Your Email Id" >
+                                        <input name="email" type="email" class="form-control" required  placeholder="Email" >
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <div class="input-group">
-                                        <input name="dzOther[Phone]" type="text" required class="form-control" placeholder="Phone">
+                                        <input name="phone" type="text" required class="form-control" placeholder="Téléphone">
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <div class="input-group">
-                                        <input name="dzOther[Subject]" type="text" required class="form-control" placeholder="Subject">
+                                        <input name="subject" type="text" required class="form-control" placeholder="Sujet">
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <div class="input-group">
-                                        <textarea name="dzMessage" rows="4" class="form-control" required placeholder="Your Message..."></textarea>
+                                        <textarea name="message" rows="4" class="form-control" required placeholder="Message..."></textarea>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-12">
-                                <div class="form-group">
-                                    <div class="g-recaptcha" data-sitekey="6LefsVUUAAAAADBPsLZzsNnETChealv6PYGzv3ZN" data-callback="verifyRecaptchaCallback" data-expired-callback="expiredRecaptchaCallback"></div>
-                                    <input class="form-control d-none" style="display:none;" data-recaptcha="true" required data-error="Please complete the Captcha">
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <button name="submit" type="submit" value="Submit" class="site-button "> <span>Submit</span> </button>
+                                <button name="submit" type="submit" value="Submit" class="site-button ">
+                                    <span>
+                                        Envoyer le message
+                                    </span>
+                                </button>
                             </div>
                         </div>
                     </form>

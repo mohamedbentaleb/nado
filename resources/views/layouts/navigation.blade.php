@@ -32,14 +32,14 @@
 					</div>
                     <!-- nav toggle button -->
                     <button data-target=".header-nav" data-toggle="collapse" type="button" class="navbar-toggle collapsed" aria-expanded="false" >
-						<i class="flaticon-menu"></i>
+						<i class="fa fa-bars"></i>
 					</button>
                     <!-- main nav -->
                     <div class="header-nav navbar-collapse collapse">
                         <ul class="nav navbar-nav">
 							<li> <a href="{{ route('index') }}">Home</a></li>
-							<li> <a href="{{ route('Acheter.index') }}">Acheter</a></li>
-							<li> <a href="{{ route('Vendre.index') }}">Vendre/Reprise</a></li>
+							<li> <a href="{{ route('Acheter.index') }}" class="hide">Acheter</a></li>
+							<li> <a href="{{ route('Vendre.index') }}" class="hide">Vendre/Reprise</a></li>
 							<li> <a href="{{ route('Contactez-nous.index') }}">Contactez-nous</a></li>
 								</ul>
 							</li>

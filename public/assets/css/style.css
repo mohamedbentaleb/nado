@@ -9846,7 +9846,7 @@ ol.commentlist li .star-rating {
     top: 0;
     opacity: 1;
     z-index: 9999;
-    background-image: url(../images/loading.svg);
+    background-image: url(../images/loading.gif);
     background-repeat: no-repeat;
     background-size: 60px;
     background-position: center;
@@ -9956,6 +9956,11 @@ ol.commentlist li .star-rating {
 	.disnone-md{
 		display:none;
 	}
+    .bnr-slider{
+        height: 174px !important;
+        margin-top: 50px !important;
+    }
+
 }
 /* Contact Form */
 .dlab-social-icon.dlab-social-icon-lg li a {
