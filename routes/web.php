@@ -6,6 +6,7 @@ use App\Http\Controllers\FrontController;
 use App\Http\Controllers\SellController;
 use App\Http\Controllers\BuyController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\ServicesController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,6 +27,7 @@ Route::resource('/', FrontController::class);
 Route::resource('/Vendre', SellController::class);
 Route::resource('/Acheter', BuyController::class);
 Route::resource('/Contactez-nous', ContactController::class);
+Route::resource('/Services', ServicesController::class);
 
 Route::get('/admin/dashboard', function () {
     return view('admin.dashboard');
