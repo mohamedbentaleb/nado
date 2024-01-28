@@ -37,8 +37,17 @@
                     <!-- main nav -->
                     <div class="header-nav navbar-collapse collapse">
                         <ul class="nav navbar-nav">
-							<li> <a href="{{ route('index') }}">Home</a></li>
+							<li> <a href="{{ route('index') }}">Accueil</a></li>
 							<li> <a href="{{ route('Acheter.index') }}" class="hide">Acheter</a></li>
+							<li> </li>
+
+							<li> <a href="{{ route('Services.index') }}" >Services <i class="fa fa-chevron-down"></i></a>
+								<ul class="sub-menu">
+									<li><a href="{{ route('Services.index') }}#intermediation" >Intermediation</a></li>
+									<li><a href="{{ route('Services.index') }}#reprise" >Reprise</a></li>
+									<li><a href="{{ route('Services.index') }}#nadopro" >Nado pro</a></li>
+								</ul>
+							</li>
 							<li> <a href="{{ route('Vendre.index') }}" class="hide">Vendre/Reprise</a></li>
 							<li> <a href="{{ route('Contactez-nous.index') }}">Contactez-nous</a></li>
 								</ul>

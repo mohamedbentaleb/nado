@@ -10,6 +10,7 @@
             <div class="page-content">
                 @yield('content')
             <!-- Content END-->
+                @include('layouts.bottom-page')
             </div>
             @include('layouts.footer')
         </div>
