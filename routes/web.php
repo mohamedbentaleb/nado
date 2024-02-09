@@ -1,6 +1,14 @@
 <?php
 
+use App\Http\Controllers\admin\AvisTextController;
+use App\Http\Controllers\admin\AvisVdController;
 use App\Http\Controllers\admin\BrandsController;
+use App\Http\Controllers\admin\ImgSlideController;
+use App\Http\Controllers\admin\ModelsController;
+use App\Http\Controllers\admin\RepriseVenteController;
+use App\Http\Controllers\admin\VideoAdsController;
+use App\Http\Controllers\admin\UserController;
+use App\Http\Controllers\admin\VilleController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\FrontController;
 use App\Http\Controllers\SellController;
@@ -38,7 +46,15 @@ Route::middleware('auth')->group(function () {
     Route::patch('/admin/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/admin/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
+    Route::resource('/admin/users', UserController::class);
     Route::resource('/admin/brands', BrandsController::class);
+    Route::resource('/admin/models', ModelsController::class);
+    Route::resource('/admin/avistext', AvisTextController::class);
+    Route::resource('/admin/avisvideos', AvisVdController::class);
+    Route::resource('/admin/imgslider', ImgSlideController::class);
+    Route::resource('/admin/demande', RepriseVenteController::class);
+    Route::resource('/admin/videoads', VideoAdsController::class);
+    Route::resource('/admin/ville', VilleController::class);
 });
 
 require __DIR__.'/auth.php';

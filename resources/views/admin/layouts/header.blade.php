@@ -5,7 +5,7 @@
 
     <title>@yield('title')</title>
 
-    <link rel="stylesheet" href="{{ asset('assets/back/assets/extensions/choices.js/public/assets/back/assets/styles/choices.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/back/assets/extensions/choices.js/public/assets/styles/choices.css') }}">
 
     <link rel="stylesheet" href="{{ asset('assets/back/assets/css/main/app.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/back/assets/css/main/app-dark.css') }}">

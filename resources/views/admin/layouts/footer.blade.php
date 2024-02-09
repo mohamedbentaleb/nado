@@ -40,8 +40,6 @@
 
 <script src="{{ asset('assets/back/assets/js/bootstrap.js') }}"></script>
 <script src="{{ asset('assets/back/assets/js/app.js') }}"></script>
-<script src="{{ asset('assets/back/assets/extensions/choices.js/public/assets/back/assets/scripts/choices.js') }}"></script>
-<script src="{{ asset('assets/back/assets/js/pages/form-element-select.js') }}"></script>
 @yield('script')
 <script>
 

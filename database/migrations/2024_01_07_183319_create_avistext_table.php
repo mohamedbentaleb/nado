@@ -11,12 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('avistext', function (Blueprint $table) {
+        Schema::create('avistexts', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->string('job');
             $table->string('text');
             $table->string('image');
-            $table->timestamps();
-            $table->dateTime('deleted_at')->nullable();
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->nullable();
+            $table->softDeletes();
         });
     }
 
@@ -25,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('avistext');
+        Schema::dropIfExists('avistexts');
     }
 };
