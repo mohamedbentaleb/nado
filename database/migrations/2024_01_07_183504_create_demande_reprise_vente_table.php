@@ -29,8 +29,9 @@ return new class extends Migration
             $table->foreign('brand_id')->references('id')->on("brands");
             $table->foreign('model_id')->references('id')->on("models");
             $table->foreign('ville_id')->references('id')->on("ville");
-            $table->timestamps();
-            $table->dateTime('deleted_at')->nullable();
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->nullable();
+            $table->softDeletes();
         });
     }
 

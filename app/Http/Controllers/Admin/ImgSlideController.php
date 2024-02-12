@@ -3,7 +3,11 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Imgslider;
 use Illuminate\Http\Request;
+use Intervention\Image\Drivers\Gd\Driver;
+use Intervention\Image\ImageManager;
+use Illuminate\Support\Str;
 
 class ImgSlideController extends Controller
 {
@@ -12,7 +16,7 @@ class ImgSlideController extends Controller
      */
     public function index()
     {
-        //
+        return view('admin.imgslider.index' , ['imgslider' => Imgslider::all()]);
     }
 
     /**
@@ -20,7 +24,7 @@ class ImgSlideController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.imgslider.form', ['imgslider' => new Imgslider()]);
     }
 
     /**
@@ -28,7 +32,17 @@ class ImgSlideController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $imgslider = $request->validate([
+            'name' => ['required', 'string'],
+            'link' => ['required', 'string'],
+            'active' => ['nullable', 'string'],
+            'image' => ['required', 'image', 'mimes:jpeg,png,jpg,gif', 'max:5120'],
+        ]);
+        if ($request->hasFile('image')) {
+            $imgslider["image"] = $this->resizeImage($request->file('image'), $request->name);
+        }
+        Imgslider::create($imgslider);
+        return to_route('imgslider.index')->with("success" , "Success store Image slider");
     }
 
     /**
@@ -42,24 +56,50 @@ class ImgSlideController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Imgslider $imgslider)
     {
-        //
+        return view('admin.imgslider.form', [
+            'imgslider' => $imgslider
+        ]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Imgslider $imgslider)
     {
-        //
+        $n = $request->validate([
+            'name' => ['required', 'string'],
+            'link' => ['required', 'string'],
+            'active' => ['nullable', 'string'],
+            'image' => ['required', 'image', 'mimes:jpeg,png,jpg,gif', 'max:5120'],
+        ]);
+        if ($request->hasFile('image')) {
+             $n["image"] = $this->resizeImage($request->file('image'), $request->name);
+         }
+
+        if(!$request->has('active')){
+            $n["active"] = 0;
+        }
+         $imgslider->update($n);
+         return to_route('imgslider.index')->with("success" , "success update Image slider");
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Imgslider $imgslider)
     {
-        //
+        $imgslider->delete();
+        return to_route("imgslider.index")->with("success" , "Image slider deleted successfully");
+    }
+
+    public function resizeImage($photo, $title){
+        $image = $photo;
+        $imageName = Str::slug($title, '-').'-'.time().'.'.$image->getClientOriginalExtension();
+        $manager = new ImageManager(new Driver());
+        $img = $manager->read($image);
+        $img->save(storage_path('app/public/imgslider/' . $imageName));
+        return $imageName;
     }
 }

@@ -5,9 +5,11 @@ namespace App\Http\Controllers\admin;
 use App\Http\Controllers\Controller;
 use App\Models\Brands;
 use Illuminate\Http\Request;
+use App\Http\Requests\BrandsRequest;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
-use Intervention\Image\Facades\Image;
+use Intervention\Image\ImageManager;
+use Intervention\Image\Drivers\Gd\Driver;
 
 class BrandsController extends Controller
 {
@@ -30,17 +32,17 @@ class BrandsController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(BrandsRequest $request)
     {
         $brands = $request->validated();
         if ($request->hasFile('logo')) {
-            $brands["logo"] = $this->resizeImage($request->file('photo'), $request->name, 750, 500);
+            $brands["logo"] = $this->resizeImage($request->file('logo'), $request->name);
         }
         $brands["ip"] = $request->ip();
         $brands["user_agent"] = $request->header('User-Agent');
         $brands["user_id"] = Auth::id();
         $brands = Brands::create($brands);
-        return to_route('admin.brands.index')->with("success" , "Success store news");
+        return to_route('brands.index')->with("success" , "Success store brand");
     }
 
     /**
@@ -64,18 +66,14 @@ class BrandsController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Brands $brand)
+    public function update(BrandsRequest $request, Brands $brand)
     {
         $n = $request->validated();
-       if ($request->hasFile('photo')) {
-            $n["photo"] = $this->resizeImage($request->file('photo'), $request->title, 750, 500);
-        }
-        if(!$request->has('active')){
-            $n["active"] = 0;
+       if ($request->hasFile('logo')) {
+            $n["logo"] = $this->resizeImage($request->file('logo'), $request->name);
         }
         $brand->update($n);
-        $brand->tags()->sync($request->validated('tags'));
-        return to_route('admin.brands.index')->with("success" , "success update brand");
+        return to_route('brands.index')->with("success" , "success update brand");
     }
 
     /**
@@ -84,14 +82,14 @@ class BrandsController extends Controller
     public function destroy(Brands $brand)
     {
         $brand->delete();
-        return to_route("admin.brands.index")->with("success" , "Brand deleted successfully");
+        return to_route("brands.index")->with("success" , "Brand deleted successfully");
     }
 
-    public function resizeImage($photo, $title, $width, $height){
+    public function resizeImage($photo, $title){
         $image = $photo;
         $imageName = Str::slug($title, '-').'-'.time().'.'.$image->getClientOriginalExtension();
-        $img = Image::make($image);
-        $img->resize($width, $height);
+        $manager = new ImageManager(new Driver());
+        $img = $manager->read($image);
         $img->save(storage_path('app/public/brands/' . $imageName));
         return $imageName;
     }
