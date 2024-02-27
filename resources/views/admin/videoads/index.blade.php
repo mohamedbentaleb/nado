@@ -23,6 +23,7 @@
                           <table class="table table-striped mb-0 display" id="example">
                               <thead>
                                   <tr>
+                                      <th>#</th>
                                       <th>title</th>
                                       <th>video key youtube</th>
                                       <th class="d-flex justify-content-end">Action</th>
@@ -31,6 +32,7 @@
                               <tbody>
                                 @foreach ($videoads as $av)
                                   <tr>
+                                      <td>{{ $av->id }}</td>
                                       <td>{{ $av->title }}</td>
                                       <td>{{ $av->video_key }}</td>
                                       <td>

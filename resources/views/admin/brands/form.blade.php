@@ -38,7 +38,7 @@
                                                     </div>
                                                 @enderror
                                                 @if($brand->exists)
-                                                    <img src="{{ asset('storage/brand/'.$brand->logo) }}" width="30%">
+                                                    <img src="{{ asset('storage/brands/'.$brand->logo) }}" width="30%">
                                                 @endif
                                             </div>
                                         </div>

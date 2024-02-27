@@ -14,7 +14,7 @@ return new class extends Migration
     {
         Schema::create('models', function (Blueprint $table) {
             $table->id();
-            $table->integer('brand_id')->unsigned();
+            $table->unsignedBigInteger('brand_id');
             $table->string('name');
             $table->foreignIdFor(User::class)->nullable()->constrained();
             $table->string('ip')->nullable();

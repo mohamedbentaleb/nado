@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Brands;
+use App\Models\Models;
 
 class ServicesController extends Controller
 {
@@ -11,7 +13,7 @@ class ServicesController extends Controller
      */
     public function index()
     {
-        return view('service');
+        return view('service', ["brands" => Brands::all()]);
     }
 
     /**
@@ -60,5 +62,15 @@ class ServicesController extends Controller
     public function destroy(string $id)
     {
         //
+    }
+    
+    public function getmodels($id)
+    {
+        $modele = Models::orderby("name","asc")
+        			->select('id','name')
+        			->where('brand_id', $id)
+        			->get();
+
+        return response()->json($modele);
     }
 }

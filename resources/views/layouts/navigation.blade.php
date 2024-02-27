@@ -38,18 +38,21 @@
                     <div class="header-nav navbar-collapse collapse">
                         <ul class="nav navbar-nav">
 							<li> <a href="{{ route('index') }}">Accueil</a></li>
-							<li> <a href="{{ route('Acheter.index') }}" class="hide">Acheter</a></li>
-							<li> </li>
+							<li> <a href="{{ route('vente.index') }}" >Vente</a></li>
+							<li> <a href="{{ route('reprise.index') }}" >Nado reprise</a></li>
+							<li> <a href="{{ route('financement.index') }}" >Auto finance</a></li>
+							<li> <a href="{{ route('services.index') }}" >à-propos</a></li>
+							<li> <a href="{{ route('acheter.index') }}" class="hide">Acheter</a></li>
 
-							<li> <a href="{{ route('Services.index') }}" >Services <i class="fa fa-chevron-down"></i></a>
+							<li> <a href="{{ route('services.index') }}" class="hide" >Services <i class="fa fa-chevron-down"></i></a>
 								<ul class="sub-menu">
-									<li><a href="{{ route('Services.index') }}#intermediation" >Intermediation</a></li>
-									<li><a href="{{ route('Services.index') }}#reprise" >Reprise</a></li>
-									<li><a href="{{ route('Services.index') }}#nadopro" >Nado pro</a></li>
+									<li><a href="{{ route('services.index') }}#intermediation" >Intermediation</a></li>
+									<li><a href="{{ route('services.index') }}#reprise" >Reprise</a></li>
+									<li><a href="{{ route('services.index') }}#nadopro" >Nado pro</a></li>
 								</ul>
 							</li>
-							<li> <a href="{{ route('Vendre.index') }}" class="hide">Vendre/Reprise</a></li>
-							<li> <a href="{{ route('Contactez-nous.index') }}">Contactez-nous</a></li>
+							<li> <a href="{{ route('vendre.index') }}" class="hide">Vendre/Reprise</a></li>
+							<li> <a href="{{ route('contactez-nous.index') }}">Contactez-nous</a></li>
 								</ul>
 							</li>
 						</ul>

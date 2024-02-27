@@ -70,7 +70,7 @@
                 <div class="p-a30 bg-gray clearfix m-b30 ">
                     <h2>Ecrivez-nous</h2>
                     <div class="FormMsg"></div>
-                    <form method="post" class="Form" action="{{ route('Contactez-nous.store') }}">
+                    <form method="post" class="Form" action="{{ route('contactez-nous.store') }}">
                     @csrf
                         <div class="row">
                             <div class="col-md-6">

@@ -31,6 +31,9 @@
                                         <div class="col-12 my-2">
                                             @include('admin.partials.input', [ "class" => 'col', "label" => "Link" ,"name" => 'link', "value" => $imgslider->link])
                                         </div>
+                                        <div class="col-12 my-2 d-none">
+                                            @include('admin.partials.input', [ "class" => 'col', "label" => "type" ,"name" => 'type', "value" => "desktop"])
+                                        </div>
                                         <div class="col-12 my-2">
                                             <div class="form-group">
                                                 <label for="image">image</label>
@@ -45,6 +48,14 @@
                                                 @endif
                                             </div>
                                         </div>
+                                        @if($imgslider->exists)
+                                        <div class="col-12 my-2">
+                                            <div class="form-check form-switch fs-6">
+                                                <input class="form-check-input  me-0" type="checkbox" name="active" id="active" value="1" @if($imgslider->active != 0) checked=""  @endif>
+                                                <label class="form-check-label">Active</label>
+                                            </div>
+                                        </div>
+                                        @endif
                                         <div class="col-12 d-flex justify-content-center">
                                             <button type="submit" class="btn btn-primary me-1 mb-1">
                                                 @if ($imgslider->exists)

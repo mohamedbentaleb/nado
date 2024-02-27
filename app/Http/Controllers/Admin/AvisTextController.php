@@ -72,7 +72,7 @@ class AvisTextController extends Controller
             'name' => ['required', 'string'],
             'job' => ['required', 'string'],
             'text' => ['required', 'string'],
-            'image' => ['required', 'image', 'mimes:jpeg,png,jpg,gif', 'max:5120'],
+            'image' => ['nullable', 'image', 'mimes:jpeg,png,jpg,gif', 'max:5120'],
         ]);
         if ($request->hasFile('image')) {
              $n["image"] = $this->resizeImage($request->file('image'), "nado");

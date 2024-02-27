@@ -35,6 +35,7 @@ class ImgSlideController extends Controller
         $imgslider = $request->validate([
             'name' => ['required', 'string'],
             'link' => ['required', 'string'],
+            'type' => ['nullable'],
             'active' => ['nullable', 'string'],
             'image' => ['required', 'image', 'mimes:jpeg,png,jpg,gif', 'max:5120'],
         ]);
@@ -72,7 +73,8 @@ class ImgSlideController extends Controller
             'name' => ['required', 'string'],
             'link' => ['required', 'string'],
             'active' => ['nullable', 'string'],
-            'image' => ['required', 'image', 'mimes:jpeg,png,jpg,gif', 'max:5120'],
+            'type' => ['nullable'],
+            'image' => ['nullable', 'image', 'mimes:jpeg,png,jpg,gif', 'max:5120'],
         ]);
         if ($request->hasFile('image')) {
              $n["image"] = $this->resizeImage($request->file('image'), $request->name);

@@ -48,8 +48,9 @@ class AvisVdController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Avisvideos $avisvideos)
+    public function edit( $vd)
     {
+        $avisvideos = Avisvideos::find($vd);
         return view('admin.avisvideos.form', [
             'avisvideos' => $avisvideos
         ]);
@@ -58,22 +59,22 @@ class AvisVdController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Avisvideos $avisvideos)
+    public function update(Request $request, $vd)
     {
         $n = $request->validate([
             'title' => ['required', 'string', 'max:255'],
             'video_key' => ['required', 'string', 'max:255'],
         ]);
-        $avisvideos->update($n);
+        Avisvideos::whereId($vd)->update($n);
         return to_route('avisvideos.index')->with("success" , "success update avis videos");
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Avisvideos $avisvideos)
+    public function destroy($vd)
     {
-        $avisvideos->delete();
+        Avisvideos::where('id',$vd)->delete();
         return to_route("avisvideos.index")->with("success" , "avis videos deleted successfully");
     }
 }

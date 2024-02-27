@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('job');
-            $table->string('text');
+            $table->longText('text');
             $table->string('image');
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->nullable();

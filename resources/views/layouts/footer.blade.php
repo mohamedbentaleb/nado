@@ -98,9 +98,9 @@
 <!-- sortcode fuctions  -->
 <script  src="{{ asset('assets/js/dz.ajax.js') }}"></script>
 <script  src="{{ asset('assets/js/lite-embed.js') }}"></script>
-
 <script src="{{ asset('assets/js/modernizr.custom.js') }}"></script>
 <script src="{{ asset('assets/js/jquery.hoverdir.js') }}"></script>
 <script  src="{{ asset('assets/js/custom.min.js') }}"></script>
 <!-- custom fuctions  -->
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBjirg3UoMD5oUiFuZt3P9sErZD-2Rxc68&callback=initMap"></script>
+@yield('script')

@@ -12,30 +12,12 @@
         </div>
     </div>
     <div class="slider-carousel owl-carousel owl-theme owl-none owl-dots only_desktop">
+        @foreach ($imgslider as $av)
         <div class="item">
-            <div class="slider-item " style="background-image: url({{ asset('assets/images/main-slider/slide-nado.jpg') }});">
+            <div class="slider-item " style="background-image: url({{ asset('storage/imgslider/'.$av->image) }});">
             </div>
         </div>
-        <div class="item">
-            <div class="slider-item " style="background-image: url({{ asset('assets/images/main-slider/slide-nado-1.jpg') }});">
-            </div>
-        </div>
-        <div class="item">
-            <div class="slider-item " style="background-image: url({{ asset('assets/images/main-slider/slide-nado-2.jpg') }});">
-            </div>
-        </div>
-        <div class="item">
-            <div class="slider-item " style="background-image: url({{ asset('assets/images/main-slider/slide-nado-3.jpg') }});">
-            </div>
-        </div>
-        <div class="item">
-            <div class="slider-item " style="background-image: url({{ asset('assets/images/main-slider/slide-nado-4.jpg') }});">
-            </div>
-        </div>
-        <div class="item">
-            <div class="slider-item " style="background-image: url({{ asset('assets/images/main-slider/slide-nado-5.jpg') }});">
-            </div>
-        </div>
+        @endforeach
     </div>
 </div>
 <!-- searching cars form -->
@@ -103,6 +85,126 @@
         </div>
         <div class="row">
             <div class="clearfix owl-carousel featured-offer owl-theme owl-nav  owl-dots col-lg-12 p-lr0">
+                <div class="item">
+                    <div class="dlab-space">
+                        <div class="dlab-feed-list style-1 relative">
+                            <div class="dlab-media bg-white">
+                                <a href="#"><img src="{{ asset('assets/images/featured/serie1-sport-2020.png')}}" alt=""></a>
+                            </div>
+                            <div class="dlab-info">
+                                <h5 class="dlab-title h5"><a href="#">BMW <span class="text-primary">Serie 1</span> Sport</a></h5>
+                                <p class="dlab-price"><span>280 000 DH</span> </p>
+                                <div class="icon-box-btn text-center">
+                                    <ul class="clearfix">
+                                        <li><a href="javascript:;"><i class="flaticon-calendar"></i> 2020</a></li>
+                                        <li><a href="javascript:"><i class="flaticon-settings"></i> Automa..</a></li>
+                                        <li><a href="javascript:;"><i class="flaticon-oil"></i> Diesel</a></li>
+                                        <li><a href="javascript:;"><i class="flaticon-dashboard-1"></i> 120K km</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="rent-link">
+                                <a href="#" class="site-button">Acheter Cette Voiture</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>   
+                <div class="item">
+                    <div class="dlab-space">
+                        <div class="dlab-feed-list style-1 relative">
+                            <div class="dlab-media bg-white">
+                                <a href="#"><img src="{{ asset('assets/images/featured/PEUGEOT-208-2022.png')}}" alt=""></a>
+                            </div>
+                            <div class="dlab-info">
+                                <h5 class="dlab-title h5"><a href="#">Peugeot <span class="text-primary">208</span> </a></h5>
+                                <p class="dlab-price"><span>156 000 DH</span> </p>
+                                <div class="icon-box-btn text-center">
+                                    <ul class="clearfix">
+                                        <li><a href="javascript:;"><i class="flaticon-calendar"></i> 2022</a></li>
+                                        <li><a href="javascript:"><i class="flaticon-settings"></i> Manuelle</a></li>
+                                        <li><a href="javascript:;"><i class="flaticon-oil"></i> Diesel</a></li>
+                                        <li><a href="javascript:;"><i class="flaticon-dashboard-1"></i> 56K km</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="rent-link">
+                                <a href="#" class="site-button">Acheter Cette Voiture</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>                 
+                <div class="item">
+                    <div class="dlab-space">
+                        <div class="dlab-feed-list style-1 relative">
+                            <div class="dlab-media bg-white">
+                                <a href="#"><img src="{{ asset('assets/images/featured/hyundai-tucson-2023.png')}}" alt=""></a>
+                            </div>
+                            <div class="dlab-info">
+                                <h5 class="dlab-title h5"><a href="#">Hyundai <span class="text-primary">Tucson</span> </a></h5>
+                                <p class="dlab-price"><span>320 000 DH</span> </p>
+                                <div class="icon-box-btn text-center">
+                                    <ul class="clearfix">
+                                        <li><a href="javascript:;"><i class="flaticon-calendar"></i> 2023</a></li>
+                                        <li><a href="javascript:"><i class="flaticon-settings"></i> Automa..</a></li>
+                                        <li><a href="javascript:;"><i class="flaticon-oil"></i> Diesel</a></li>
+                                        <li><a href="javascript:;"><i class="flaticon-dashboard-1"></i> 46K km</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="rent-link">
+                                <a href="#" class="site-button">Acheter Cette Voiture</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>                
+                <div class="item">
+                    <div class="dlab-space">
+                        <div class="dlab-feed-list style-1 relative">
+                            <div class="dlab-media bg-white">
+                                <a href="#"><img src="{{ asset('assets/images/featured/rong-rover-sport-se-2016.png')}}" alt=""></a>
+                            </div>
+                            <div class="dlab-info">
+                                <h5 class="dlab-title h5"><a href="#">Range Rover <span class="text-primary">Sport SE</span> </a></h5>
+                                <p class="dlab-price"><span>310 000 DH</span> </p>
+                                <div class="icon-box-btn text-center">
+                                    <ul class="clearfix">
+                                        <li><a href="javascript:;"><i class="flaticon-calendar"></i> 2016</a></li>
+                                        <li><a href="javascript:"><i class="flaticon-settings"></i> Automa..</a></li>
+                                        <li><a href="javascript:;"><i class="flaticon-oil"></i> Diesel</a></li>
+                                        <li><a href="javascript:;"><i class="flaticon-dashboard-1"></i> 137K km</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="rent-link">
+                                <a href="#" class="site-button">Acheter Cette Voiture</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="dlab-space">
+                        <div class="dlab-feed-list style-1 relative">
+                            <div class="dlab-media bg-white">
+                                <a href="#"><img src="{{ asset('assets/images/featured/kadjar-renault-12-2017.png')}}" alt=""></a>
+                            </div>
+                            <div class="dlab-info">
+                                <h5 class="dlab-title h5"><a href="#">Renault <span class="text-primary">Kadjar</span> </a></h5>
+                                <p class="dlab-price"><span>185 000 DH</span> </p>
+                                <div class="icon-box-btn text-center">
+                                    <ul class="clearfix">
+                                        <li><a href="javascript:;"><i class="flaticon-calendar"></i> 2017</a></li>
+                                        <li><a href="javascript:"><i class="flaticon-settings"></i> Automa..</a></li>
+                                        <li><a href="javascript:;"><i class="flaticon-oil"></i> Diesel</a></li>
+                                        <li><a href="javascript:;"><i class="flaticon-dashboard-1"></i> 76K km</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="rent-link">
+                                <a href="#" class="site-button">Acheter Cette Voiture</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="item">
                     <div class="dlab-space">
                         <div class="dlab-feed-list style-1 relative">
@@ -325,137 +427,38 @@
 </div>
 <!-- brands end -->
 <!-- blog -->
+<div class ="section-full content-inner" style="padding-top: 0 !important;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-head style-1 text-center" style="margin-bottom: 0;">
+                    <h2 class="h2">NADO AUTO</h2>
+                    <div class="title-sm text-uppercase">En voiture Nado qui rassure</div>
+                </div>
+            </div>
+        </div>
+</div>
 <div class="section-full p-t10" style="background: black;">
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
                 <div class="blog-carousel owl-carousel owl-btn-center-lr">
+                    @foreach ($vdAds as $vAds)
                     <div class="item">
                         <div class="ow-blog-post date-style-2 dlab-latest-blog style-2">
                             <div class="ow-post-media dlab-img-effect">
-                                <lite-youtube videoid="Yot-JB9tw30"></lite-youtube>
+                                <lite-youtube videoid="{{ $vAds->video_key }}"></lite-youtube>
                             </div>
                             <div class="ow-post-info ">
                                 <div class="ow-post-title">
                                     <h4 class="post-title">
-                                        208 peugeot 2022
+                                        {{ ucfirst($vAds->title) }}
                                     </h4>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="item">
-                        <div class="ow-blog-post date-style-2 dlab-latest-blog style-2">
-                            <div class="ow-post-media dlab-img-effect">
-                                <lite-youtube videoid="bxTKQ6gVW-8"></lite-youtube>
-                            </div>
-                            <div class="ow-post-info ">
-                                <div class="ow-post-title">
-                                    <h4 class="post-title">
-                                        Range Rover Evoque 2018
-                                    </h4>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="ow-blog-post date-style-2 dlab-latest-blog style-2">
-                            <div class="ow-post-media dlab-img-effect">
-                                <lite-youtube videoid="bQnDT1ZRSgU"></lite-youtube>
-                            </div>
-                            <div class="ow-post-info ">
-                                <div class="ow-post-title">
-                                    <h4 class="post-title">
-                                        Hyundai Tucson 2022
-                                    </h4>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="ow-blog-post date-style-2 dlab-latest-blog style-2">
-                            <div class="ow-post-media dlab-img-effect">
-                                <lite-youtube videoid="OQv0p9XJsSk"></lite-youtube>
-                            </div>
-                            <div class="ow-post-info ">
-                                <div class="ow-post-title">
-                                    <h4 class="post-title">
-                                        Citroen ds3 crossback 2022
-                                    </h4>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="ow-blog-post date-style-2 dlab-latest-blog style-2">
-                            <div class="ow-post-media dlab-img-effect">
-                                <lite-youtube videoid="jqWRDYpOt50"></lite-youtube>
-                            </div>
-                            <div class="ow-post-info ">
-                                <div class="ow-post-title">
-                                    <h4 class="post-title">
-                                        Volkswagen gtd GOLF 7 plus 2019
-                                    </h4>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="ow-blog-post date-style-2 dlab-latest-blog style-2">
-                            <div class="ow-post-media dlab-img-effect">
-                                <lite-youtube videoid="82OkIW8g1AA"></lite-youtube>
-                            </div>
-                            <div class="ow-post-info ">
-                                <div class="ow-post-title">
-                                    <h4 class="post-title">
-                                        Mercedes-Benz Classe C 2022
-                                    </h4>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="ow-blog-post date-style-2 dlab-latest-blog style-2">
-                            <div class="ow-post-media dlab-img-effect">
-                                <lite-youtube videoid="mtPz6wOyaqE"></lite-youtube>
-                            </div>
-                            <div class="ow-post-info ">
-                                <div class="ow-post-title">
-                                    <h4 class="post-title">
-                                        Volkswagen Tiguan R-line 2021
-                                    </h4>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="ow-blog-post date-style-2 dlab-latest-blog style-2">
-                            <div class="ow-post-media dlab-img-effect">
-                                <lite-youtube videoid="X6g97ZcQOPg"></lite-youtube>
-                            </div>
-                            <div class="ow-post-info ">
-                                <div class="ow-post-title">
-                                    <h4 class="post-title">
-                                        Skoda Octavia Diesel Manuelle 2019
-                                    </h4>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="ow-blog-post date-style-2 dlab-latest-blog style-2">
-                            <div class="ow-post-media dlab-img-effect">
-                                <lite-youtube videoid="w6NfgiRKTlk"></lite-youtube>
-                            </div>
-                            <div class="ow-post-info ">
-                                <div class="ow-post-title">
-                                    <h4 class="post-title">
-                                        dacia sandero stepway gris 2021
-                                    </h4>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>
@@ -576,7 +579,7 @@
         </div>
     </div>
 </div>
-<div class="section-full bg-white content-inner-2" style="background-image: url(images/background/about-us.jpg); background-position:bottom; background-repeat:no-repeat; background-size:100%;">
+<div class="section-full bg-white content-inner-2" style="background-image: url({{ asset('assets/images/background/about-us.jpg')}}); background-position:bottom; background-repeat:no-repeat; background-size:100%;">
     <div class="container">
         <div class="section-head text-center head-1">
             <h3 class="h3 text-uppercase">Financement Auto</h3>
@@ -651,7 +654,7 @@
         </div>
     </div>
 </div>
-<div class="section-full p-t50 bg-white content-inner compare-car p-b20">
+<div class="section-full p-t50 bg-white content-inner compare-car p-b20 hide">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
@@ -855,68 +858,24 @@
             <h2 class="h2 text-white">Les avis de nos clients</h2>
         </div>
         <div class="section-content ">
-
             <div class="testimonial-center owl-carousel owl-btn-center-lr">
+                @foreach ($avistext as $atext)
                 <div class="item">
                     <div class="testimonial-2 testimonial-bg style-1">
                         <div class="testimonial-text">
-                            <p>“لم أكن أعرف ماذا أتوقع عند شرائي لأول مرة سيارة، لكن مستوى الخدمة الذي حصلت عليه تجاوز توقعاتي بكثير. فريق احترافي ومتعاون، والسيارة التي اشتريتها تجعلني سعيدة جدًا. شكرًا جزيلا لكم.”</p>
+                            <p>“{{ $atext->text }}”</p>
                         </div>
                         <div class="testimonial-detail clearfix">
                             <div class="testimonial-box">
                                 <div class="testimonial-pic radius shadow">
-                                    <img src="{{ asset('assets/images/testimonials/person1.webp') }}" alt="" width="100" height="100"></div>
-                                    <strong class="testimonial-name font-14">HASSAN KABIR</strong>
-                                    <span class="text-white">Blogger</span>
+                                    <img src="{{ asset('storage/avistext/'.$atext->image) }}" alt="" width="100" height="100"></div>
+                                    <strong class="testimonial-name font-14">{{ $atext->name }}</strong>
+                                    <span class="text-white">{{ $atext->job }}</span>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="item">
-                    <div class="testimonial-2 testimonial-bg style-1">
-                        <div class="testimonial-text">
-                            <p>“Grâce à Every Sunday, j'ai réussi à vendre ma voiture dès le lendemain. Merci Nado pour cette plateforme efficace et rapide.”</p>
-                        </div>
-                        <div class="testimonial-detail clearfix">
-                            <div class="testimonial-box">
-                                <div class="testimonial-pic radius shadow">
-                                    <img src="{{ asset('assets/images/testimonials/person2.webp') }}" alt="" width="100" height="100"></div>
-                                    <strong class="testimonial-name font-14">HANAN YASSMIN</strong>
-                                    <span class="text-white">HR Manager</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="testimonial-2 testimonial-bg style-1">
-                        <div class="testimonial-text">
-                            <p>“Je tiens à vous remercier pour votre professionnalisme et votre enthousiasme, Nado. Votre plateforme a véritablement transformé l'expérience d'achat de voitures d'occasion. Je vous souhaite bon courage pour la suite”</p>
-                        </div>
-                        <div class="testimonial-detail clearfix">
-                            <div class="testimonial-box">
-                                <div class="testimonial-pic radius shadow">
-                                    <img src="{{ asset('assets/images/testimonials/person3.webp') }}" alt="" width="100" height="100"></div>
-                                    <strong class="testimonial-name font-14">KAMAL DARI</strong>
-                                    <span class="text-white">English Teacher</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="testimonial-2 testimonial-bg style-1">
-                        <div class="testimonial-text">
-                            <p>“لم أكن أعرف ماذا أتوقع عند شرائي لأول مرة سيارة، لكن مستوى الخدمة الذي حصلت عليه تجاوز توقعاتي بكثير. فريق احترافي ومتعاون، والسيارة التي اشتريتها تجعلني سعيدة جدًا. شكرًا جزيلا لكم”</p>
-                        </div>
-                        <div class="testimonial-detail clearfix">
-                            <div class="testimonial-box">
-                                <div class="testimonial-pic radius shadow">
-                                    <img src="{{ asset('assets/images/testimonials/person4.webp') }}" alt="" width="100" height="100"></div>
-                                    <strong class="testimonial-name font-14">HASSNA KAMA</strong>
-                                    <span class="text-white">Student</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>
