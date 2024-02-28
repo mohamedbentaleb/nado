@@ -48,8 +48,9 @@ class VideoAdsController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Videosads $videoads)
+    public function edit($vd)
     {
+        $videoads = Videosads::find($vd);
         return view('admin.videoads.form', [
             'videoads' => $videoads
         ]);
@@ -58,22 +59,22 @@ class VideoAdsController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Videosads $videoads)
+    public function update(Request $request, $vd)
     {
         $n = $request->validate([
             'title' => ['required', 'string', 'max:255'],
             'video_key' => ['required', 'string', 'max:255'],
-        ]);
-        $videoads->update($n);
+        ]);;
+        Videosads::whereId($vd)->update($n);
         return to_route('videoads.index')->with("success" , "success update video ads");
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Videosads $videoads)
+    public function destroy($vd)
     {
-        $videoads->delete();
+        Videosads::where('id',$vd)->delete();
         return to_route("videoads.index")->with("success" , "Video ads deleted successfully");
     }
 }

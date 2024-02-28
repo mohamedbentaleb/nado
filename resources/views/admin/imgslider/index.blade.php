@@ -26,6 +26,7 @@
                                       <th>Name</th>
                                       <th>Link</th>
                                       <th>Image</th>
+                                      <th>Active</th>
                                       <th class="d-flex justify-content-end">Action</th>
                                   </tr>
                               </thead>
@@ -39,6 +40,7 @@
                                             <img class="activeimgnews" src="{{ asset('storage/imgslider/'.$av->image) }}" width="100%" data-bs-target="#Gallerycarousel" >
                                         </a>
                                       </td>
+                                      <td class="text-center"> @if ($av->active == 1) <i class="bi bi-check text-success"></i> @else <i class="bi bi-dash-circle text-danger"></i> @endif </td>
                                       <td>
                                         <div class="d-flex gap-2 w-100 justify-content-end">
                                           <a href="{{ route("imgslider.edit" , $av)}}" class="btn btn-info">Update</a>

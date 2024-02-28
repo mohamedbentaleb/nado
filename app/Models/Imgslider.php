@@ -15,5 +15,5 @@ class Imgslider extends Model
     *
     * @var array<int, string>
     */
-    protected $fillable = [ 'name', 'link', 'image' ];
+    protected $fillable = [ 'name', 'link', 'image', 'type', 'active' ];
 }

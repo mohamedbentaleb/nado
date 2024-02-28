@@ -14,9 +14,9 @@ return new class extends Migration
         Schema::dropIfExists('demande_reprise_vente');
         Schema::create('demande_reprise_vente', function (Blueprint $table) {
             $table->id();
-            $table->integer('brand_id')->unsigned();
-            $table->integer('model_id')->unsigned();
-            $table->integer('ville_id')->unsigned();
+            $table->unsignedBigInteger('brand_id');
+            $table->unsignedBigInteger('model_id');
+            $table->unsignedBigInteger('ville_id');
             $table->string('year');
             $table->string('km');
             $table->string('fuel');
@@ -28,7 +28,7 @@ return new class extends Migration
             $table->string('img_derriere');
             $table->foreign('brand_id')->references('id')->on("brands");
             $table->foreign('model_id')->references('id')->on("models");
-            $table->foreign('ville_id')->references('id')->on("ville");
+            $table->foreign('ville_id')->references('id')->on("villes");
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->nullable();
             $table->softDeletes();

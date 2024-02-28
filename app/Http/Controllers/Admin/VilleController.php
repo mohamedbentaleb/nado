@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\ville;
+use App\Models\Ville;
 use Illuminate\Http\Request;
 
 class VilleController extends Controller

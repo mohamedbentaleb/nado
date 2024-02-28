@@ -29,6 +29,9 @@
                                     <div class="col-12 col-md-6 my-2">
                                         @include('admin.partials.input', ["class" => 'col', "label" => "Email" , "type" => "email", "name" => 'email', "value" => $user->email, "hasicon" => "envelope" ])
                                     </div>
+                                    <div class="col-12 col-md-12 my-2">
+                                        @include('admin.partials.select', ["class" => 'col', "label" => "Role" ,"name" => 'role', "value" => $user->role, "data" => ["admin" => "Admin", "member" => "Member"], "hasicon" => "building" ])
+                                    </div>
                                     <div class="col-12 col-md-6 my-2">
                                         @include('admin.partials.input', ["class" => 'col', "label" => "Password" , "type" => "password", "name" => 'password', "hasicon" => "lock" ])
                                     </div>

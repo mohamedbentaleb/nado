@@ -15,7 +15,7 @@
               <div class="card">
                   <div class="card-header d-flex justify-content-between">
                       <h4 class="card-title">List Model</h4>
-                      <a href="{{ route('models.create')}}" class="btn btn-primary float-right">New brand</a>
+                      <a href="{{ route('models.create')}}" class="btn btn-primary float-right">New model</a>
                   </div>
                   <div class="card-content">
                       <div class="card-body">

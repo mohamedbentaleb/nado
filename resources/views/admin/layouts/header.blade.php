@@ -9,7 +9,7 @@
 
     <link rel="stylesheet" href="{{ asset('assets/back/assets/css/main/app.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/back/assets/css/main/app-dark.css') }}">
-    <link rel="shortcut icon" href="{{ asset('assets/back/assets/images/logo/favicon.png') }}" type="image/png">
+    <link rel="shortcut icon" href="{{ asset('assets/images/favicon.png') }}" type="image/png">
 
     <link rel="stylesheet" href="{{ asset('assets/back/assets/css/shared/iconly.css') }}">
 

@@ -1,20 +1,23 @@
 <?php
 
-use App\Http\Controllers\admin\AvisTextController;
-use App\Http\Controllers\admin\AvisVdController;
-use App\Http\Controllers\admin\BrandsController;
-use App\Http\Controllers\admin\ImgSlideController;
-use App\Http\Controllers\admin\ModelsController;
-use App\Http\Controllers\admin\RepriseVenteController;
-use App\Http\Controllers\admin\VideoAdsController;
-use App\Http\Controllers\admin\UserController;
-use App\Http\Controllers\admin\VilleController;
+use App\Http\Controllers\Admin\AvisTextController;
+use App\Http\Controllers\Admin\AvisVdController;
+use App\Http\Controllers\Admin\BrandsController;
+use App\Http\Controllers\Admin\ImgSlideController;
+use App\Http\Controllers\Admin\ModelsController;
+use App\Http\Controllers\Admin\RepriseVenteController;
+use App\Http\Controllers\Admin\VideoAdsController;
+use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Admin\VilleController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\FrontController;
 use App\Http\Controllers\SellController;
 use App\Http\Controllers\BuyController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ServicesController;
+use App\Http\Controllers\FinancementController;
+use App\Http\Controllers\RepriseController;
+use App\Http\Controllers\VenteController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -32,10 +35,14 @@ use Illuminate\Support\Facades\Route;
     return view('welcome');
 });*/
 Route::resource('/', FrontController::class);
-Route::resource('/Vendre', SellController::class);
-Route::resource('/Acheter', BuyController::class);
-Route::resource('/Contactez-nous', ContactController::class);
-Route::resource('/Services', ServicesController::class);
+Route::resource('/vendre', SellController::class);
+Route::resource('/acheter', BuyController::class);
+Route::resource('/contactez-nous', ContactController::class);
+Route::resource('/services', ServicesController::class);
+Route::resource('/financement', FinancementController::class);
+Route::resource('/reprise', RepriseController::class);
+Route::resource('/vente', VenteController::class);
+Route::post('/Services/{id}/getmodels', [ServicesController::class, 'getmodels'])->name('services.modeles');
 
 Route::get('/admin/dashboard', function () {
     return view('admin.dashboard');

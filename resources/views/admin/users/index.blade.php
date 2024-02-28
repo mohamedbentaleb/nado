@@ -23,6 +23,7 @@
                           <th>#</th>
                           <th>Name</th>
                           <th>Email</th>
+                          <th>role</th>
                           <th class="d-flex justify-content-end">Action</th>
                       </tr>
                   </thead>
@@ -32,6 +33,7 @@
                       <th scope="row">{{ $user->id; }}</th>
                       <td>{{ $user->name; }}</td>
                       <td>{{ $user->email; }}</td>
+                      <td>{{ $user->role; }}</td>
                       <td>
                         <div class="d-flex gap-2 w-100 justify-content-end">
                           <a href="{{ route("users.edit" , $user)}}" class="btn btn-info">Update</a>

@@ -3,18 +3,16 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Imgslider;
-use App\Models\Videosads;
-use App\Models\Avistext;
+use App\Models\Brands;
 
-class FrontController extends Controller
+class VenteController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('front', ['imgslider' => Imgslider::where('active', 1)->limit(6)->get(), 'vdAds' => Videosads::orderBy('id', 'desc')->limit(6)->get(), 'avistext' => Avistext::all()]);
+        return view('vente', ["brands" => Brands::all()]);
     }
 
     /**
@@ -64,7 +62,4 @@ class FrontController extends Controller
     {
         //
     }
-    
-       
-
 }
