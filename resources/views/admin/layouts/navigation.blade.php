@@ -46,6 +46,20 @@
             </li>
         </ul>
     </li>
+    <li @class(['sidebar-item','has-sub', 'active' => str_contains( $current_route , "annonces.")]) >
+        <a href="#" class='sidebar-link'>
+            <i class="bi bi-people"></i>
+            <span>Annonces</span>
+        </a>
+        <ul @class(['submenu', 'active' => str_contains( $current_route , "annonces.")]) >
+            <li  @class(['submenu-item', 'active' => request()->routeIs('annonces.index')])>
+                <a href="{{ route("annonces.index") }}">List</a>
+            </li>
+            <li @class(['submenu-item', 'active' => request()->routeIs('annonces.create')])>
+                <a href="{{ route("annonces.create") }}">New</a>
+            </li>
+        </ul>
+    </li>
 
     <li @class(['sidebar-item','has-sub', 'active' => str_contains( $current_route , "brands.")]) >
         <a href="#" class='sidebar-link'>
