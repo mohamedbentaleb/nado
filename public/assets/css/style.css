@@ -125,7 +125,7 @@ body {
 	letter-spacing: 0.8px;
 }
 a {
-    color: #EFBB20;
+    color: #ffd802;
     outline: 0 none;
     text-decoration: none;
 }
@@ -2292,7 +2292,7 @@ blockquote {
     position: relative;
     background: #f6f6f6;
     clear: both;
-    border-left: 4px solid #EFBB20;
+    border-left: 4px solid #ffd802;
 }
 blockquote p {
     font-size: 18px;
@@ -2303,7 +2303,7 @@ blockquote p {
 blockquote:before {
     content: '\f10d';
     font-family: "FontAwesome";
-    color: #EFBB20;
+    color: #ffd802;
     font-size: 35px;
     position: absolute;
     left: 20px;
@@ -2545,7 +2545,7 @@ blockquote:before {
     float: left;
     vertical-align: middle;
     padding: 0;
-    color: #EFBB20;
+    color: #ffd802;
     margin-top: 0;
     margin-bottom: 0;
     margin-left: 0;
@@ -2560,7 +2560,7 @@ blockquote:before {
     display: table;
     vertical-align: middle;
     padding: 0;
-    color: #EFBB20;
+    color: #ffd802;
     margin-top: 15px;
     margin-bottom: 15px;
     margin-left: 0;
@@ -2587,7 +2587,7 @@ blockquote:before {
 .logo-header span,
 .logo-footer span {
     font-size: 20px;
-    color: #EFBB20;
+    color: #ffd802;
     letter-spacing: 20px;
 }
 /*= When header is sticky =*/
@@ -2659,7 +2659,7 @@ blockquote:before {
 /*== >mena-menu ==*/
 
 .navbar-toggle {
-    border: 0 solid #efbb20;
+    border: 0 solid #ffd802;
     font-size: 16px;
     line-height: 24px;
     margin: 28px 0 26px 10px;
@@ -2701,7 +2701,7 @@ blockquote:before {
 }
 .header-nav .nav > li > a:hover {
     background-color: transparent;
-    color: #efbb20;
+    color: #ffd802;
 }
 .header-nav .nav > li > a:active,
 .header-nav .nav > li > a:focus {
@@ -2710,10 +2710,10 @@ blockquote:before {
 .header-nav .nav > li.active > a,
 .header-nav .nav > li.current-menu-item > a {
     background-color: transparent;
-    color: #EFBB20;
+    color: #ffd802;
 }
 .header-nav .nav > li:hover > a {
-    color: #EFBB20;
+    color: #ffd802;
 }
 .header-nav .nav > li:hover > .sub-menu,
 .header-nav .nav > li:hover > .mega-menu {
@@ -2756,11 +2756,11 @@ blockquote:before {
 }
 .header-nav .nav > li .sub-menu li a:hover {
     background-color: #F2F2F2;
-    color: #EFBB20;
+    color: #ffd802;
     text-decoration: none;
 }
 .header-nav .nav > li .sub-menu li:hover > a {
-    color: #EFBB20;
+    color: #ffd802;
 }
 .header-nav .nav > li .sub-menu li:last-child {
     border-bottom: 0px;
@@ -2874,7 +2874,7 @@ blockquote:before {
 	font-weight: 600;
 }
 .header-nav .nav > li .mega-menu > li ul a:hover {
-    color: #EFBB20;
+    color: #ffd802;
     background-color: #F2F2F2;
 }
 .header-nav .nav > li.menu-item-has-children:before {
@@ -3181,13 +3181,13 @@ blockquote:before {
     }
     [class*="bg-"] .nav-dark.header-nav .nav > li.active > a,
     [class*="bg-"] .nav-dark.header-nav .nav > li:hover > a {
-        color: #EFBB20;
+        color: #ffd802;
     }
     .nav-dark.header-nav .nav > li > a:hover,
     .nav-dark.header-nav .nav > li > a:active,
     .nav-dark.header-nav .nav > li > a:focus {
         background-color: #282828;
-        color: #EFBB20;
+        color: #ffd802;
     }
     .nav-dark.header-nav .nav > li ul,
     .nav-dark.header-nav .nav > li .sub-menu,
@@ -3665,7 +3665,7 @@ blockquote:before {
     width: 100%;
 }
 .dlab-bnr-inr:before {
-    background: #f5c04a none repeat scroll 0 0;
+    background: #ffd802 none repeat scroll 0 0;
     border-radius: 100%;
     top: 20%;
     content: "";
@@ -3987,7 +3987,7 @@ blockquote:before {
 
 .date-style-1 .post-date {
     color: #fff;
-    background-color: #EFBB20;
+    background-color: #ffd802;
     padding: 3px 5px 3px 5px;
 }
 .date-style-1 .post-date .fa {
@@ -4456,7 +4456,7 @@ ol.comment-list li.comment .reply a {
     top: 50px;
     right: 30px;
     margin-top: -5px;
-    color: #EFBB20;
+    color: #ffd802;
     font-weight: 600;
 }
 ol.comment-list li .children {
@@ -4588,7 +4588,7 @@ ol.comment-list li.comment .comment-respond .comment-form p {
     margin: 0;
 }
 .comments-area .comment-form p input[type="submit"] {
-    background-color: #EFBB20;
+    background-color: #ffd802;
     border: none;
     border-radius: 3px;
     border-style: solid;
@@ -5338,7 +5338,7 @@ a,
 	text-align:center;
 }
 .site-button {
-    background-color: #EFBB20;
+    background-color: #ffd802;
 }
 .site-button:active,
 .site-button:hover,
@@ -5901,8 +5901,8 @@ a,
 /* yellow */
 
 .site-button.outline.yellow {
-    color: #EFBB20;
-    border-color: #EFBB20;
+    color: #ffd802;
+    border-color: #ffd802;
 }
 /* purple */
 
@@ -6381,7 +6381,7 @@ a,
 }
 .site-filters .active > [class*="site-button"] {
     color: #fff;
-    background-color: #EFBB20;
+    background-color: #ffd802;
 }
 .site-filters.center {
     text-align: center;
@@ -6589,7 +6589,7 @@ a,
 /*listing before icon color css*/
 
 .primary li:before {
-    color: #EFBB20;
+    color: #ffd802;
 }
 .secondry li:before {
     color: #77C04B;
@@ -6635,7 +6635,7 @@ a,
     height: 28px;
     padding: 5px;
     color: #fff;
-    background: #EFBB20;
+    background: #ffd802;
     font-weight: bold;
     text-align: center;
     font-size: 12px;
@@ -6676,7 +6676,7 @@ a,
     border: 1px solid transparent;
 }
 .dlab-tabs .nav-tabs > li > a i {
-    color: #EFBB20;
+    color: #ffd802;
     margin-right: 5px;
 }
 /*tabs bg  [ tabs background ]*/
@@ -6811,7 +6811,7 @@ a,
 .acod-head a,
 .acod-head a:hover,
 .acod-head a.collapsed:hover {
-    color: #EFBB20;
+    color: #ffd802;
 }
 .acod-head a.collapsed,
 .acod-head a.collapsed:after {
@@ -6821,7 +6821,7 @@ a,
     font-family: 'FontAwesome';
     content: "--";
     float: right;
-    color: #EFBB20;
+    color: #ffd802;
     font-size: 16px;
     font-weight: normal;
 	letter-spacing: -2px;
@@ -7339,7 +7339,7 @@ a,
     text-align: center;
 }
 .testimonial-1 .testimonial-position {
-    color: #EFBB20;
+    color: #ffd802;
 }
 .testimonial-1 .testimonial-name,
 .testimonial-1 .testimonial-position {
@@ -7350,7 +7350,7 @@ a,
     height: 36px;
     line-height: 36px;
     font-size: 16px;
-    background: #EFBB20;
+    background: #ffd802;
     color: #FFF;
     text-align: center;
     left: 0;
@@ -7389,7 +7389,7 @@ a,
     height: 36px;
     line-height: 36px;
     font-size: 16px;
-    background: #EFBB20;
+    background: #ffd802;
     color: #FFF;
     text-align: center;
     left: 0;
@@ -7405,7 +7405,7 @@ a,
     padding-top: 20px;
 }
 .testimonial-2 .testimonial-position {
-    color: #EFBB20;
+    color: #ffd802;
 }
 .testimonial-2 .quote-left:before {
     top: 50px;
@@ -7427,10 +7427,10 @@ a,
 .testimonial-3 .quote-left:before {
     position: static;
     font-size: 40px;
-    color: #EFBB20;
+    color: #ffd802;
 }
 .testimonial-3 .testimonial-position {
-    color: #EFBB20;
+    color: #ffd802;
 }
 .testimonial-3 .testimonial-name,
 .testimonial-3 .testimonial-position {
@@ -7449,7 +7449,7 @@ a,
     background-color: #282a3c;
     border-left-width: 4px;
     border-left-style: solid;
-    border-left-color: #EFBB20;
+    border-left-color: #ffd802;
     content: "";
     position: absolute;
     left: -80px;
@@ -7477,7 +7477,7 @@ a,
     height: 0;
     border-style: solid;
     border-width: 30px;
-    border-color: #EFBB20;
+    border-color: #ffd802;
     border-top-color: transparent !important;
     border-left-color: transparent !important;
 }
@@ -7501,7 +7501,7 @@ a,
 }
 .testimonial-4 .testimonial-name:after {
     content: "/";
-    color: #EFBB20;
+    color: #ffd802;
     margin: 0 2px 0 5px;
 }
 .testimonial-4 .testimonial-name {
@@ -7512,7 +7512,7 @@ a,
     color: #bebebe;
 }
 .testimonial-4 .testimonial-pic {
-    border-color: #EFBB20;
+    border-color: #ffd802;
     border-width: 3px;
     width: 90px;
     height: 90px;
@@ -7712,7 +7712,7 @@ a,
     margin-right: 3px;
 }
 .pricingtable-title {
-    background-color: #EFBB20;
+    background-color: #ffd802;
     padding: 20px;
     text-transform: uppercase;
 }
@@ -7889,7 +7889,7 @@ a,
     -moz-border-radius: 0 0 3px 3px;
 }
 .modal-header {
-    background: #EFBB20;
+    background: #ffd802;
     padding: 15px 25px;
 }
 .modal-header .modal-title {
@@ -8943,13 +8943,13 @@ footer .widget_getintuch i {
 /* scroll top btn css */
 button.scroltop {
     background: rgba(255, 255, 255, 0.9) none repeat scroll 0 0;
-    border-color: #efbb20;
+    border-color: #ffd802;
     border-radius: 20px;
     border-style: solid;
     border-width: 0;
     bottom: 15px;
     box-shadow: 2px 2px 12px -5px #000000;
-    color: #efbb20;
+    color: #ffd802;
     cursor: pointer;
     display: none;
     height: 40px;
@@ -9251,10 +9251,10 @@ footer.footer-white .footer-bottom a {
     width: 150px;
 }
 .product-description.dex-tabs.border-top .nav-tabs > li.active > a {
-    border-top: 2px solid #efbb20;
+    border-top: 2px solid #ffd802;
 }
 .product-description.dex-tabs .nav-tabs > li > a i {
-    color: #efbb20;
+    color: #ffd802;
 }
 .dex-tabs.bg-tabs .nav-tabs > li > a {
     background-color: #fcfcfc;

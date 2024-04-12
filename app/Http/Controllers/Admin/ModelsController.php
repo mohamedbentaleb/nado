@@ -77,4 +77,13 @@ class ModelsController extends Controller
         $model->delete();
         return to_route("models.index")->with("success" , "Model deleted successfully");
     }
+    public function getmodels($id)
+    {
+        $modele = Models::orderby("name","asc")
+        			->select('id','name')
+        			->where('brand_id', $id)
+        			->get();
+
+        return response()->json($modele);
+    }
 }

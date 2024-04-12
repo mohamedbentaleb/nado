@@ -37,12 +37,12 @@
                     <!-- main nav -->
                     <div class="header-nav navbar-collapse collapse">
                         <ul class="nav navbar-nav">
-							<li> <a href="{{ route('index') }}">Accueil</a></li>
-							<li> <a href="{{ route('vente.index') }}" >Vente</a></li>
-							<li> <a href="{{ route('reprise.index') }}" >Nado reprise</a></li>
-							<li> <a href="{{ route('financement.index') }}" >Auto finance</a></li>
-							<li> <a href="{{ route('services.index') }}" >à-propos</a></li>
-							<li> <a href="{{ route('acheter.index') }}" class="hide">Acheter</a></li>
+							<li> <a href="{{ route('index') }}" style="color: #1f519b !important" >Accueil</a></li>
+							<li> <a href="{{ route('achat.index') }}" style="color: #ffd802 !important" >Achat</a></li>
+							<li> <a href="{{ route('vente.index') }}" style="color: #ffd802 !important" >Vente</a></li>
+							<li> <a href="{{ route('reprise.index') }}" style="color: #1f519b !important" >Nado reprise</a></li>
+							<li> <a href="{{ route('financement.index') }}" style="color: #1f519b !important">Auto finance</a></li>
+							<li> <a href="{{ route('services.index') }}" style="color: #1f519b !important" >à-propos</a></li>
 
 							<li> <a href="{{ route('services.index') }}" class="hide" >Services <i class="fa fa-chevron-down"></i></a>
 								<ul class="sub-menu">
@@ -52,7 +52,7 @@
 								</ul>
 							</li>
 							<li> <a href="{{ route('vendre.index') }}" class="hide">Vendre/Reprise</a></li>
-							<li> <a href="{{ route('contactez-nous.index') }}">Contactez-nous</a></li>
+							<li> <a href="{{ route('contactez-nous.index') }}" style="color: #1f519b !important" >Contactez-nous</a></li>
 								</ul>
 							</li>
 						</ul>

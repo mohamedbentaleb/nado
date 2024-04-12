@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\AnnoncesController;
 use App\Http\Controllers\Admin\AvisTextController;
 use App\Http\Controllers\Admin\AvisVdController;
 use App\Http\Controllers\Admin\BrandsController;
@@ -36,13 +37,14 @@ use Illuminate\Support\Facades\Route;
 });*/
 Route::resource('/', FrontController::class);
 Route::resource('/vendre', SellController::class);
-Route::resource('/acheter', BuyController::class);
 Route::resource('/contactez-nous', ContactController::class);
 Route::resource('/services', ServicesController::class);
 Route::resource('/financement', FinancementController::class);
 Route::resource('/reprise', RepriseController::class);
 Route::resource('/vente', VenteController::class);
-Route::post('/Services/{id}/getmodels', [ServicesController::class, 'getmodels'])->name('services.modeles');
+Route::resource('/achat', BuyController::class);
+Route::post('/achat/{id}/getmodels', [ServicesController::class, 'getmodels'])->name('services.modeles');
+Route::get('/achat/voiture/{marque}_{modele}_{id}.html', [BuyController::class, 'show'])->name('achat.detail');
 
 Route::get('/admin/dashboard', function () {
     return view('admin.dashboard');
@@ -62,6 +64,10 @@ Route::middleware('auth')->group(function () {
     Route::resource('/admin/demande', RepriseVenteController::class);
     Route::resource('/admin/videoads', VideoAdsController::class);
     Route::resource('/admin/ville', VilleController::class);
+    Route::resource('/admin/annonces', AnnoncesController::class);
+    Route::post('/admin/models/{id}/getmodels', [ModelsController::class, 'getmodels'])->name('models.modeles');
+    //delete media
+    Route::post('/admin/annonces/{id}/deleteImage', [AnnoncesController::class, 'deleteImage'])->name('annonces.deleteImg');
 });
 
 require __DIR__.'/auth.php';

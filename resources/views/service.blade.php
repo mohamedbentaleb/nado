@@ -17,6 +17,23 @@
             </ul>
         </div>
     </div>
+    		<div class="section-full bg-white content-inner-1">
+			<div class="container">
+				<div class="row dzseth m-b50">
+					<div class="col-md-5 col-sm-6">
+						<img src="{{ asset('assets/images/design-site-web.jpg') }}" alt=""/>
+					</div>
+					<div class="col-md-6 col-sm-6 dis-tbl">
+						<div class="dis-tbl-cell">
+							<h2 class="h2 p-b20">la plateforme digitale de <span class="text-primary">"NADO AUTO"</span> pour l’achat, la vente et la reprise des véhicules neufs et d’occasions.</h2>
+							<p>Avec plus de 20 ans d’expertise dans le secteur de la vente et achat d’automobile. "NADO AUTO" ne cesse de développer son activité, de diversifier son portefeuille et de conclure des partenariats de renom dans l’ambition de servir au mieux ses clients.
+							La plateforme digitale met à disposition de ses utilisateurs un large éventail d’opérations, notamment l’expertise, l’achat, la reprise et la vente de véhicules d’occasion :
+							Pour les clients qui désirent vendre leur véhicule, NADO.ma s’appuie sur les experts du garage,  pour réaliser les expertises techniques et garantir la juste valeur du véhicule en question. Les clients désirant acheter un véhicule d’occasion trouveront dans la plateforme NADO.ma un outil intuitif et efficace pour naviguer et sélectionner le véhicule de leur choix, parmi des centaines de véhicules, expertisés, certifiés et garantis.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
     <div class="section-full p-t50 bg-white content-inner" >
         <div class="container">
             <div class="section-head text-center head-1">
@@ -74,7 +91,7 @@ $(document).ready(function(){
             'mark': mark,
             '_token' : $('input[name="_token"]').val()
         };
-        var ajaxurl = "/Services/"+mark+"/getmodels";
+        var ajaxurl = "/achat/"+mark+"/getmodels";
         var models = '<option value="">Selectionner un modele</option>';
         $.ajax({
             type: "POST",

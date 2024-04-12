@@ -7,7 +7,7 @@
 <div class="bnr-slider">
     <div class="owl-carousel only_mobile">
         <div class="item">
-            <div class="slider-item " style="background-image: url({{ asset('assets/images/main-slider/slaide-phone.png') }});">
+            <div class="slider-item " style="background-image: url({{ asset('assets/images/main-slider/slaide-phone.jpg') }});">
             </div>
         </div>
     </div>
@@ -19,413 +19,179 @@
         </div>
         @endforeach
     </div>
+                <!-- searching cars form -->
+			<div class="car-searching text-white only_desktop">
+				<form class="searching-form" action="{{ route('achat.index') }}" method="get">
+				    @csrf
+					<div class="container">
+						<div class="row search-row">
+							<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+								<div class="form-group">
+									<label>Marque</label>
+									<select class="form-control nado-marks" name="marque" id="marque" required>
+									    <option value="">Marque</option>
+									    @foreach($brands as $brand)
+									    <option value="{{$brand->name}}" data-id="{{$brand->id}}">{{$brand->name}}</option>
+									    @endforeach
+									</select>
+								</div>
+							</div>
+							<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+								<div class="form-group">
+									<label>Modele</label>
+									<select class="form-control nado-models" name="modele" id="modele" >
+									    <option value="">Modele</option>
+									</select>
+								</div>
+							</div>
+							<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+								<div class="form-group">
+									<label>Année</label>
+									<select class="form-control" name="annee" id="annee" >
+									    <option value="">Année</option>
+									    @for ($i = date("Y"); $i >= 1992; $i--)
+                			                <option title="{{$i}}" value="{{$i}}">
+                			                  {{$i}}
+                			                </option>
+            			                @endfor
+									</select>
+								</div>
+							</div>
+							<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+								<div class="form-group">
+									<button type="submit" class="site-button">Recherche</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+			<!-- searching cars form end -->
 </div>
+
 <!-- searching cars form -->
-<div class="section-full bg-secondry hide">
-    <div class="car-searchings text-white">
-        <form class="searching-form">
-            <div class="container">
-                <h3 class="text-center">Achetez et vendez votre voiture Facilement et rapidement.</h3>
-                <div class="row search-row">
-                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
-                        <div class="form-group">
-                            <label>Car brands</label>
-                            <select class="form-control">
-                                <option>Any Brands</option>
-                                <option>Brand 1</option>
-                                <option>Brand 2</option>
-                                <option>Brand 3</option>
-                                <option>Brand 4</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
-                        <div class="form-group">
-                            <label>Car Type</label>
-                            <select class="form-control">
-                                <option>Any Type</option>
-                                <option>Type 1</option>
-                                <option>Type 2</option>
-                                <option>Type 3</option>
-                                <option>Type 4</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
-                        <div class="form-group">
-                            <label>Car Price</label>
-                            <select class="form-control">
-                                <option>Price low to high</option>
-                                <option>Price high to low</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
-                        <div class="form-group">
-                            <button type="submit" class="site-button">Search car now</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </form>
-    </div>
+<div class="section-full only_mobile" style="z-index: 1111;">
+	<div class="car-searching text-white">
+		<form class="searching-form" action="{{ route('achat.index') }}" method="get">
+		    @csrf
+			<div class="container">
+				<div class="row search-row">
+					<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+						<div class="form-group">
+							<label>Marque</label>
+							<select class="form-control nado-marks-m" name="marque" id="marque" required>
+							    <option value="">Marque</option>
+							    @foreach($brands as $brand)
+							    <option value="{{$brand->name}}" data-id="{{$brand->id}}">{{$brand->name}}</option>
+							    @endforeach
+							</select>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+						<div class="form-group">
+							<label>Modele</label>
+							<select class="form-control nado-models-m" name="modele" id="modele" >
+							    <option value="">Modele</option>
+							</select>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+						<div class="form-group">
+							<label>Année</label>
+							<select class="form-control" name="annee" id="annee" >
+							    <option value="">Année</option>
+							    @for ($i = date("Y"); $i >= 1992; $i--)
+        			                <option title="{{$i}}" value="{{$i}}">
+        			                  {{$i}}
+        			                </option>
+    			                @endfor
+							</select>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+						<div class="form-group">
+							<button type="submit" class="site-button">Recherche</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</form>
+	</div>
 
 </div>
 <!-- searching cars form end -->
-<!-- brands -->
-<div class ="section-full content-inner brand">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="section-head style-1 text-center">
-                    <h2 class="h2">Nos dernières voitures d’occasions</h2>
-                    <div class="title-sm text-uppercase">Choisissez votre type de voiture préférée</div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="clearfix owl-carousel featured-offer owl-theme owl-nav  owl-dots col-lg-12 p-lr0">
-                <div class="item">
-                    <div class="dlab-space">
-                        <div class="dlab-feed-list style-1 relative">
-                            <div class="dlab-media bg-white">
-                                <a href="#"><img src="{{ asset('assets/images/featured/serie1-sport-2020.png')}}" alt=""></a>
-                            </div>
-                            <div class="dlab-info">
-                                <h5 class="dlab-title h5"><a href="#">BMW <span class="text-primary">Serie 1</span> Sport</a></h5>
-                                <p class="dlab-price"><span>280 000 DH</span> </p>
-                                <div class="icon-box-btn text-center">
-                                    <ul class="clearfix">
-                                        <li><a href="javascript:;"><i class="flaticon-calendar"></i> 2020</a></li>
-                                        <li><a href="javascript:"><i class="flaticon-settings"></i> Automa..</a></li>
-                                        <li><a href="javascript:;"><i class="flaticon-oil"></i> Diesel</a></li>
-                                        <li><a href="javascript:;"><i class="flaticon-dashboard-1"></i> 120K km</a></li>
-                                    </ul>
+<div class="section-full bg-white  p-t40 p-b70 ">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="section-head">
+					<h3 class="h4 text-uppercase">Nos dernières Annonces</h3>
+
+				</div>
+				<div class="clearfix owl-carousel owl-btn-style-2 quick-look">
+				    @foreach($similar_ads as $ad)
+					<div class="item">
+                        <div class="dlab-feed-list style-list m-b30 text-left box-s border-blr">
+                                <div class="dlab-media border-tlr">
+                                    <a href="{{ route('achat.detail', [ 'marque' => str_replace(' ', '', $ad->mark),  'modele' =>  str_replace(' ', '', $ad->modele),  'id' => $ad['id'] ]) }}">
+                                        <div class="block-status-listAds {{$ad['status']}}"><i class="far fa-check-square"></i> {{ucfirst($ad['status'])}}</div>
+                                        <img src="{{ asset('storage/ads/'.$ad->pathImageAds()) }}" alt="">
+                                        <div class="bg-primary block-price-list">
+                                            <div class="p-a5 text-center text-secondry" style="font-size: 18px;">
+                                                <b>{{$ad['prix']}} Dh</b>
+                                            </div>
+                                            <div class="bg-secondry text-center text-primary p-a5" style="font-size: 8px;">
+                                                 {{ number_format(($ad['prix']) / 72, 2, '.', '') }} Dhs/ 72 mois
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="dlab-info block-detail-list text-left border-blr" style="text-align: left !important;">
+                                    <h4 class="dlab-title m-b0" ><a href="{{ route('achat.detail', [ 'marque' => str_replace(' ', '', $ad->mark),  'modele' =>  str_replace(' ', '', $ad->modele),  'id' => $ad['id'] ]) }}" style="color:#333 !important;font-weight: normal;">{{$ad['mark']}} {{$ad['modele']}} - {{$ad['year']}}</a></h4>
+                                    <span class="text-muted font-14">Voitures d'occasion NADO.MA</span>
+                                    <img src="{{ asset('assets/images/icons/icon-car.png')}}" class="icon-image-list" style="width: 60px;display: inline-block;">
+                                    <ul class="used-car-dl-info" style="font-size: 10px;">
+        								<li><i class="fa fa-map-marker"></i> {{$ad->city}}</li>
+        								<li><i class="fa fa-calendar"></i> {{$formatDate($ad->created_at)}}</li>
+        							</ul>
+        						    <div class="site-filters btn-list m-t10">
+                        				<ul class="filters clearfix" data-toggle="buttons">
+                        				    @if($ad['showroom'] == 1)
+                        					<li data-filter="" class="btn active">
+                        						<a href="#" class="btn btn-sm bg-primary text-white"><span><i class="far fa-check-square"></i> In Showroom</span></a> 
+                        					</li>
+                        					@endif
+                        					@if($ad['finance'] == 1)
+                        					<li data-filter="interior" class="btn">
+                        						<a href="#" class="btn btn-sm btn-finance text-white"><span><i class="far fa-check-square"></i> Finance</span></a> 
+                        					</li>
+                        					@endif
+                        					@if($ad['certifie'] == 1)
+                        					<li data-filter="exterior" class="btn">
+                        						<a href="#" class="btn btn-sm btn-success text-white"><span><i class="far fa-check-square"></i> Certifié</span></a> 
+                        					</li>
+                        					@endif
+                        				</ul>
+                        			</div>
+                                    <div class="icon-box-btn text-center m-tb10">
+                                        <ul class="clearfix">
+                                            <li><a class="box-list" href="javascript:;"><i class="flaticon-calendar"></i> {{$ad['year']}}</a></li>
+                                            <li><a class="box-list" href="javascript:"><i class="flaticon-settings"></i> {{$ad['box']}}</a></li>
+                                            <li><a class="box-list" href="javascript:;"><i class="flaticon-oil"></i> {{$ad['carburant']}}</a></li>
+                                            <li><a class="box-list" href="javascript:;"><i class="flaticon-dashboard-1"></i> {{$ad['km']}} km</a></li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="rent-link">
-                                <a href="#" class="site-button">Acheter Cette Voiture</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>   
-                <div class="item">
-                    <div class="dlab-space">
-                        <div class="dlab-feed-list style-1 relative">
-                            <div class="dlab-media bg-white">
-                                <a href="#"><img src="{{ asset('assets/images/featured/PEUGEOT-208-2022.png')}}" alt=""></a>
-                            </div>
-                            <div class="dlab-info">
-                                <h5 class="dlab-title h5"><a href="#">Peugeot <span class="text-primary">208</span> </a></h5>
-                                <p class="dlab-price"><span>156 000 DH</span> </p>
-                                <div class="icon-box-btn text-center">
-                                    <ul class="clearfix">
-                                        <li><a href="javascript:;"><i class="flaticon-calendar"></i> 2022</a></li>
-                                        <li><a href="javascript:"><i class="flaticon-settings"></i> Manuelle</a></li>
-                                        <li><a href="javascript:;"><i class="flaticon-oil"></i> Diesel</a></li>
-                                        <li><a href="javascript:;"><i class="flaticon-dashboard-1"></i> 56K km</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="rent-link">
-                                <a href="#" class="site-button">Acheter Cette Voiture</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>                 
-                <div class="item">
-                    <div class="dlab-space">
-                        <div class="dlab-feed-list style-1 relative">
-                            <div class="dlab-media bg-white">
-                                <a href="#"><img src="{{ asset('assets/images/featured/hyundai-tucson-2023.png')}}" alt=""></a>
-                            </div>
-                            <div class="dlab-info">
-                                <h5 class="dlab-title h5"><a href="#">Hyundai <span class="text-primary">Tucson</span> </a></h5>
-                                <p class="dlab-price"><span>320 000 DH</span> </p>
-                                <div class="icon-box-btn text-center">
-                                    <ul class="clearfix">
-                                        <li><a href="javascript:;"><i class="flaticon-calendar"></i> 2023</a></li>
-                                        <li><a href="javascript:"><i class="flaticon-settings"></i> Automa..</a></li>
-                                        <li><a href="javascript:;"><i class="flaticon-oil"></i> Diesel</a></li>
-                                        <li><a href="javascript:;"><i class="flaticon-dashboard-1"></i> 46K km</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="rent-link">
-                                <a href="#" class="site-button">Acheter Cette Voiture</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>                
-                <div class="item">
-                    <div class="dlab-space">
-                        <div class="dlab-feed-list style-1 relative">
-                            <div class="dlab-media bg-white">
-                                <a href="#"><img src="{{ asset('assets/images/featured/rong-rover-sport-se-2016.png')}}" alt=""></a>
-                            </div>
-                            <div class="dlab-info">
-                                <h5 class="dlab-title h5"><a href="#">Range Rover <span class="text-primary">Sport SE</span> </a></h5>
-                                <p class="dlab-price"><span>310 000 DH</span> </p>
-                                <div class="icon-box-btn text-center">
-                                    <ul class="clearfix">
-                                        <li><a href="javascript:;"><i class="flaticon-calendar"></i> 2016</a></li>
-                                        <li><a href="javascript:"><i class="flaticon-settings"></i> Automa..</a></li>
-                                        <li><a href="javascript:;"><i class="flaticon-oil"></i> Diesel</a></li>
-                                        <li><a href="javascript:;"><i class="flaticon-dashboard-1"></i> 137K km</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="rent-link">
-                                <a href="#" class="site-button">Acheter Cette Voiture</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="dlab-space">
-                        <div class="dlab-feed-list style-1 relative">
-                            <div class="dlab-media bg-white">
-                                <a href="#"><img src="{{ asset('assets/images/featured/kadjar-renault-12-2017.png')}}" alt=""></a>
-                            </div>
-                            <div class="dlab-info">
-                                <h5 class="dlab-title h5"><a href="#">Renault <span class="text-primary">Kadjar</span> </a></h5>
-                                <p class="dlab-price"><span>185 000 DH</span> </p>
-                                <div class="icon-box-btn text-center">
-                                    <ul class="clearfix">
-                                        <li><a href="javascript:;"><i class="flaticon-calendar"></i> 2017</a></li>
-                                        <li><a href="javascript:"><i class="flaticon-settings"></i> Automa..</a></li>
-                                        <li><a href="javascript:;"><i class="flaticon-oil"></i> Diesel</a></li>
-                                        <li><a href="javascript:;"><i class="flaticon-dashboard-1"></i> 76K km</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="rent-link">
-                                <a href="#" class="site-button">Acheter Cette Voiture</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="dlab-space">
-                        <div class="dlab-feed-list style-1 relative">
-                            <div class="dlab-media bg-white">
-                                <a href="#"><img src="{{ asset('assets/images/featured/208-peugeot.png')}}" alt=""></a>
-                            </div>
-                            <div class="dlab-info">
-                                <h5 class="dlab-title h5"><a href="#">Peugeot <span class="text-primary">208</span> </a></h5>
-                                <p class="dlab-price"><span>157 000 DH</span> </p>
-                                <div class="icon-box-btn text-center">
-                                    <ul class="clearfix">
-                                        <li><a href="javascript:;"><i class="flaticon-calendar"></i> 2022</a></li>
-                                        <li><a href="javascript:"><i class="flaticon-settings"></i> Manuelle</a></li>
-                                        <li><a href="javascript:;"><i class="flaticon-oil"></i> Diesel</a></li>
-                                        <li><a href="javascript:;"><i class="flaticon-dashboard-1"></i> 39K km</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="rent-link">
-                                <a href="#" class="site-button">Acheter Cette Voiture</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="dlab-space">
-                        <div class="dlab-feed-list style-1 relative">
-                            <div class="dlab-media bg-white">
-                                <a href="#"><img src="{{ asset('assets/images/featured/Evoque.png')}}" alt=""></a>
-                            </div>
-                            <div class="dlab-info">
-                                <h5 class="dlab-title h5"><a href="#">Range Rover <span class="text-primary">Evoque</span> </a></h5>
-                                <p class="dlab-price"><span>245 000 DH</span> </p>
-                                <div class="icon-box-btn text-center">
-                                    <ul class="clearfix">
-                                        <li><a href="javascript:;"><i class="flaticon-calendar"></i> 2018</a></li>
-                                        <li><a href="javascript:"><i class="flaticon-settings"></i> Automa..</a></li>
-                                        <li><a href="javascript:;"><i class="flaticon-oil"></i> Diesel</a></li>
-                                        <li><a href="javascript:;"><i class="flaticon-dashboard-1"></i> 140K km</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="rent-link">
-                                <a href="#" class="site-button">Acheter Cette Voiture</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="dlab-space">
-                        <div class="dlab-feed-list style-1 relative">
-                            <div class="dlab-media bg-white">
-                                <a href="#"><img src="{{ asset('assets/images/featured/v1tucson.png')}}" alt=""></a>
-                            </div>
-                            <div class="dlab-info">
-                                <h5 class="dlab-title h5"><a href="#">Hyundai <span class="text-primary">Tucson</span> </a></h5>
-                                <p class="dlab-price"><span>264 999 DH</span> </p>
-                                <div class="icon-box-btn text-center">
-                                    <ul class="clearfix">
-                                        <li><a href="javascript:;"><i class="flaticon-calendar"></i> 2022</a></li>
-                                        <li><a href="javascript:"><i class="flaticon-settings"></i> Automa..</a></li>
-                                        <li><a href="javascript:;"><i class="flaticon-oil"></i> Diesel</a></li>
-                                        <li><a href="javascript:;"><i class="flaticon-dashboard-1"></i> 69K km</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="rent-link">
-                                <a href="#" class="site-button">Acheter Cette Voiture</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="dlab-space">
-                        <div class="dlab-feed-list style-1 relative">
-                            <div class="dlab-media bg-white">
-                                <a href="#"><img src="{{ asset('assets/images/featured/v1300.png')}}" alt=""></a>
-                            </div>
-                            <div class="dlab-info">
-                                <h5 class="dlab-title h5"><a href="#">Mercedes-Benz <span class="text-primary">Classe E</span> </a></h5>
-                                <p class="dlab-price"><span>300 000 DH</span> </p>
-                                <div class="icon-box-btn text-center">
-                                    <ul class="clearfix">
-                                        <li><a href="javascript:;"><i class="flaticon-calendar"></i> 2016</a></li>
-                                        <li><a href="javascript:"><i class="flaticon-settings"></i> Automa..</a></li>
-                                        <li><a href="javascript:;"><i class="flaticon-oil"></i> Diesel</a></li>
-                                        <li><a href="javascript:;"><i class="flaticon-dashboard-1"></i> 65K km</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="rent-link">
-                                <a href="#" class="site-button">Acheter Cette Voiture</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="dlab-space">
-                        <div class="dlab-feed-list style-1 relative">
-                            <div class="dlab-media bg-white">
-                                <a href="#"><img src="{{ asset('assets/images/featured/v2300.png')}}" alt=""></a>
-                            </div>
-                            <div class="dlab-info">
-                                <h5 class="dlab-title h5"><a href="#">Citroen <span class="text-primary">DS3 </span> </a></h5>
-                                <p class="dlab-price"><span>260 000 DH</span></p>
-                                <div class="icon-box-btn text-center">
-                                    <ul class="clearfix">
-                                        <li><a href="javascript:;"><i class="flaticon-calendar"></i> 2022</a></li>
-                                        <li><a href="javascript:"><i class="flaticon-settings"></i> Automa.. </a></li>
-                                        <li><a href="javascript:;"><i class="flaticon-oil"></i> Diesel</a></li>
-                                        <li><a href="javascript:;"><i class="flaticon-dashboard-1"></i> 15K km</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="rent-link">
-                                <a href="#" class="site-button">Acheter Cette Voiture</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="dlab-space">
-                        <div class="dlab-feed-list style-1 relative">
-                            <div class="dlab-media bg-white">
-                                <a href="#"><img src="{{ asset('assets/images/featured/v3300.png')}}" alt=""></a>
-                            </div>
-                            <div class="dlab-info">
-                                <h5 class="dlab-title h5"><a href="#">Volkswagen  <span class="text-primary">Tiguan Rline</span> </a></h5>
-                                <p class="dlab-price"><span>540 000 DH</span></p>
-                                <div class="icon-box-btn text-center">
-                                    <ul class="clearfix">
-                                        <li><a href="javascript:;"><i class="flaticon-calendar"></i>  2021</a></li>
-                                        <li><a href="javascript:"><i class="flaticon-settings"></i> Automa..</a></li>
-                                        <li><a href="javascript:;"><i class="flaticon-oil"></i> Diesel</a></li>
-                                        <li><a href="javascript:;"><i class="flaticon-dashboard-1"></i> 100K km</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="rent-link">
-                                <a href="#" class="site-button">Acheter Cette Voiture</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="dlab-space">
-                        <div class="dlab-feed-list style-1 relative">
-                            <div class="dlab-media bg-white">
-                                <a href="#"><img src="{{ asset('assets/images/featured/v4300.png')}}" alt=""></a>
-                            </div>
-                            <div class="dlab-info">
-                                <h5 class="dlab-title h5"><a href="#">BMW <span class="text-primary">X4 </span> </a></h5>
-                                <p class="dlab-price"><span>385 000 DH</span> </p>
-                                <div class="icon-box-btn text-center">
-                                    <ul class="clearfix">
-                                        <li><a href="javascript:;"><i class="flaticon-calendar"></i> 2018</a></li>
-                                        <li><a href="javascript:"><i class="flaticon-settings"></i>  Automa..</a></li>
-                                        <li><a href="javascript:;"><i class="flaticon-oil"></i> Diesel</a></li>
-                                        <li><a href="javascript:;"><i class="flaticon-dashboard-1"></i> 110K km</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="rent-link">
-                                <a href="#" class="site-button">Acheter Cette Voiture</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="dlab-space">
-                        <div class="dlab-feed-list style-1 relative">
-                            <div class="dlab-media bg-white">
-                                <a href="#"><img src="{{ asset('assets/images/featured/v5300.png')}}" alt=""></a>
-                            </div>
-                            <div class="dlab-info">
-                                <h5 class="dlab-title h5"><a href="#">Volkswagen <span class="text-primary">Arteon</span> </a></h5>
-                                <p class="dlab-price"><span>250 000 DH</span></p>
-                                <div class="icon-box-btn text-center">
-                                    <ul class="clearfix">
-                                        <li><a href="javascript:;"><i class="flaticon-calendar"></i> 2019</a></li>
-                                        <li><a href="javascript:"><i class="flaticon-settings"></i> Automa.</a></li>
-                                        <li><a href="javascript:;"><i class="flaticon-oil"></i> Diesel</a></li>
-                                        <li><a href="javascript:;"><i class="flaticon-dashboard-1"></i> 120K km</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="rent-link">
-                                <a href="#" class="site-button">Acheter Cette Voiture</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="dlab-space">
-                        <div class="dlab-feed-list style-1 relative">
-                            <div class="dlab-media bg-white">
-                                <a href="#"><img src="{{ asset('assets/images/featured/v6300.png')}}" alt=""></a>
-                            </div>
-                            <div class="dlab-info">
-                                <h5 class="dlab-title h5"><a href="#">Hyundai  <span class="text-primary">Creta</span> </a></h5>
-                                <p class="dlab-price"><span>177 000 DH</span></p>
-                                <div class="icon-box-btn text-center">
-                                    <ul class="clearfix">
-                                        <li><a href="javascript:;"><i class="flaticon-calendar"></i> 2019</a></li>
-                                        <li><a href="javascript:"><i class="flaticon-settings"></i> Automa.. </a></li>
-                                        <li><a href="javascript:;"><i class="flaticon-oil"></i> Diesel</a></li>
-                                        <li><a href="javascript:;"><i class="flaticon-dashboard-1"></i> 100K km</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="rent-link">
-                                <a href="#" class="site-button">Acheter Cette Voiture</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+					</div>
+				@endforeach	
+				</div>
+			</div>
+		</div>
+
+	</div>
 </div>
-<!-- brands end -->
+
 <!-- blog -->
 <div class ="section-full content-inner" style="padding-top: 0 !important;">
     <div class="container">
@@ -433,7 +199,7 @@
             <div class="col-lg-12">
                 <div class="section-head style-1 text-center" style="margin-bottom: 0;">
                     <h2 class="h2">NADO AUTO</h2>
-                    <div class="title-sm text-uppercase">En voiture Nado qui rassure</div>
+                    <div class="title-sm text-uppercase">En voiture c'est Nado qui rassure</div>
                 </div>
             </div>
         </div>
@@ -479,9 +245,9 @@
                     <img src="{{ asset('assets/images/services/repris.png') }}" alt="">
                     <div class="team-about">
                         <div>
-                            <h4><a href="javascript:;">Reprise De Voiture</a></h4>
+                            <h4><a href="javascript:;">Vente et Achat</a></h4>
                             <p>
-                                 Un échange d'automobiles est un processus qui rend la vente de votre voiture rapide et facile. Si vous possédez une voiture dont vous souhaitez vous débarrasser, un concessionnaire automobile pourrait être une excellente option pour vous.
+                               Le processus d'achat et de vente de voitures d'occasion est désormais simple et rapide avec notre agence. Nous vous fournissons des services d'achat et de vente de la meilleure façon pour vous faciliter la vie, Nado étant un excellent choix pour vous.
                             </p>
                         </div>
                     </div>
@@ -507,10 +273,9 @@
                     <img src="{{ asset('assets/images/services/vente.png') }}" alt="">
                     <div class="team-about" >
                         <div>
-                            <h4><a href="javascript:;">Service Après-Vente</a></h4>
+                            <h4><a href="javascript:;">Reprise De Voiture</a></h4>
                             <p>
-                                Vous pouvez recevoir tous les documents dont vous avez besoin dans les meilleurs délais et sans délai Respecter vos demandes, être à l'écoute de vos attentes.
-                                Assurez-vous que votre voiture sera prête dès le premier jour lorsque à l'heure
+                                Un échange d'automobiles est un processus qui rend la vente de votre voiture rapide et facile. Si vous possédez une voiture dont vous souhaitez vous débarrasser, un concessionnaire automobile pourrait être une excellente option pour vous.
                             </p>
                         </div>
                     </div>
@@ -852,6 +617,51 @@
         </div>
     </div>
 </div>
+
+<!-- brands -->
+<div class ="section-full content-inner brand">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-head style-1 text-center">
+                    <h2 class="h2">Nos dernières voitures d’occasions</h2>
+                    <div class="title-sm text-uppercase">Choisissez votre type de voiture préférée</div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="clearfix owl-carousel featured-offer owl-theme owl-nav  owl-dots col-lg-12 p-lr0">
+                @foreach($similar_ads as $ad)
+                <div class="item">
+                    <div class="dlab-space">
+                        <div class="dlab-feed-list style-1 relative">
+                            <div class="dlab-media bg-white">
+                                <a href="{{ route('achat.detail', [ 'marque' => str_replace(' ', '', $ad->mark),  'modele' =>  str_replace(' ', '', $ad->modele),  'id' => $ad['id'] ]) }}"><img src="{{ asset('storage/ads/'.$ad['image'])}}" alt=""></a>
+                            </div>
+                            <div class="dlab-info">
+                                <h5 class="dlab-title h5"><a href="#">{{$ad['mark']}} <span class="text-primary">{{$ad['modele']}}</span></a></h5>
+                                <p class="dlab-price"><span>{{$ad['prix']}} DH</span> </p>
+                                <div class="icon-box-btn text-center">
+                                    <ul class="clearfix">
+                                        <li><a href="javascript:;"><i class="flaticon-calendar"></i> {{$ad['year']}}</a></li>
+                                        <li><a href="javascript:"><i class="flaticon-settings"></i>  {{$ad['box']}}</a></li>
+                                        <li><a href="javascript:;"><i class="flaticon-oil"></i>  {{$ad['carburant']}}</a></li>
+                                        <li><a href="javascript:;"><i class="flaticon-dashboard-1"></i> {{$ad['km']}} km</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="rent-link">
+                                <a href="{{ route('achat.detail', [ 'marque' => str_replace(' ', '', $ad->mark),  'modele' =>  str_replace(' ', '', $ad->modele),  'id' => $ad['id'] ]) }}" class="site-button">Acheter Cette Voiture</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                @endforeach
+            </div>
+        </div>
+    </div>
+</div>
+<!-- brands end -->
 <div class="section-full content-inner bg-img-fix overlay-primary-dark" style="background-image: url({{ asset('assets/images/background/bg3.jpg') }});">
     <div class="container">
         <div class="section-head text-center head-1">
@@ -882,3 +692,36 @@
 </div>
 <!-- counter end -->
 @endsection
+@section('script')
+<script>
+$(document).ready(function(){ 
+    $("select.nado-marks, select.nado-marks-m").change(function () {  
+        $('select.nado-models, select.nado-models-m').html("<option> Chargement en cours ... </option>").prop('disabled', 'disabled');
+        var mark = $(this).find('option:selected').attr('data-id');
+        var formData = {
+            'mark': mark,
+            '_token' : $('input[name="_token"]').val()
+        };
+        var ajaxurl = "/achat/"+mark+"/getmodels";
+        var models = '<option value="">Selectionner un modele</option>';
+        $.ajax({
+            type: "POST",
+            url: ajaxurl,
+            data: formData,
+            dataType: 'json',
+            success: function (data) { 
+                for(var i =0;i < data.length;i++){
+                    models += '<option value="' + data[i].name + '">' + data[i].name + '</option>';
+                 }
+                 
+                console.log(models);
+            },
+            complete:function(){
+                $('select.nado-models, select.nado-models-m').html("").append(models).prop('disabled', false);
+            }
+        });
+    });
+    });
+</script>
+@endsection
+

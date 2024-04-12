@@ -1,4 +1,4 @@
-.h1 {
+.used-car-info .dlab-info.h1 {
 	font-size: 80px;
 	font-weight: 700
 }
@@ -52,7 +52,7 @@
 }
 
 .bg-secondry {
-	background-color: #212c50
+	background-color: #1f519b
 }
 
 .text-gray-dark {
@@ -1152,11 +1152,15 @@ footer .footer-bottom .fa-heart {
 	transition: all .5s
 }
 
-.dlab-box-bg.active .icon-box-btn .site-button,
 .dlab-box-bg.active .icon-content h4,
 .dlab-box-bg.active .icon-content p,
 .dlab-box-bg.active .text-primary {
-	color: #fff !important;
+	color: #ffffff !important;
+	transition: all .5s
+}
+
+.dlab-box-bg.active .icon-box-btn .site-button {
+	color: #1f519b !important;
 	transition: all .5s
 }
 
@@ -1201,25 +1205,26 @@ footer .footer-bottom .fa-heart {
 }
 
 .theme-tabs li a {
-	color: #000
+	color: #000 !important;
 }
 
 .theme-tabs li.active a {
-	color: #fff
+	color: #fff !important;
 }
 
 .theme-tabs li.active,
 .theme-tabs li.active a:focus,
 .theme-tabs li.active a:hover,
 .theme-tabs li.active:focus {
-	background-color: #d81517;
-	border-radius: 2px
+	background-color: #ffd802;
+    border-radius: 2px;
+    color: #fff !important;
 }
 
 .theme-tabs li.active a:after {
 	border-left: 5px solid transparent;
 	border-right: 5px solid transparent;
-	border-top: 5px solid #d81416;
+	border-top: 5px solid #ffd802;
 	bottom: -5px;
 	content: "";
 	left: 50%;
@@ -1236,7 +1241,7 @@ footer .footer-bottom .fa-heart {
 .dlab-feed-list .dlab-info {
 	background-color: #f9f9f9;
 	text-align: center;
-	padding: 20px
+	padding: 20px 15px;
 }
 
 .dlab-feed-list .dlab-price {
@@ -1248,6 +1253,11 @@ footer .footer-bottom .fa-heart {
 	font-family: open sans;
 	font-size: 16px;
 	font-weight: 600
+}
+.dlab-feed-list.style-list .dlab-price span {
+    font-family: open sans;
+    font-size: 20px;
+    font-weight: 600;
 }
 
 .dlab-feed-list .dlab-price del {
@@ -1324,7 +1334,7 @@ footer .footer-bottom .fa-heart {
 }
 
 .find-car.active .car-box-1 {
-	background-color: #212c50b3 !important;
+	background-color: #1f519bb3 !important;
 	transition: all 1s
 }
 
@@ -1798,7 +1808,7 @@ footer .footer-bottom .fa-heart {
 }
 
 .form-head:after {
-	background: #f5c04a none repeat scroll 0 0;
+	background: #ffd802 none repeat scroll 0 0;
 	border-radius: 100%;
 	bottom: -20px;
 	content: "";
@@ -1873,13 +1883,13 @@ footer .footer-bottom .fa-heart {
 
 input[type=checkbox]+label:before,
 input[type=radio]+label:before {
-	border: 2px solid #d81416
+	border: 2px solid #1b4e9d
 }
 
 input[type=checkbox]+label:hover:before,
 input[type=radio]+label:hover:before,
 input[type=radio]:checked+label:before {
-	border-color: #d81416
+	border-color: #1b4e9d
 }
 
 .check-nav>li {
@@ -2126,7 +2136,7 @@ input[type=radio]:checked+label:before {
 
 .vehicle-type .btn.active {
 	box-shadow: none;
-	background: #f5c04a;
+	background: #ffd802;
 	color: #fff
 }
 
@@ -2207,9 +2217,9 @@ input[type=radio]:checked+label:before {
 .filter-bar .theme-tabs li.active a:hover,
 .filter-bar .theme-tabs li.active:focus {
 	background: #fff;
-	color: #f5c04a;
+	color: #ffd802;
 	border-radius: 0;
-	border-color: #f5c04a
+	border-color: #ffd802
 }
 
 .filter-bar .theme-tabs li {
@@ -2236,7 +2246,7 @@ input[type=radio]:checked+label:before {
 }
 
 .car-details .modal-header {
-	background-color: #f5c04a;
+	background-color: #ffd802;
 	border-radius: 0
 }
 
@@ -2318,7 +2328,8 @@ input[type=radio]:checked+label:before {
 }
 
 .used-car-info .dlab-info {
-	padding: 20px;
+    max-height: 204px;
+	padding: 20px 15px;
 	text-align: left
 }
 
@@ -3065,7 +3076,8 @@ input[type=radio]:checked+label:before {
 	padding: 20px 44px;
 	font-size: 16px;
 	font-weight: 700;
-	vertical-align: middle
+	vertical-align: middle;
+	color: #1f519b !important;
 }
 
 .op-08 {
@@ -3509,7 +3521,7 @@ input[type=radio]:checked+label:before {
 	font-weight: 700
 }
 
-.dlab-feed-list.style-1 .icon-box-btn ul li {
+.dlab-feed-list.style-1 .icon-box-btn ul li, .dlab-feed-list.style-list .icon-box-btn ul li {
 	width: 25%;
 	padding: 0;
 	border-color: #fff
@@ -3517,13 +3529,21 @@ input[type=radio]:checked+label:before {
 
 .dlab-feed-list.style-1 .icon-box-btn ul li a {
 	font-size: 10px;
-	color: #aaa !important;
+	color: #000 !important;
 	padding: 6px 5px;
 	border-color: #fff;
 	display: block
 }
 
-.dlab-feed-list.style-1 .icon-box-btn ul li a:hover {
+.dlab-feed-list.style-list .icon-box-btn ul li a {
+    font-size: 8px;
+    color: #000 !important;
+    padding: 5px 2px;
+    border-color: #fff;
+    display: block;
+}
+
+.dlab-feed-list.style-1 .icon-box-btn ul li a:hover, .dlab-feed-list.style-list .icon-box-btn ul li a:hover {
 	color: #fff !important;
 }
 
@@ -3792,7 +3812,7 @@ input[type=radio]:checked+label:before {
 }
 
 .car-brand .car-brand-value li:first-child {
-	background: #f5c04a;
+	background: #ffd802;
 	color: #fff;
 	padding: 9px 12px;
 	font-weight: 700
@@ -5854,6 +5874,9 @@ footer.footer-image.style-1 .widget_services ul li a {
 	display: flex;
 	align-items: center
 }
+.used-car-info .post{
+    max-height: 494px;
+}
 
 @media only screen and (max-width:1400px) {
 	.home-banner {
@@ -5863,6 +5886,30 @@ footer.footer-image.style-1 .widget_services ul li a {
 	.icon-bx-toggle {
 		min-height: 420px
 	}
+	.block-detail-list h4{
+	    font-size: 15px !important;
+	}
+	.block-detail-list span.font-14{
+	    font-size: 12px !important;
+	}
+	.block-detail-list img{
+	    width: 40px !important;
+	}
+	.block-detail-lis .icon-image-list{
+	    width: 40px !important;
+	}
+	.block-detail-list .site-filters ul li a {
+	    padding: 2px 6px !important;
+	}	
+	.block-detail-list .site-filters ul li a span {
+	    font-size: 9px !important;
+	}	
+	.used-car-info .dlab-info.block-detail-list  {
+	    max-height: 210px !important;
+	}
+	.used-car-info .post{
+        max-height: 440px;
+    }
 }
 
 @media only screen and (max-width:1200px) {
@@ -6050,7 +6097,6 @@ footer.footer-image.style-1 .widget_services ul li a {
 		padding: 15px
 	}
 }
-
 .bnr-slider {
 	position: relative
 }

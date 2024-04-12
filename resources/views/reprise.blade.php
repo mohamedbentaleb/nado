@@ -101,7 +101,7 @@ $(document).ready(function(){
             'mark': mark,
             '_token' : $('input[name="_token"]').val()
         };
-        var ajaxurl = "/Services/"+mark+"/getmodels";
+        var ajaxurl = "/achat/"+mark+"/getmodels";
         var models = '<option value="">Selectionner un modele</option>';
         $.ajax({
             type: "POST",
