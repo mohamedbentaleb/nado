@@ -51,7 +51,7 @@
     									</div>
     									<div class="col-md-12 col-sm-12">
     										<div class="max-w300 m-auto">
-    											<button class="site-button btn-block" type="button">CONTINUE</button>
+    											<button class="site-button btn-block" type="button" style="background: #1f519b !important; color: #fdd64d !important;">CONTINUE</button>
     										</div>
     									</div>
     								</div>
@@ -272,7 +272,7 @@ $(document).ready(function(){
             'mark': mark,
             '_token' : $('input[name="_token"]').val()
         };
-        var ajaxurl = "/services/"+mark+"/getmodels";
+        var ajaxurl = "/achat/"+mark+"/getmodels";
         var models = '<option value="">Selectionner un modele</option>';
         $.ajax({
             type: "POST",

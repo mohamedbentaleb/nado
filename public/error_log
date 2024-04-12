@@ -1,0 +1,2 @@
+[26-Mar-2024 14:10:38 UTC] PHP Fatal error:  Declaration of App\Http\Controllers\FrontController::index() must be compatible with App\Http\Controllers\BuyController::index(Illuminate\Http\Request $request) in /home2/nadoma/public_html/app/Http/Controllers/FrontController.php on line 17
+[26-Mar-2024 14:10:48 UTC] PHP Fatal error:  Declaration of App\Http\Controllers\FrontController::index() must be compatible with App\Http\Controllers\BuyController::index(Illuminate\Http\Request $request) in /home2/nadoma/public_html/app/Http/Controllers/FrontController.php on line 17

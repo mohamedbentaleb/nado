@@ -1,6 +1,22 @@
 /*=====================
 	Premery bg color
 =====================*/
+.clearfix .btn-success {
+	background-color: #5cb85c !important;
+	border-color: #5cb85c !important;
+	color: #fff
+}
+.clearfix .btn-success:hover {
+	background-color: #5cb85c !important;
+}
+.clearfix .btn-finance {
+	background-color: #1b4e9d !important;
+	border-color: #1b4e9d !important;
+	color: #fff
+}
+.clearfix .btn-finance:hover {
+	background-color: #1b4e9d !important;
+}
 
 /* Hex */
 .bg-primary,
@@ -46,7 +62,7 @@
 .home-2 .sep,
 .home-3 .sep,
 .new-page{
-    background-color: #f5c04a !important;
+    background-color: #ffd802 !important;
 }
 
 /*Hex color :hover */
@@ -65,7 +81,8 @@
 .pagination > .active > span:hover,
 .pagination > .active > a:focus,
 .pagination > .active > span:focus,
-.dlab-feed-list.style-1 .icon-box-btn ul li a:hover {
+.dlab-feed-list.style-1 .icon-box-btn ul li a:hover,
+.dlab-feed-list.style-list .icon-box-btn ul li .box-list:hover{
     background-color: #fdd64d !important;
 }
 .about-us .dlab-tabs .nav-tabs li.active{
@@ -127,7 +144,7 @@ h6 a:hover,
 .section-head.style-1 .h2.text-primary,
 .team-box ul li a:hover,
 .link-car-brand li a:hover {
-    color: #f5c04a !important;
+    color: #ffd802 !important;
 }
 
 .icon-box-btn .site-button{
@@ -144,19 +161,64 @@ h6 a:hover,
 button.scroltop,
 blockquote,
 .widget_gallery li:hover {
-    border-color: #f5c04a !important;
+    border-color: #ffd802 !important;
 }
 
 /*=====================
 	Secondery bg color
  =====================*/
 .bg-secondry {
-    background-color: #212c50 !important;
+    background-color: #1f519b !important;
 }
 
 /*=====================
 	Secondery text color
  =====================*/
 .text-secondry {
-    color: #212c50 !important;
+    color: #1f519b !important;
+}
+.box-s{
+    box-shadow: rgb(149 157 165 / 34%) 0px 6px 14px;
+}
+.border-tlr{
+    border-top-right-radius: 4px;
+    border-top-left-radius: 4px;
+}
+.border-blr{
+    border-bottom-right-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+input[type=range] {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 10px;
+    background: #1f519b; /* Gray background */
+    border-radius: 5px;
+    outline: none;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+/* Custom styles for the thumb of the range input */
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: #ffffff; /* Green thumb */
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+input[type=range]::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    background: #ffffff; /* Green thumb */
+    border-radius: 50%;
+    cursor: pointer;
+}
+.block-price-list{
+    position: absolute;
+    bottom: 16%;
+    border-top-right-radius: 14px;
 }

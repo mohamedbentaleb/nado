@@ -1831,7 +1831,7 @@ input[type="radio"] + label:hover:before{
 }
 .vehicle-type .btn.active {
 	box-shadow:none;
-	background:#f5c04a;
+	background:#ffd802;
 	color:#fff;
 }
 .vehicle-type .btn.active:after {
@@ -1900,9 +1900,9 @@ input[type="radio"] + label:hover:before{
 .filter-bar .theme-tabs li.active a,
 .filter-bar .theme-tabs li.active{
 	background:#fff;
-	color:#f5c04a;
+	color:#ffd802;
 	border-radius:0;
-	border-color:#f5c04a;
+	border-color:#ffd802;
 }
 
 .filter-bar .theme-tabs li{
@@ -1928,7 +1928,7 @@ input[type="radio"] + label:hover:before{
 }
 /* Car Details */
 .car-details .modal-header{
-	background-color:#f5c04a;
+	background-color:#ffd802;
 	border-radius:0;
 }
 .car-details .modal-footer{
@@ -3292,7 +3292,7 @@ text-align: center;
     margin-bottom: 30px;
 }
 .car-brand .car-brand-value li:first-child {
-	background: #f5c04a;
+	background: #ffd802;
 	color: #fff;
 	padding: 9px 12px;
 	font-weight: 700;

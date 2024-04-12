@@ -27,6 +27,7 @@ class AdsRequest extends FormRequest
             'prix' => ['required', 'numeric'],
             'mark' => ['required', 'string'],
             'modele' => ['required', 'string'],
+            'city' => ['required', 'string'],
             'year' => ['required', 'numeric'],
             'km' => ['required', 'numeric'],
             'cv' => ['required', 'numeric'],
@@ -39,6 +40,8 @@ class AdsRequest extends FormRequest
             'video' => ['required', 'string'],
             'reel' => ['required', 'string'],
             'bodywork' => ['required', 'string'],
+            'status' => ['required', 'string'],
+            'co2' => ['required', 'string'],
             'certifie' => ['nullable'],
             'showroom' => ['nullable'],
             'finance' => ['nullable'],
@@ -47,6 +50,7 @@ class AdsRequest extends FormRequest
             'climatisation' => ['nullable'],
             'gps' => ['nullable'],
             'toit_ouvrant' => ['nullable'],
+            'double_toit_ouvrant' => ['nullable'],
             'siege_cuir' => ['nullable'],
             'radar_recul' => ['nullable'],
             'camera_recul' => ['nullable'],
@@ -58,6 +62,10 @@ class AdsRequest extends FormRequest
             'cd' => ['nullable'],
             'ordinateur' => ['nullable'],
             'verrouillage' => ['nullable'],
+            'active' => ['nullable'],
+            'image' => [($this->method() == "POST") ? 'required' : 'nullable', 'image', 'mimes:jpeg,png,jpg,gif', 'max:5120'],
+            'imgrapport' => [($this->method() == "POST") ? 'required' : 'nullable', 'image', 'mimes:jpeg,png,jpg,gif', 'max:5120'],
+            'rapport' => [($this->method() == "POST") ? 'required' : 'nullable', 'mimes:pdf', 'max:5120'],
         ];
     }
 }

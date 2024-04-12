@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\admin;
+namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\AdsRequest;
 use App\Models\Anonnces;
 use App\Models\Brands;
-use App\Models\ville;
+use App\Models\Ville;
 use App\Models\Media;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -77,9 +77,10 @@ class AnonncesController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Anonnces $anonnces)
     {
-        //
+        $anonnces->delete();
+        return to_route("anonncest.index")->with("success" , "Anonnce  deleted successfully");
     }
 
     public function resizeImage($imagefile, $title, $idAds){
@@ -87,12 +88,12 @@ class AnonncesController extends Controller
                 $media = new Media;
                 $image = $imagefile;
                 $name =  Str::slug($title, '-').'-'.rand(100000, 999999).'.'.$image->getClientOriginalExtension();
-                $width = 852; // your max width
-                $height = 609; // your max height
+                $width = 720; // your max width
+                $height = 550; // your max height
                 $manager = new ImageManager(new Driver());
                 $img = $manager->read($image);
                 //$img->insert(storage_path('app/public/marques/hatif-logo-watermark.png'), 'center');
-                //$img->resize(652, 409);
+                $img->resize(720, 550);
                 $img->height() > $img->width() ? $width=null : $height=null;
                 $img->resize($width, $height, function ($constraint) {
                     $constraint->aspectRatio();

@@ -24,6 +24,7 @@
     }
 @endphp
 <ul class="menu">
+    @role('admin')
     <li
         class="sidebar-item d-none">
         <a href="{{route('dashboard')}}" class='sidebar-link'>
@@ -31,24 +32,10 @@
             <span>Dashboard</span>
         </a>
     </li>
-    @role('super-admin')    @endrole
-    <li @class(['sidebar-item','has-sub', 'active' => str_contains( $current_route , "users.")]) >
-        <a href="#" class='sidebar-link'>
-            <i class="bi bi-people"></i>
-            <span>Users</span>
-        </a>
-        <ul @class(['submenu', 'active' => str_contains( $current_route , "users.")]) >
-            <li  @class(['submenu-item', 'active' => request()->routeIs('users.index')])>
-                <a href="{{ route("users.index") }}">List</a>
-            </li>
-            <li @class(['submenu-item', 'active' => request()->routeIs('users.create')])>
-                <a href="{{ route("users.create") }}">New</a>
-            </li>
-        </ul>
-    </li>
+    @endrole
     <li @class(['sidebar-item','has-sub', 'active' => str_contains( $current_route , "annonces.")]) >
         <a href="#" class='sidebar-link'>
-            <i class="bi bi-people"></i>
+            <i class="bi bi-box"></i>
             <span>Annonces</span>
         </a>
         <ul @class(['submenu', 'active' => str_contains( $current_route , "annonces.")]) >
@@ -162,6 +149,20 @@
             </li>
             <li @class(['submenu-item', 'active' => request()->routeIs('avisvideos.create')])>
                 <a href="{{ route("avisvideos.create") }}">New</a>
+            </li>
+        </ul>
+    </li>
+    <li @class(['sidebar-item','has-sub', 'active' => str_contains( $current_route , "users.")]) >
+        <a href="#" class='sidebar-link'>
+            <i class="bi bi-people"></i>
+            <span>Users</span>
+        </a>
+        <ul @class(['submenu', 'active' => str_contains( $current_route , "users.")]) >
+            <li  @class(['submenu-item', 'active' => request()->routeIs('users.index')])>
+                <a href="{{ route("users.index") }}">List</a>
+            </li>
+            <li @class(['submenu-item', 'active' => request()->routeIs('users.create')])>
+                <a href="{{ route("users.create") }}">New</a>
             </li>
         </ul>
     </li>

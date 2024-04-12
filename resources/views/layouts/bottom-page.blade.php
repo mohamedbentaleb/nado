@@ -4,7 +4,7 @@
 			<div class="col-md-12 col-sm-12 text-center">
 				<h2 class="font-30 font-weight-600 m-b10 m-t0 text-white">Achat de voiture à distance en toute sécurité.!</h2>
 				<h5 class="font-18 text-white">Achetez votre voiture d'occasion maintenant en toute sécurité et facilement</h5>
-				<a href="#" class="site-button">Acheter votre véhicule</a>
+				<a href="{{ route('achat.index') }}" class="site-button">Acheter votre véhicule</a>
 
 			</div>
 		</div>

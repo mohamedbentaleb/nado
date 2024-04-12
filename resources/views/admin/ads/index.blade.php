@@ -24,6 +24,7 @@
                           <th>titre</th>
                           <th>mark</th>
                           <th>modele</th>
+                          <th>Active</th>
                           <th class="d-flex justify-content-end">Action</th>
                       </tr>
                   </thead>
@@ -34,6 +35,7 @@
                       <td>{{ $ad->titre; }}</td>
                       <td>{{ $ad->mark; }}</td>
                       <td>{{ $ad->modele; }}</td>
+                      <td class="text-center"> @if ($ad->active == 1) <i class="bi bi-check text-success"></i> @else <i class="bi bi-dash-circle text-danger"></i> @endif </td>
                       <td>
                         <div class="d-flex gap-2 w-100 justify-content-end">
                           <a href="{{ route("annonces.edit" , $ad)}}" class="btn btn-info">Update</a>
@@ -49,6 +51,7 @@
                         <th>titre</th>
                         <th>mark</th>
                         <th>modele</th>
+                        <th>Active</th>
                       </tr>
                   </tfoot>
               </table>
