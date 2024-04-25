@@ -13,14 +13,110 @@
     			<div class="used-car sale-car ">
     				<div class="dlab-tabs">
     					<div class="tab-content">
-    						<div id="by-budget" class="tab-pane clearfix active in" >
-    							<form action="{{ route('services.store') }}" method="POST">
+                            <div id="by-budget" class="tab-pane clearfix active in" >
+                                <div class="row m-b10">
+                                    @if (session('success'))
+                                        <div class="alert alert-success no-bg"> {{ session('success') }} </div>
+                                    @endif
+                                    <div class="col-md-4 col-sm-4 font-14 Bstep1">
+                                        <div class="bg-step m-r5 p-lr5 bg-step-active">
+                                            1- Information personnelles <i class="fa fa-angle-right"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-sm-4 font-14 Bstep2">
+                                        <div class="bg-step m-r5 p-lr5">
+                                            2- Situation professionelles <i class="fa fa-angle-right"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-sm-4 font-14 Bstep3">
+                                        <div class="bg-step m-r5 p-lr5">
+                                            3- Information véhicule <i class="fa fa-angle-right"></i>
+                                        </div>
+                                    </div>
+                                </div>
+    							<form action="{{ route('financement.store') }}" method="POST" enctype="multipart/form-data">
     							    @csrf
-    								<div class="row">
+    								<div class="row step1">
+                                        <div class="col-md-4 col-sm-4">
+    										<div class="input-group">
+    											<label>Nom & Prénom</label>
+                                                <input type="text" class="form-control" name="name" id="name" placeholder="Nom & Prénom">
+    										</div>
+    									</div>
     									<div class="col-md-4 col-sm-4">
     										<div class="input-group">
+    											<label>Téléphone</label>
+                                                <input type="text" class="form-control" name="phone" id="phone" placeholder="Téléphone">
+    										</div>
+    									</div>
+    									<div class="col-md-4 col-sm-4">
+    										<div class="input-group">
+    											<label>Ville</label>
+    											<select class="form-control" name="city" id="city" >
+    											    <option value="">Ville</option>
+    											    @foreach($city as $c)
+    											    <option value="{{$c->name}}">{{$c->name}}</option>
+    											    @endforeach
+    											</select>
+    										</div>
+    									</div>
+    									<div class="col-md-12 col-sm-12">
+    										<div class="text-center">
+    											<button class="site-button  Nextstep1" type="button" style="background: #1f519b !important; color: #fdd64d !important;">CONTINUE</button>
+    										</div>
+    									</div>
+    								</div>
+    								<div class="row step2 hide">
+    									<div class="col-md-4 col-sm-4">
+    										<div class="input-group">
+    											<label>Situation professionnelle</label>
+    											<select class="form-control " name="situationprof" id="situationprof" >
+    											    <option value="">Situation professionnelle</option>
+                                                    <option value="Fonctionnaire">Fonctionnaire</option>
+                                                    <option value="Salarié du privé">Salarié du privé</option>
+                                                    <option value="Profession libérale">Profession libérale</option>
+                                                    <option value="Commercant">Commercant</option>
+                                                    <option value="Autre">Autre</option>
+    											</select>
+    										</div>
+    									</div>
+    									<div class="col-md-4 col-sm-4">
+    										<div class="input-group">
+    											<label>Revenus mensuels</label>
+                                                <input type="text" class="form-control" name="revenusmensuels" id="revenusmensuels" placeholder="Revenus mensuels">
+    										</div>
+    									</div>
+    									<div class="col-md-4 col-sm-4">
+    										<div class="input-group">
+    											<label>Crédits en cours</label>
+                                                <input type="text" class="form-control" name="creditsencours" id="creditsencours" placeholder="Crédits en cours">
+    										</div>
+    									</div>
+                                        <div class="col-md-4 col-sm-4">
+    										<div class="input-group">
+    											<label>Durée </label>
+    											<select class="form-control" name="duree" id="duree" required>
+    											    <option value="">Durée</option>
+    											    @for ($i = 12; $i <= 88; $i++)
+                            			                <option title="{{$i}}" value="{{$i}}">
+                            			                  {{$i}}
+                            			                </option>
+                        			                @endfor
+    											</select>
+    										</div>
+    									</div>
+    									<div class="col-md-12 col-sm-12">
+    										<div class="text-center">
+    											<button class="site-button  Backstep1" type="button">RETOUR</button>
+    											<button class="site-button  Nextstep2" type="button" style="background: #1f519b !important; color: #fdd64d !important;">CONTINUE</button>
+    										</div>
+    									</div>
+    								</div>
+    								<div class="row step3 hide">
+                                        <div class="col-md-4 col-sm-4">
+    										<div class="input-group">
     											<label>Marque</label>
-    											<select class="form-control nado-marks" name="mark" id="mark" required >
+    											<select class="form-control nado-marks" name="mark" id="mark" required>
     											    <option value="">Marque</option>
     											    @foreach($brands as $brand)
     											    <option value="{{$brand->name}}" data-id="{{$brand->id}}">{{$brand->name}}</option>
@@ -50,8 +146,9 @@
     										</div>
     									</div>
     									<div class="col-md-12 col-sm-12">
-    										<div class="max-w300 m-auto">
-    											<button class="site-button btn-block" type="button" style="background: #1f519b !important; color: #fdd64d !important;">CONTINUE</button>
+    										<div class="text-center">
+    											<button class="site-button  Backstep2" type="button">RETOUR</button>
+    											<button class="site-button  Nextstep3" type="submit" style="background: #1f519b !important; color: #fdd64d !important;">ENVOYER</button>
     										</div>
     									</div>
     								</div>
@@ -264,8 +361,8 @@
 @endsection
 @section('script')
 <script>
-$(document).ready(function(){ 
-    $("select.nado-marks").change(function () {  
+$(document).ready(function(){
+    $("select.nado-marks").change(function () {
         $('select.nado-models').html("<option> Chargement en cours ... </option>").prop('disabled', 'disabled');
         var mark = $('select.nado-marks option:selected').attr('data-id');
         var formData = {
@@ -279,11 +376,11 @@ $(document).ready(function(){
             url: ajaxurl,
             data: formData,
             dataType: 'json',
-            success: function (data) { 
+            success: function (data) {
                 for(var i =0;i < data.length;i++){
                     models += '<option value="' + data[i].name + '">' + data[i].name + '</option>';
                  }
-                 
+
                 console.log(models);
             },
             complete:function(){
@@ -291,9 +388,84 @@ $(document).ready(function(){
             }
         });
     });
-    setTimeout(function() {
-        $(".bootstrap-select").remove();
-    }, 2000);
+
+    $("select.jeveux").change(function () {
+        $('select.mode').html("<option> Chargement en cours ... </option>").prop('disabled', 'disabled');
+        var mode = '<option value="">Selectionner</option>';
+        if($(this).val() == "vendre ma voiture"){
+
+            mode += '<option value="pack showroom">PACK SHOWROOM</option>';
+            mode += '<option value="khdima distance">KHIDMA DISTANCE</option>';
+
+        }else if($(this).val() == "estimer ma voiture"){
+
+            mode += '<option value="estimer">ESTIMER</option>';
+
+        }
+        $('select.mode').html("").append(mode).prop('disabled', false);
+
+    });
+
+    $(".Nextstep1").click(function(){
+        if($("#name").val() == "" ){
+            $("#name").parent().addClass("has-error");
+            $("#name").parent().children("small").removeClass("v-hidden");
+            return false;
+        }
+        if($("#phone").val() == "" ){
+            $("#phone").parent().addClass("has-error");
+            $("#phone").parent().children("small").removeClass("v-hidden");
+            return false;
+        }
+        if($("#city").val() == "" ){
+            $("#city").parent().addClass("has-error");
+            $("#city").parent().children("small").removeClass("v-hidden");
+            return false;
+        }
+        $(".step1").addClass("hide");
+        $(".step2").removeClass("hide");
+        $(".Bstep1 div").removeClass("bg-step-active");
+        $(".Bstep2 div").addClass("bg-step-active");
+    });
+    $(".Nextstep2").click(function(){
+        if($("#situationprof").val() == "" ){
+            $("#situationprof").parent().addClass("has-error");
+            $("#situationprof").parent().children("small").removeClass("v-hidden");
+            return false;
+        }
+        if($("#revenusmensuels").val() == "" ){
+            $("#revenusmensuels").parent().addClass("has-error");
+            $("#revenusmensuels").parent().children("small").removeClass("v-hidden");
+            return false;
+        }
+        if($("#creditsencours").val() == "" ){
+            $("#creditsencours").parent().addClass("has-error");
+            $("#creditsencours").parent().children("small").removeClass("v-hidden");
+            return false;
+        }
+        if($("#duree").val() == "" ){
+            $("#duree").parent().addClass("has-error");
+            $("#duree").parent().children("small").removeClass("v-hidden");
+            return false;
+        }
+        $(".step2").addClass("hide");
+        $(".step3").removeClass("hide");
+        $(".Bstep2 div").removeClass("bg-step-active");
+        $(".Bstep3 div").addClass("bg-step-active");
+    });
+    $(".Backstep1").click(function(){
+        $(".step2").addClass("hide");
+        $(".step1").removeClass("hide");
+        $(".Bstep2 div").removeClass("bg-step-active");
+        $(".Bstep1 div").addClass("bg-step-active");
+    });
+    $(".Backstep2").click(function(){
+        $(".step3").addClass("hide");
+        $(".step2").removeClass("hide");
+        $(".Bstep3 div").removeClass("bg-step-active");
+        $(".Bstep2 div").addClass("bg-step-active");
+    });
+
     });
 </script>
 @endsection

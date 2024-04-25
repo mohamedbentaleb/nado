@@ -45,7 +45,7 @@
 							<li> <a href="{{ route('services.index') }}" style="color: #1f519b !important" >à-propos</a></li>
 
 							<li> <a href="{{ route('services.index') }}" class="hide" >Services <i class="fa fa-chevron-down"></i></a>
-								<ul class="sub-menu">
+								<ul class="sub-menu"> 
 									<li><a href="{{ route('services.index') }}#intermediation" >Intermediation</a></li>
 									<li><a href="{{ route('services.index') }}#reprise" >Reprise</a></li>
 									<li><a href="{{ route('services.index') }}#nadopro" >Nado pro</a></li>

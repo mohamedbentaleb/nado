@@ -7,6 +7,7 @@ use App\Models\Annonces;
 use App\Models\Brands;
 use App\Models\Models;
 use App\Models\Ville;
+use App\Models\Offre;
 
 class BuyController extends Controller
 {
@@ -46,7 +47,7 @@ class BuyController extends Controller
                 $bodywork = str_replace("-", " ", $bodywork);
                 $data = $data->where('bodywork',  $bodywork);
             }
-            
+
             if ( $prix =  $request->prix ?? ""){
                 $data = $data->where('prix' , '>=' ,  $prix);
             }
@@ -54,16 +55,16 @@ class BuyController extends Controller
                 $data = $data->where('km' , '>=' , $km);
             }
         }
-        
+
         if($data->count() > 0){
             return view('annonces.list', ["ads" => $data, "brands" => Brands::all(), "ville" => Ville::all(), "searchKeys" => $request->all(), "models" => $models, "formatDate" => function($date){
                     return $this->formatDateLabel($date );
                 } ]);
         }else{
-        
+
             return to_route('achat.index')->with("danger" , "aucune voiture trouvée dans cette recherche");
         }
-        
+
     }
 
     /**
@@ -79,14 +80,24 @@ class BuyController extends Controller
      */
     public function store(Request $request)
     {
-        //
+       $offre = $request->validate([
+            'car' => ['required', 'string'],
+            'prix' => ['required', 'string'],
+            'phone' => ['required', 'string'],
+            'idads' => ['required', 'numeric'],
+            'offre' => ['required', 'string']
+
+        ]);
+
+        Offre::create($offre);
+        return back()->with("success" , "Votre demande a ete envoyer");
     }
 
     /**
      * Display the specified resource.
      *
      * @param  int  $id
-     * 
+     *
      */
     public function show($marque , $modele , $id)
     {
@@ -123,7 +134,7 @@ class BuyController extends Controller
     {
         //
     }
-    
+
     public static function formatDateLabel($date){
 
 

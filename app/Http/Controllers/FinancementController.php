@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Brands;
+use App\Models\Ville;
+use App\Models\Financement;
 
 class FinancementController extends Controller
 {
@@ -12,7 +14,7 @@ class FinancementController extends Controller
      */
     public function index()
     {
-        return view('financement', ["brands" => Brands::all()]);
+        return view('financement', ["brands" => Brands::all(), "city" => Ville::all()]);
     }
 
     /**
@@ -28,7 +30,21 @@ class FinancementController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $financement = $request->validate([
+            'name' => ['required', 'string'],
+            'phone' => ['required', 'string'],
+            'city' => ['required', 'string'],
+            'mark' => ['required', 'string'],
+            'modele' => ['required', 'string'],
+            'year' => ['required', 'numeric'],
+            'situationprof' => ['required', 'string'],
+            'revenusmensuels' => ['required', 'string'],
+            'creditsencours' => ['required', 'string'],
+            'duree' => ['required', 'string']
+
+        ]);
+        Financement::create($financement);
+        return to_route('financement.index')->with("success" , "Votre demande a ete envoyer");
     }
 
     /**
