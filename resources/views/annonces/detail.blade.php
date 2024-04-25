@@ -40,7 +40,7 @@
                             </div>
                             <div class="col-md-5 col-xs-12 blockImgdetail">
                                 @if($detail[0]->showroom == 1)
-                                <a href="#" class="btn btn-sm bg-primary text-white" style="position: absolute;top: 4%;left: 5.3%;z-index: 111;"><span><i class="far fa-check-square"></i> In Showroom</span></a> 
+                                <a href="#" class="btn btn-sm bg-primary text-white" style="position: absolute;top: 4%;left: 5.3%;z-index: 111;"><span><i class="far fa-check-square"></i> In Showroom</span></a>
                                 @endif
             					@if($detail[0]->certifie == 1)
                                 <a href="#" class="btn btn-sm btn-success text-white" style="position: absolute;top: 4%;right: 5.3%;z-index: 111;"><span><i class="far fa-check-square"></i> Certifié</span></a>
@@ -59,15 +59,22 @@
     								<h2 class="m-t0 m-b5" style="color: blue !important"><b>{{$detail[0]->prix}} Dh</b></h2>
     								<span>{{ number_format(($detail[0]->prix) / 72, 2, '.', '') }} Dhs/ 72 mois </span>
     							</div>
-    							<form class="">
+                                @if (session('success'))
+                                    <div class="alert alert-success no-bg"> {{ session('success') }} </div>
+                                @endif
+    							<form action="{{ route('achat.store') }}" method="POST">
+                                    @csrf
     								<div class="form-group m-b5">
-    									<input value="" class="form-control" placeholder="Mon Offre">
+    									<input type="text" value="" class="form-control" name="offre" placeholder="Mon Offre">
+    									<input type="hidden" value="{{$detail[0]->mark}} {{$detail[0]->modele}} {{$detail[0]->year}}" class="form-control" name="car">
+    									<input type="hidden" value="{{$detail[0]->id}}" class="form-control" name="idads">
+    									<input type="hidden" value="{{$detail[0]->prix}}" class="form-control" name="prix">
     								</div>
     								<div class="form-group m-b5">
-    									<input value="" class="form-control" placeholder="Téléphone">
+    									<input value="" class="form-control" name="phone" placeholder="Téléphone">
     								</div>
     								<div class="clearfix p-tb5">
-    									<button type="button" class="btn-primary site-button btn-block" title="READ MORE" rel="bookmark" data-toggle="modal" data-target="#car-details"><i class="fa fa-hand-paper"></i> Envoyer </button>
+    									<button type="submit" class="btn-primary site-button btn-block" title="READ MORE" rel="bookmark" data-toggle="modal" data-target="#car-details"><i class="fa fa-hand-paper"></i> Envoyer </button>
     								</div>
     							</form>
                                 <div class="clearfix p-tb5">
@@ -169,7 +176,7 @@
                                             <div class="row">
                                                 @if($detail[0]->jantesA)
                                             	<div class="col-md-6 col-xs-6 m-tb5">
-                                            		<img src="{{ asset('assets/images/icons/jantes_aluminium.png')}}" width="30"> Jantes aluminium 
+                                            		<img src="{{ asset('assets/images/icons/jantes_aluminium.png')}}" width="30"> Jantes aluminium
                                             	</div>
                                             	@endif
                                             	@if($detail[0]->airbags)
@@ -237,14 +244,14 @@
                                             		<img src="{{ asset('assets/images/icons/CDMP3BL.png')}}" width="30"> Cd/mp3/bluetooth
                                             	</div>
                                             	@endif
-                                            	@if($detail[0]->ordinateur) 
+                                            	@if($detail[0]->ordinateur)
                                             	<div class="col-md-6 col-xs-6 m-tb5">
                                             		<img src="{{ asset('assets/images/icons/gps.png')}}" width="30"> Ordinateur de bord
                                             	</div>
                                             	@endif
                                             	@if($detail[0]->verrouillage)
                                             	<div class="col-md-6 col-xs-6 m-tb5">
-                                            		<img src="{{ asset('assets/images/icons/Verrouillage _Distance.png')}}" width="30"> Verrouillage centralisé à distance 
+                                            		<img src="{{ asset('assets/images/icons/Verrouillage _Distance.png')}}" width="30"> Verrouillage centralisé à distance
                                             	</div>
                                             	@endif
                                             </div>
@@ -335,7 +342,7 @@
                                                 	<div>Présence du pneu de secours</div>
                                                 	<div class="rightview text-green"><i class="fa fa-check font-18"></i> Yes</div>
                                                 </li>
-                                                
+
 												<li>
                                                     <b>Intérieur du véhicule</b>
                                                 </li>
@@ -459,14 +466,14 @@
                                                   <div>Passage marche arrière</div>
                                                   <div class="rightview text-green"><i class="fa fa-check font-18"></i> Yes</div>
                                                 </li>
-                                                
-                                                
-                                                
-                                                
+
+
+
+
                                                 <li>
                                                   <b>Fonctionnement des options</b>
                                                 </li>
-                                                
+
                                                 <li>
                                                   <div>Climatisation</div>
                                                   <div class="rightview text-green"><i class="fa fa-check font-18"></i> Yes</div>
@@ -487,11 +494,11 @@
                                                   <div>Ecran</div>
                                                   <div class="rightview text-green"><i class="fa fa-check font-18"></i> Yes</div>
                                                 </li>
-                                                
+
                                                 <li>
                                                   <b>Conformité administrative</b>
                                                 </li>
-                                                
+
                                                 <li>
                                                   <div>Conformité plaque immatriculation</div>
                                                   <div class="rightview text-green"><i class="fa fa-check font-18"></i> Yes</div>
@@ -512,13 +519,13 @@
                                                   <div>Présence 2e clé</div>
                                                   <div class="rightview text-green"><i class="fa fa-check font-18"></i> Yes</div>
                                                 </li>
-												
+
 											  </ul>
 										</div>
 									</div>
 									<div id="safety"  class="tab-pane clearfix city-list">
 										<div class="icon-bx-wraper bx-style-1 p-a30">
-										    
+
 										    <img src="{{ asset('assets/images/rapport/rapport.jpeg')}}" style="width:100%" class="m-b10">
 										    	<ul class="table-dl clearfix">
 												<li>
@@ -529,7 +536,7 @@
 												</li>
 											  </ul>
 										    <img src="{{ asset('assets/images/rapport/ligne.jpeg')}}" style="width:100%" class="m-b10">
-										
+
 										</div>
 									</div>
 								</div>
@@ -547,10 +554,10 @@
     						<div class="text-center">
 						    	<a href="#" class="site-button gray text-uppercase m-t10" style="background: #1f519b !important; color: #fdd64d !important;">Telecharger fiche technique <i class="fas fa-download"></i></a>
     						</div>
-    					
+
 					    </div>
 						</div>
-						
+
                         <div class="col-md-4">
                             <div class="m-b10">
 								<button class="site-button-secondry text-uppercase " style="background:#f00;">Vidéo en détail</button>
@@ -605,17 +612,17 @@
                                 				<ul class="filters clearfix" data-toggle="buttons">
                                 				    @if($ad['showroom'] == 1)
                                 					<li data-filter="" class="btn active">
-                                						<a href="#" class="btn btn-sm bg-primary text-white"><span><i class="far fa-check-square"></i> In Showroom</span></a> 
+                                						<a href="#" class="btn btn-sm bg-primary text-white"><span><i class="far fa-check-square"></i> In Showroom</span></a>
                                 					</li>
                                 					@endif
                                 					@if($ad['finance'] == 1)
                                 					<li data-filter="interior" class="btn">
-                                						<a href="#" class="btn btn-sm btn-finance text-white"><span><i class="far fa-check-square"></i> Finance</span></a> 
+                                						<a href="#" class="btn btn-sm btn-finance text-white"><span><i class="far fa-check-square"></i> Finance</span></a>
                                 					</li>
                                 					@endif
                                 					@if($ad['certifie'] == 1)
                                 					<li data-filter="exterior" class="btn">
-                                						<a href="#" class="btn btn-sm btn-success text-white"><span><i class="far fa-check-square"></i> Certifié</span></a> 
+                                						<a href="#" class="btn btn-sm btn-success text-white"><span><i class="far fa-check-square"></i> Certifié</span></a>
                                 					</li>
                                 					@endif
                                 				</ul>
@@ -631,7 +638,7 @@
                                         </div>
                                     </div>
 							</div>
-						@endforeach	
+						@endforeach
 						</div>
 					</div>
 				</div>

@@ -2,6 +2,9 @@
 
 @section('Vente', 'Home | Nado.ma')
 
+@section('link')
+<link href="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.4.5/jquery.datetimepicker.min.css" rel="stylesheet">
+@endsection
 @section('content')
     <div class="dlab-bnr-inr overlay-black-middle" style="background-image:url({{ asset('assets/images/banner/sell.jpg')}});">
         <div class="container">
@@ -14,13 +17,38 @@
     				<div class="dlab-tabs">
     					<div class="tab-content">
     						<div id="by-budget" class="tab-pane clearfix active in" >
-    							<form action="{{ route('services.store') }}" method="POST">
+                                <div class="row m-b10">
+                                    @if (session('success'))
+                                        <div class="alert alert-success no-bg"> {{ session('success') }} </div>
+                                    @endif
+                                    <div class="col-md-3 col-sm-3 font-14 Bstep1">
+                                        <div class="bg-step m-r5 p-lr10 bg-step-active">
+                                            1- Votre type de voiture <i class="fa fa-angle-right"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-sm-3 font-14 Bstep2">
+                                        <div class="bg-step m-r5 p-lr10">
+                                            2- information véhicule <i class="fa fa-angle-right"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-sm-3 font-14 Bstep3">
+                                        <div class="bg-step m-r5 p-lr10">
+                                            3- information personnelle <i class="fa fa-angle-right"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-sm-3 font-14 Bstep4">
+                                        <div class="bg-step m-r5 p-lr10">
+                                            4- confirmation Rendez-vous <i class="fa fa-angle-right"></i>
+                                        </div>
+                                    </div>
+                                </div>
+    							<form action="{{ route('vente.store') }}" method="POST" enctype="multipart/form-data">
     							    @csrf
-    								<div class="row">
+    								<div class="row step1">
     									<div class="col-md-4 col-sm-4">
     										<div class="input-group">
     											<label>Marque</label>
-    											<select class="form-control nado-marks" name="mark" id="mark" required >
+    											<select class="form-control nado-marks" name="mark" id="mark" >
     											    <option value="">Marque</option>
     											    @foreach($brands as $brand)
     											    <option value="{{$brand->name}}" data-id="{{$brand->id}}">{{$brand->name}}</option>
@@ -31,7 +59,7 @@
     									<div class="col-md-4 col-sm-4">
     										<div class="input-group">
     											<label>Modele</label>
-    											<select class="form-control nado-models" name="modele" id="modele" required>
+    											<select class="form-control nado-models" name="modele" id="modele">
     											    <option value="">Modele</option>
     											</select>
     										</div>
@@ -39,7 +67,7 @@
     									<div class="col-md-4 col-sm-4">
     										<div class="input-group">
     											<label>Année</label>
-    											<select class="form-control" name="year" id="year" required>
+    											<select class="form-control" name="year" id="year">
     											    <option value="">Année</option>
     											    @for ($i = date("Y"); $i >= 1992; $i--)
                             			                <option title="{{$i}}" value="{{$i}}">
@@ -49,9 +77,168 @@
     											</select>
     										</div>
     									</div>
+    									<div class="col-md-4 col-sm-4">
+    										<div class="input-group">
+    											<label>Image avant de la voiture</label>
+                                                <input type="file" class="form-control" name="img_avant" id="img_avant" >
+    										</div>
+    									</div>
+    									<div class="col-md-4 col-sm-4">
+    										<div class="input-group">
+    											<label class="font-14">Image derrière de la voiture </label>
+                                                <input type="file" class="form-control" name="img_derriere" id="img_derriere" >
+    										</div>
+    									</div>
+    									<div class="col-md-4 col-sm-4">
+    										<div class="input-group">
+    											<label>Image carte grise</label>
+                                                <input type="file" class="form-control" name="img_cartegrise" id="img_cartegrise" >
+    										</div>
+    									</div>
     									<div class="col-md-12 col-sm-12">
-    										<div class="max-w300 m-auto">
-    											<button class="site-button btn-block" type="button">CONTINUE</button>
+    										<div class="text-center">
+    											<button class="site-button  Nextstep1" type="button">CONTINUE</button>
+    										</div>
+    									</div>
+    								</div>
+    								<div class="row step2 hide">
+    									<div class="col-md-4 col-sm-4">
+    										<div class="input-group">
+    											<label>Carburant</label>
+    											<select class="form-control " name="carburant" id="carburant" >
+    											    <option value="">Carburant</option>
+    											    <option value="essence">Essence</option>
+    											    <option value="diesel">Diesel</option>
+    											    <option value="electrique">Electrique</option>
+    											    <option value="hybride">Hybride</option>
+    											</select>
+    										</div>
+    									</div>
+    									<div class="col-md-4 col-sm-4">
+    										<div class="input-group">
+    											<label>Boite de vitesses</label>
+    											<select class="form-control " name="box" id="box" >
+    											    <option value="">Boite de vitesses</option>
+    											    <option value="manuelle">Manuelle</option>
+    											    <option value="automatique">Automatique</option>
+    											</select>
+    										</div>
+    									</div>
+    									<div class="col-md-4 col-sm-4">
+    										<div class="input-group">
+    											<label>Kilométrage</label>
+                                                <input type="text" class="form-control" name="km" id="km" placeholder="kilométrage">
+    										</div>
+    									</div>
+                                        <div class="col-md-4 col-sm-4">
+    										<div class="input-group">
+    											<label>Etat de vehicule</label>
+    											<select class="form-control" name="etat" id="etat" >
+    											    <option value="">Etat de vehicule</option>
+    											    <option value="excellent">Excellent</option>
+    											    <option value="très bon">Très bon</option>
+    											    <option value="bon">Bon</option>
+    											    <option value="correct">Correct</option>
+    											    <option value="endommagé">Endommagé</option>
+    											    <option value="neuf">Neuf</option>
+    											</select>
+    										</div>
+    									</div>
+                                        <div class="col-md-4 col-sm-4">
+    										<div class="input-group">
+    											<label>Type</label>
+    											<select class="form-control " name="type" id="type" >
+    											    <option value="">Type</option>
+    											    <option value="occasion">Occasion</option>
+    											    <option value="neuf">Neuf</option>
+    											</select>
+    										</div>
+    									</div>
+                                        <div class="col-md-4 col-sm-4">
+    										<div class="input-group">
+    											<label>Origine</label>
+    											<select class="form-control " name="origine" id="origine" >
+    											    <option value="">Origine</option>
+    											    <option value="dédouané">dédouané</option>
+    											    <option value="WWW au Maroc">WWW au Maroc</option>
+    											    <option value="importé neuf">importé neuf</option>
+    											    <option value="pas encore dédouané">pas encore dédouané</option>
+    											</select>
+    										</div>
+    									</div>
+    									<div class="col-md-12 col-sm-12">
+    										<div class="text-center">
+    											<button class="site-button  Backstep1" type="button" style="background: #1f519b !important; color: #fdd64d !important;">RETOUR</button>
+    											<button class="site-button  Nextstep2" type="button">CONTINUE</button>
+    										</div>
+    									</div>
+    								</div>
+    								<div class="row step3 hide">
+    									<div class="col-md-4 col-sm-4">
+    										<div class="input-group">
+    											<label>Nom & Prénom</label>
+                                                <input type="text" class="form-control" name="name" id="name" placeholder="Nom & Prénom">
+    										</div>
+    									</div>
+    									<div class="col-md-4 col-sm-4">
+    										<div class="input-group">
+    											<label>Téléphone</label>
+                                                <input type="text" class="form-control" name="phone" id="phone" placeholder="Téléphone">
+    										</div>
+    									</div>
+    									<div class="col-md-4 col-sm-4">
+    										<div class="input-group">
+    											<label>Ville</label>
+    											<select class="form-control" name="city" id="city" >
+    											    <option value="">Ville</option>
+    											    @foreach($city as $c)
+    											    <option value="{{$c->name}}">{{$c->name}}</option>
+    											    @endforeach
+    											</select>
+    										</div>
+    									</div>
+    									<div class="col-md-12 col-sm-12">
+    										<div class="text-center">
+    											<button class="site-button  Backstep2" type="button" style="background: #1f519b !important; color: #fdd64d !important;">RETOUR</button>
+    											<button class="site-button  Nextstep3" type="button">CONTINUE</button>
+    										</div>
+    									</div>
+    								</div>
+    								<div class="row step4 hide">
+    									<div class="col-md-4 col-sm-4">
+    										<div class="input-group">
+    											<label>Je veux</label>
+    											<select class="form-control jeveux" name="jeveux" id="jeveux" required >
+    											    <option value="">Je veux</option>
+    											    <option value="vendre ma voiture">Vendre ma voiture</option>
+    											    <option value="estimer ma voiture">Estimer la valeur de ma voiture</option>
+    											</select>
+    										</div>
+    									</div>
+    									<div class="col-md-4 col-sm-4">
+    										<div class="input-group">
+    											<label style="font-size:13px !important;">Choisissez votre pack de vente</label>
+    											<select class="form-control mode" name="mode" id="mode" required>
+    											    <option value="">Selectionner</option>
+    											</select>
+    										</div>
+    									</div>
+    									<div class="col-md-4 col-sm-4">
+    										<div class="input-group">
+    											<label>Rendez-vous</label><br/>
+    											<input type="text" class="form-control rendezvous" name="rendezvous" id="rendezvous" placeholder="Rendez-vous" required>
+    										</div>
+    									</div>
+    									<div class="col-md-12 col-sm-12 text-center">
+    										<div class="input-group">
+    											<label>Prix</label><br/>
+    											<span class="pricepaye" style="color:#1f519b;"></span>
+    										</div>
+    									</div>
+    									<div class="col-md-12 col-sm-12">
+    										<div class="text-center">
+    											<button class="site-button  Backstep3" type="button" style="background: #1f519b !important; color: #fdd64d !important;">RETOUR</button>
+    											<button class="site-button  Nextstep4" type="submit">CONTINUE</button>
     										</div>
     									</div>
     								</div>
@@ -119,7 +306,7 @@
 					</div>
 				</div>
 				<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
-					<div class="box-hover">					
+					<div class="box-hover">
 						<div class="icon-bx-wraper bx-style-1 p-a30 ">
 							<div class="icon-md text-primary m-b10"> <a href="#" class="icon-cell"><i class="flaticon-vehicle"></i></a> </div>
 							<div class="icon-content">
@@ -152,7 +339,7 @@
 		</div>
 	</div>
 
- 
+
 
     <div class="section-full p-t50 bg-white content-inner-1">
         <div class="container">
@@ -190,7 +377,7 @@
 										<option>Expert</option>
 										<option>Robot </option>
 									</select>
-								</div>	
+								</div>
 							</div>
 						</div>
 						<div class="col-md-4 m-b30">
@@ -210,8 +397,8 @@
 							</div>
 						</div>
 					</div>
-					
-					
+
+
 
 				</div>
             </div>
@@ -315,9 +502,17 @@
 </div>
 @endsection
 @section('script')
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.4.5/jquery.datetimepicker.min.js"></script>
 <script>
-$(document).ready(function(){ 
-    $("select.nado-marks").change(function () {  
+$(document).ready(function(){
+    $(".rendezvous").datetimepicker({
+		  timepicker: false,
+		  datepicker: true,
+		  format: 'Y-m-d',
+		  autoclose: true,
+		});
+		
+    $("select.nado-marks").change(function () {
         $('select.nado-models').html("<option> Chargement en cours ... </option>").prop('disabled', 'disabled');
         var mark = $('select.nado-marks option:selected').attr('data-id');
         var formData = {
@@ -331,11 +526,11 @@ $(document).ready(function(){
             url: ajaxurl,
             data: formData,
             dataType: 'json',
-            success: function (data) { 
+            success: function (data) {
                 for(var i =0;i < data.length;i++){
                     models += '<option value="' + data[i].name + '">' + data[i].name + '</option>';
                  }
-                 
+
                 console.log(models);
             },
             complete:function(){
@@ -343,9 +538,155 @@ $(document).ready(function(){
             }
         });
     });
-    setTimeout(function() {
-        $(".bootstrap-select").remove();
-    }, 2000);
+    
+    $("select.jeveux").change(function () {
+        $('select.mode').html("<option> Chargement en cours ... </option>").prop('disabled', 'disabled');
+        var mode = '<option value="">Selectionner</option>';
+        if($(this).val() == "vendre ma voiture"){
+            
+            mode += '<option value="pack showroom">PACK SHOWROOM</option>';
+            mode += '<option value="khdima distance">KHIDMA DISTANCE</option>';
+            
+        }else if($(this).val() == "estimer ma voiture"){
+            
+            mode += '<option value="estimer">ESTIMER</option>';
+            
+        }
+        $('select.mode').html("").append(mode).prop('disabled', false);
+        
+    });
+    $("select.mode").change(function () {
+        var p = "";
+        if($(this).val() == "pack showroom"){
+    
+            p = '499 Dh';
+            
+        }else if($(this).val() == "khdima distance"){
+            
+            p = '299 Dh';
+            
+        }else if($(this).val() == "estimer"){
+            
+            p = '199 Dh';
+            
+        }
+        $('.pricepaye').html("").append(p);
+        
+    });
+    
+    $(".Nextstep1").click(function(){
+        if($("#mark").val() == "" ){
+            $("#mark").parent().addClass("has-error");
+            $("#mark").parent().children("small").removeClass("v-hidden");
+            return false;
+        }
+        if($("#modele").val() == "" ){
+            $("#modele").parent().addClass("has-error");
+            $("#modele").parent().children("small").removeClass("v-hidden");
+            return false;
+        }
+        if($("#year").val() == "" ){
+            $("#year").parent().addClass("has-error");
+            $("#year").parent().children("small").removeClass("v-hidden");
+            return false;
+        }
+                if($("#img_avant").val() == "" ){
+            $("#img_avant").parent().addClass("has-error");
+            $("#img_avant").parent().children("small").removeClass("v-hidden");
+            return false;
+        }
+        if($("#img_derriere").val() == "" ){
+            $("#img_derriere").parent().addClass("has-error");
+            $("#img_derriere").parent().children("small").removeClass("v-hidden");
+            return false;
+        }
+        if($("#img_cartegrise").val() == "" ){
+            $("#img_cartegrise").parent().addClass("has-error");
+            $("#img_cartegrise").parent().children("small").removeClass("v-hidden");
+            return false;
+        }
+        $(".step1").addClass("hide");
+        $(".step2").removeClass("hide");
+        $(".Bstep1 div").removeClass("bg-step-active");
+        $(".Bstep2 div").addClass("bg-step-active");
+    });
+    $(".Nextstep2").click(function(){
+        if($("#carburant").val() == "" ){
+            $("#carburant").parent().addClass("has-error");
+            $("#carburant").parent().children("small").removeClass("v-hidden");
+            return false;
+        }
+        if($("#box").val() == "" ){
+            $("#box").parent().addClass("has-error");
+            $("#box").parent().children("small").removeClass("v-hidden");
+            return false;
+        }
+        if($("#km").val() == "" ){
+            $("#km").parent().addClass("has-error");
+            $("#km").parent().children("small").removeClass("v-hidden");
+            return false;
+        }
+        if($("#etat").val() == "" ){
+            $("#etat").parent().addClass("has-error");
+            $("#etat").parent().children("small").removeClass("v-hidden");
+            return false;
+        }
+        if($("#type").val() == "" ){
+            $("#type").parent().addClass("has-error");
+            $("#type").parent().children("small").removeClass("v-hidden");
+            return false;
+        }
+        if($("#origine").val() == "" ){
+            $("#origine").parent().addClass("has-error");
+            $("#origine").parent().children("small").removeClass("v-hidden");
+            return false;
+        }
+        $(".step2").addClass("hide");
+        $(".step3").removeClass("hide");
+        $(".Bstep2 div").removeClass("bg-step-active");
+        $(".Bstep3 div").addClass("bg-step-active");
+    });
+    $(".Nextstep3").click(function(){
+        if($("#name").val() == "" ){
+            $("#name").parent().addClass("has-error");
+            $("#name").parent().children("small").removeClass("v-hidden");
+            return false;
+        }
+        if($("#phone").val() == "" ){
+            $("#phone").parent().addClass("has-error");
+            $("#phone").parent().children("small").removeClass("v-hidden");
+            return false;
+        }
+        if($("#city").val() == "" ){
+            $("#city").parent().addClass("has-error");
+            $("#city").parent().children("small").removeClass("v-hidden");
+            return false;
+        }
+        $(".step3").addClass("hide");
+        $(".step4").removeClass("hide");
+        $(".Bstep3 div").removeClass("bg-step-active");
+        $(".Bstep4 div").addClass("bg-step-active");
+    });
+    
+    $(".Backstep1").click(function(){
+        $(".step2").addClass("hide");
+        $(".step1").removeClass("hide");
+        $(".Bstep2 div").removeClass("bg-step-active");
+        $(".Bstep1 div").addClass("bg-step-active");
+    });
+    $(".Backstep2").click(function(){
+        $(".step3").addClass("hide");
+        $(".step2").removeClass("hide");
+        $(".Bstep3 div").removeClass("bg-step-active");
+        $(".Bstep2 div").addClass("bg-step-active");
+    });
+    $(".Backstep3").click(function(){
+        $(".step4").addClass("hide");
+        $(".step3").removeClass("hide");
+        $(".Bstep4 div").removeClass("bg-step-active");
+        $(".Bstep3 div").addClass("bg-step-active");
+    });
+
     });
 </script>
 @endsection

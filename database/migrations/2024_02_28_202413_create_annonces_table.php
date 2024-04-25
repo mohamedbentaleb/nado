@@ -20,6 +20,8 @@ return new class extends Migration
             $table->string('mark');
             $table->string('modele');
             $table->integer('year');
+            $table->string('city');
+            $table->string('cv');
             $table->integer('km');
             $table->string('carburant');
             $table->string('box');
@@ -32,7 +34,9 @@ return new class extends Migration
             $table->string('bodywork');
             $table->string('status');
             $table->string('image');
-            //$table->mediumText('description');
+            $table->string('imgrapport');
+            $table->string('rapport');
+            $table->string('co2');
             $table->integer('certifie')->unsigned()->default(0);
             $table->integer('showroom')->unsigned()->default(0);
             $table->integer('finance')->unsigned()->default(0);

@@ -10,6 +10,9 @@ use App\Http\Controllers\Admin\RepriseVenteController;
 use App\Http\Controllers\Admin\VideoAdsController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\VilleController;
+use App\Http\Controllers\Admin\VenteAdminController;
+use App\Http\Controllers\Admin\FinanceController;
+use App\Http\Controllers\Admin\OffreController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\FrontController;
 use App\Http\Controllers\SellController;
@@ -65,6 +68,9 @@ Route::middleware('auth')->group(function () {
     Route::resource('/admin/videoads', VideoAdsController::class);
     Route::resource('/admin/ville', VilleController::class);
     Route::resource('/admin/annonces', AnnoncesController::class);
+    Route::resource('/admin/ventes', VenteAdminController::class);
+    Route::resource('/admin/finances', FinanceController::class);
+    Route::resource('/admin/offres', OffreController::class);
     Route::post('/admin/models/{id}/getmodels', [ModelsController::class, 'getmodels'])->name('models.modeles');
     //delete media
     Route::post('/admin/annonces/{id}/deleteImage', [AnnoncesController::class, 'deleteImage'])->name('annonces.deleteImg');

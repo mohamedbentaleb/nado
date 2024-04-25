@@ -1,6 +1,6 @@
 @extends('admin.layouts.app')
 
-@section('title' , $ads->exists ? 'Edit User' : 'New User')
+@section('title' , $ads->exists ? 'Edit ads' : 'New ads')
 
 @section('link')
 <link rel="stylesheet" type="text/css" href="{{ asset('assets/back/assets/css/uploader/image-uploader.min.css') }}">
@@ -457,8 +457,8 @@ $(document).ready(function(){
             }
         });
     });
-    
-    
+
+
     $('.delete-image').click(function(){
     	let id = $(this).parent('.uploaded-image').children('input').val();
         //delete media
@@ -473,8 +473,8 @@ $(document).ready(function(){
            }
         });
     });
-    
-    
+
+
     });
 
 </script>

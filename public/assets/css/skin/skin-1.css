@@ -222,3 +222,12 @@ input[type=range]::-moz-range-thumb {
     bottom: 16%;
     border-top-right-radius: 14px;
 }
+.bg-step{
+    background-color: #FFE963;
+    width: 100%;
+    opacity: 0.6;
+}
+.bg-step-active{
+    background-color: #ffd802;
+    opacity: 1;
+}
