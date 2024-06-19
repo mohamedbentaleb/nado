@@ -64,7 +64,7 @@ Route::middleware('auth')->group(function () {
     Route::resource('/admin/avistext', AvisTextController::class);
     Route::resource('/admin/avisvideos', AvisVdController::class);
     Route::resource('/admin/imgslider', ImgSlideController::class);
-    Route::resource('/admin/demande', RepriseVenteController::class);
+    Route::resource('/admin/reprises', RepriseVenteController::class);
     Route::resource('/admin/videoads', VideoAdsController::class);
     Route::resource('/admin/ville', VilleController::class);
     Route::resource('/admin/annonces', AnnoncesController::class);

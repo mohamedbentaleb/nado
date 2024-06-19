@@ -4,6 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Brands;
+use App\Models\Reprise;
+use App\Models\Ville;
+use Intervention\Image\Drivers\Gd\Driver;
+use Intervention\Image\ImageManager;
+use Illuminate\Support\Str;
+
 
 class RepriseController extends Controller
 {
@@ -12,7 +18,7 @@ class RepriseController extends Controller
      */
     public function index()
     {
-        return view('reprise', ["brands" => Brands::all()]);
+        return view('reprise', ["brands" => Brands::all(), "city" => Ville::all()]);
     }
 
     /**
@@ -28,7 +34,19 @@ class RepriseController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $reprise = $request->validate([
+            'name' => ['required', 'string'],
+            'city' => ['required', 'string'],
+            'mark' => ['required', 'string'],
+            'modele' => ['required', 'string'],
+            'phone' => ['required', 'string'],
+            'email' => ['required', 'string'],
+            'contacte' => ['required', 'string'],
+            'rendezvous' => ['required', 'string'],
+
+        ]);
+        Reprise::create($reprise);
+        return to_route('reprise.index')->with("success" , "Votre demande a ete envoyer");
     }
 
     /**
