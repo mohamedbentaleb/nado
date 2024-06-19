@@ -47,11 +47,11 @@ class AnnoncesController extends Controller
              $ads["imgrapport"] = $this->ImageCar($request->file('imgrapport'),  $ads['mark']."-".$ads['modele']);
          }
         if ($request->hasFile('rapport')) {
-             $ads["rapport"] = $ads['mark']."-".$ads['modele']."-".rand(100000, 999999).'.'.$request->rapport->extension();  
+             $ads["rapport"] = $ads['mark']."-".$ads['modele']."-".rand(100000, 999999).'.'.$request->rapport->extension();
              $request->rapport->move(storage_path('app/public/pdf/'), $ads["rapport"]);
          }
         $ads = Annonces::create($ads);
-        
+
 
         if ($request->hasFile('userfile')) {
             foreach ($request->file('userfile') as $imagefile) {
@@ -155,10 +155,10 @@ class AnnoncesController extends Controller
              $ads["imgrapport"] = $this->ImageCar($request->file('imgrapport'),  $ads['mark']."-".$ads['modele']);
          }
         if ($request->hasFile('rapport')) {
-             $ads["rapport"] = $ads['mark']."-".$ads['modele']."-".rand(100000, 999999).'.'.$request->rapport->extension();  
+             $ads["rapport"] = $ads['mark']."-".$ads['modele']."-".rand(100000, 999999).'.'.$request->rapport->extension();
              $request->rapport->move(storage_path('app/public/pdf/'), $ads["rapport"]);
          }
-          
+
         Annonces::whereId($id)->update($ads);
         if ($request->hasFile('userfile')) {
             foreach ($request->file('userfile') as $imagefile) {

@@ -13,7 +13,17 @@ return new class extends Migration
     {
         Schema::create('reprises', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->string('name');
+            $table->string('city');
+            $table->string('mark');
+            $table->string('modele');
+            $table->string('phone');
+            $table->string('email');
+            $table->string('contacte');
+            $table->timestamp('rendezvous');
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->nullable();
+            $table->softDeletes();
         });
     }
 

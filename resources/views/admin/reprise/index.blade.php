@@ -1,12 +1,12 @@
 @extends('admin.layouts.app')
 
-@section('title' , 'Finance | nado.ma')
+@section('title' , 'Reprise | nado.ma')
 
 
 @section('content')
 <div id="main-content">
 <div class="page-heading">
-    <h3>Financement</h3>
+    <h3>Reprise</h3>
 </div>
 <div class="page-content">
     <section class="row">
@@ -14,7 +14,7 @@
           <div class="col-12">
               <div class="card">
                   <div class="card-header d-flex justify-content-between">
-                      <h4 class="card-title">List finance</h4>
+                      <h4 class="card-title">List Reprise</h4>
                   </div>
                   <div class="card-content">
                       <div class="card-body">
@@ -23,35 +23,30 @@
                               <thead>
                                   <tr>
                                       <th>Name</th>
-                                      <th>Phone</th>
                                       <th>ville</th>
                                       <th>Mark</th>
                                       <th>Modele</th>
-                                      <th>Année</th>
-                                      <th>Situation professionnelle</th>
-                                      <th>Revenus mensuels</th>
-                                      <th>Crédits en cours</th>
-                                      <th>Durée</th>
+                                      <th>Phone</th>
+                                      <th>Email</th>
+                                      <th>Contacte</th>
+                                      <th>Rende-zvous</th>
                                       <th class="d-flex justify-content-end">Action</th>
                                   </tr>
                               </thead>
                               <tbody>
-                                @foreach ($finances as $finance)
+                                @foreach ($reprises as $reprise)
                                   <tr>
-                                      <td>{{ $finance->name }}</td>
-                                      <td>{{ $finance->phone }}</td>
-                                      <td>{{ $finance->city }}</td>
-                                      <td>{{ $finance->mark }}</td>
-                                      <td>{{ $finance->modele }}</td>
-                                      <td>{{ $finance->year }}</td>
-                                      <td>{{ $finance->situationprof }}</td>
-                                      <td>{{ $finance->revenusmensuels }}</td>
-                                      <td>{{ $finance->creditsencours }}</td>
-                                      <td>{{ $finance->duree }}</td>
+                                      <td>{{ $reprise->name }}</td>
+                                      <td>{{ $reprise->city }}</td>
+                                      <td>{{ $reprise->mark }}</td>
+                                      <td>{{ $reprise->modele }}</td>
+                                      <td>{{ $reprise->phone }}</td>
+                                      <td>{{ $reprise->email }}</td>
+                                      <td>{{ $reprise->contacte }}</td>
+                                      <td>{{ $reprise->rendezvous }}</td>
                                       <td>
                                         <div class="d-flex gap-2 w-100 justify-content-end">
-                                          <a href="{{ route("finances.show" , $finance)}}" class="btn btn-info">Voire </a>
-                                          @include('admin.partials.deleteBtn', ["url" =>  route('finances.destroy' , $finance) ])
+                                          @include('admin.partials.deleteBtn', ["url" =>  route('reprises.destroy' , $reprise) ])
                                         </div>
                                       </td>
                                   </tr>
@@ -61,15 +56,13 @@
                             <tfoot>
                                 <tr>
                                     <th>Name</th>
-                                    <th>Phone</th>
                                     <th>ville</th>
                                     <th>Mark</th>
                                     <th>Modele</th>
-                                    <th>Année</th>
-                                    <th>Situation professionnelle</th>
-                                    <th>Revenus mensuels</th>
-                                    <th>Crédits en cours</th>
-                                    <th>Durée</th>
+                                    <th>Phone</th>
+                                    <th>Email</th>
+                                    <th>Contacte</th>
+                                    <th>Rende-zvous</th>
                                 </tr>
                             </tfoot>
                           </table>

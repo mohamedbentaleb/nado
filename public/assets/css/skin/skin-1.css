@@ -231,3 +231,14 @@ input[type=range]::-moz-range-thumb {
     background-color: #ffd802;
     opacity: 1;
 }
+.bg-stepblue{
+    background-color: #1f519b;
+    color: #fdd64d;
+    width: 100%;
+    opacity: 0.6;
+}
+.bg-stepblue-active{
+    background-color: #1f519b;
+    color: #fdd64d;
+    opacity: 1;
+}

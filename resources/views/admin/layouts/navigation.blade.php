@@ -58,6 +58,17 @@
             </li>
         </ul>
     </li>
+    <li @class(['sidebar-item','has-sub', 'active' => str_contains( $current_route , "reprises.")]) >
+        <a href="#" class='sidebar-link'>
+            <i class="bi bi-arrow-left-right"></i>
+            <span>Reprises</span>
+        </a>
+        <ul @class(['submenu', 'active' => str_contains( $current_route , "reprises.")]) >
+            <li  @class(['submenu-item', 'active' => request()->routeIs('reprises.index')])>
+                <a href="{{ route("reprises.index") }}">List</a>
+            </li>
+        </ul>
+    </li>
     <li @class(['sidebar-item','has-sub', 'active' => str_contains( $current_route , "finances.")]) >
         <a href="#" class='sidebar-link'>
             <i class="bi bi-cash"></i>
@@ -69,7 +80,7 @@
             </li>
         </ul>
     </li>
-    <li @class(['sidebar-item','has-sub', 'active' => str_contains( $current_route , "finances.")]) >
+    <li @class(['sidebar-item','has-sub', 'active' => str_contains( $current_route , "offres.")]) >
         <a href="#" class='sidebar-link'>
             <i class="bi bi-coin"></i>
             <span>offres</span>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Reprise;
 
 class RepriseVenteController extends Controller
 {
@@ -12,7 +13,7 @@ class RepriseVenteController extends Controller
      */
     public function index()
     {
-        //
+        return view('admin.reprise.index' , ['reprises' => Reprise::all()]);
     }
 
     /**
@@ -58,8 +59,9 @@ class RepriseVenteController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Reprise $reprise)
     {
-        //
+        $reprise->delete();
+        return to_route("reprises.index")->with("success" , "Reprise deleted successfully");
     }
 }
